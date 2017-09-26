@@ -1,0 +1,432 @@
+/*蓝   按钮&主题色*/
+/*背景*/
+/*边框*/
+/*投影*/
+/* 钱*/
+/*提示*/
+/*标签*/
+.lf {
+  float: left;
+}
+.rg {
+  float: right;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.text-c {
+  text-align: center;
+}
+.text-l {
+  text-align: left;
+}
+.text-r {
+  text-align: right;
+}
+.v-m {
+  vertical-align: middle;
+}
+.positon-r {
+  position: relative;
+}
+.t-l {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.t-r {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.b-l {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+.b-r {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+.cursor {
+  cursor: pointer;
+}
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.img-circle {
+  border-radius: 50%;
+}
+.col-main {
+  color: #379cf8;
+}
+.col-999 {
+  color: #999;
+}
+.col-666 {
+  color: #666;
+}
+.col-red {
+  color: #d97a6f;
+}
+.bg_f8f8f8 {
+  background-color: #f8f8f8;
+}
+.bg_dfe6ee {
+  background-color: #dfe6ee;
+}
+.btn,
+.ivu-btn-large {
+  padding: 4px 15px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all .4s;
+}
+.btn.btn-main,
+.ivu-btn-large.btn-main {
+  background-color: #379cf8;
+  color: #fff;
+}
+.btn.btn-main:hover,
+.ivu-btn-large.btn-main:hover {
+  background-color: #81bef7;
+}
+.btn.btn-main:active,
+.ivu-btn-large.btn-main:active {
+  background-color: #2f85f3;
+}
+.btn:active,
+.ivu-btn-large:active,
+.btn:focus,
+.ivu-btn-large:focus {
+  outline: none;
+  border-color: transparent;
+}
+.btn.btn-text,
+.ivu-btn-large.btn-text {
+  color: #333;
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn.btn-text:hover,
+.ivu-btn-large.btn-text:hover {
+  color: #379cf8;
+}
+.btn.btn-text:focus,
+.ivu-btn-large.btn-text:focus,
+.btn.btn-text:active,
+.ivu-btn-large.btn-text:active {
+  border-color: transparent;
+  outline: none;
+}
+.btn.btn-text.col-main,
+.ivu-btn-large.btn-text.col-main {
+  color: #379cf8;
+}
+.btn.btn-outline,
+.ivu-btn-large.btn-outline {
+  background: transparent;
+  border: 1px solid #e6e6e6;
+  color: #666;
+}
+.btn.btn-outline:hover,
+.ivu-btn-large.btn-outline:hover {
+  color: #999;
+}
+.btn.btn-outline:active,
+.ivu-btn-large.btn-outline:active {
+  background-color: #bbb;
+  color: #fff;
+  outline: none;
+}
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+.panel {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.panel .panel-heading {
+  background-color: #f8f8f8 ;
+  padding: 10px;
+}
+.panel .panel-body {
+  padding: 10px;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #dfe6ee;
+}
+a {
+  color: #333;
+  transition: all .4s;
+}
+input[type="text"] {
+  color: #379cf8;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vertical-center-modal .ivu-modal {
+  top: 0;
+}
+.f-12 {
+  font-size: 12px;
+}
+.f-14 {
+  font-size: 14px;
+}
+.f-16 {
+  font-size: 16px;
+}
+.f-18 {
+  font-size: 18px;
+}
+.f-20 {
+  font-size: 20px;
+}
+.f-22 {
+  font-size: 22px;
+}
+.f-24 {
+  font-size: 24px;
+}
+.f-26 {
+  font-size: 26px;
+}
+.f-28 {
+  font-size: 28px;
+}
+.f-30 {
+  font-size: 30px;
+}
+.mt-4 {
+  margin-top: 4px;
+}
+.ml-5 {
+  margin-left: 5px;
+}
+.ml-10 {
+  margin-left: 10px;
+}
+.ml-20 {
+  margin-left: 20px;
+}
+.ml-30 {
+  margin-left: 30px;
+}
+.ml-40 {
+  margin-left: 40px;
+}
+.ml-50 {
+  margin-left: 50px;
+}
+.ml-60 {
+  margin-left: 60px;
+}
+.ml-70 {
+  margin-left: 70px;
+}
+.ml-80 {
+  margin-left: 80px;
+}
+.ml-90 {
+  margin-left: 90px;
+}
+.ml-100 {
+  margin-left: 100px;
+}
+.ml-170 {
+  margin-left: 170px;
+}
+.mr-5 {
+  margin-right: 5px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.mr-40 {
+  margin-right: 40px;
+}
+.mr-50 {
+  margin-right: 50px;
+}
+.mr-60 {
+  margin-right: 60px;
+}
+.mr-60 {
+  margin-right: 60px;
+}
+.mr-70 {
+  margin-right: 70px;
+}
+.mr-80 {
+  margin-right: 80px;
+}
+.mr-90 {
+  margin-right: 90px;
+}
+.mr-100 {
+  margin-right: 100px;
+}
+.mr-200 {
+  margin-right: 200px;
+}
+.mt-3 {
+  margin-top: 3px;
+}
+.mt-5 {
+  margin-top: 5px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.mt-60 {
+  margin-top: 60px;
+}
+.mt-70 {
+  margin-top: 70px;
+}
+.mt-80 {
+  margin-top: 80px;
+}
+.mt-90 {
+  margin-top: 90px;
+}
+.mt-100 {
+  margin-top: 100px;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-5 {
+  margin-bottom: 5px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.mb-60 {
+  margin-bottom: 60px;
+}
+.ivu-dropdown-item:hover {
+  background-color: #379cf8;
+  color: #fff;
+}
+.slide-carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.slide-carousel .item-list {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.slide-carousel .item-list li .item-content {
+  width: 100%;
+  height: 100%;
+}
+.slide-carousel .item-list li .item-content a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.slide-carousel .item-list li .item-content a .cover-img {
+  width: 100%;
+  height: 100%;
+}
+.gallery-top {
+  height: 80%;
+  width: 100%;
+  margin: 0 auto;
+}
+.gallery-thumbs {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  /*width: 520px;*/
+}
+.gallery-thumbs .swiper-slide {
+  width: 20%;
+  height: 100%;
+  opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.swiper-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.ivu-modal-footer {
+  border-top: none;
+}

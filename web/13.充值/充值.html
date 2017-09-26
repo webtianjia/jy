@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/vue/css/iview.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/vue/vue.min.js"></script>
+    <script src="../js/vue/iview.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/script.js"></script>
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.js"></script>
+    <![endif]-->
+    <title>Title</title>
+</head>
+<body>
+<section id="app">
+    <header class="header" >
+        <div class="container">
+            <a href="#">
+                <div class="layout-logo"></div>
+                <div class="lf">吉凯基因分析平台</div>
+            </a>
+            <Dropdown class="lf ml-50">
+                <a href="javascript:void (0)">
+                    <span> 更多平台</span>
+                    <Icon type="arrow-down-b"></Icon>
+                </a>
+                <DropdownMenu slot="list">
+                    <Dropdown-Item>新增和启动</Dropdown-Item>
+                    <Dropdown-Item>活跃分析</Dropdown-Item>
+                    <Dropdown-Item>时段分析</Dropdown-Item>
+                    <Dropdown-Item>更多平台四</Dropdown-Item>
+                </DropdownMenu>
+            </Dropdown>
+            <div class="search ml-50 lf">
+                <input class="search-input" type="text" placeholder="搜索应用">
+                <button class="search-btn"></button>
+            </div>
+            <div class="rg">
+                <!--登录之前-->
+                <!--<div class="lf"><a href="#">关于平台</a></div>-->
+                <div class="lf ml-50"><a href="#">帮助中心</a></div>
+                <div class="lf ml-50">
+                    <Dropdown trigger="click">
+                        <div href="#" class="badge">
+                            <div class="badge-count">99+</div>
+                        </div>
+                        <Dropdown-Menu slot="list">
+                            <div class="news">
+                                <div class="news-header">
+                                    <a class="rg" href="#">全部已读</a>
+                                    <i class="icon"></i>
+                                    <span>未读消息(36条)</span>
+                                </div>
+                                <div class="news-content">
+                                    <ul class="list">
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="new-footer">
+                                    <a href="#">查看全部>></a>
+                                </div>
+                            </div>
+                        </Dropdown-Menu>
+                    </Dropdown>
+                </div>
+                <div class="lf ml-20">
+                    <Dropdown>
+                        <a href="javascript:void(0)">
+                            <img class="img-circle head" src="../images/head.png" style="width: 40px;height: 40px">
+                            <span class=" name text-overflow">ExoxonsvyExoxonsvyExoxonsvy...</span>
+                            <Icon type="arrow-down-b"></Icon>
+                        </a>
+                        <DropdownMenu slot="list">
+                            <Dropdown-Item>个人信息</Dropdown-Item>
+                            <Dropdown-Item>安全设置</Dropdown-Item>
+                            <Dropdown-Item>第三方账号</Dropdown-Item>
+                            <Dropdown-Item>退出</Dropdown-Item>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main recharge">
+        <div class="container">
+            <div class="f-16 top">
+                <span>账户充值   当前余额 J$ 111.00</span>
+            </div>
+            <div class="well-lg well">
+                <Tabs value="name2">
+                    <Tab-Pane icon="ios-monitor-outline" con="social-apple" label="在线充值" name="name1">
+                        <i-Form :model="form_online" :label-width="100" class="mt-40 ml-100" style="width:380px;">
+                                <Form-Item label="充值金额">
+                                    <i-Input v-model="form_online.payment_amount" placeholder="J$ "></i-Input>
+                                </Form-Item>
+                                    <Form-item label="" v-for="(item,index) in price_list">
+                                        <div @click="option_price(index)" class="checked-item" :class="{'checked':item.checked}">J$  {{item.price}}</div>
+                                    </Form-item>
+                                <Form-item label="支付方式">
+                                    <Radio-Group v-model="form_online.radio" vertical>
+                                        <div class="checked-item">
+                                            <Radio label="zfb"><i class="icon-zfb"></i>支付宝支付</Radio>
+                                        </div>
+                                        <div class="checked-item mt-30">
+                                            <Radio label="wx"><i class="icon-wx"></i>微信支付</Radio>
+                                        </div>
+                                    </Radio-Group>
+                                </Form-item>
+                                <Form-item label="">
+                                    <button class="btn btn-main" type="button">立即充值</button>
+                                </Form-item>
+                        </i-Form>
+                    </Tab-Pane>
+                    <Tab-Pane icon="card" con="social-apple" label="线下转账" name="name2">
+                            <i-Form  :model="form_online"   class="mt-40 ml-100 lf" :label-width="100" style="width: 380px">
+                                <Form-Item label="付款银行" prop="paying_bank" >
+                                    <i-Input v-model="form_line.paying_bank" placeholder=""></i-Input>
+                                 <!--   <div class="ivu-form-item-error-tip" v-if="is_sub">请输入正确的银行账号</div>-->
+                                </Form-Item>
+                                <Form-Item label="付款账号" prop="paying_account">
+                                    <i-Input v-model="form_line.paying_account" placeholder=""></i-Input>
+                                  <!--  <div class="ivu-form-item-error-tip" v-if="is_sub">账号不能为空</div>-->
+                                </Form-Item>
+                                <Form-Item label="交易流水号" prop="batch">
+                                    <i-Input v-model="form_line.batch" placeholder=""></i-Input>
+                                    <!--<div class="ivu-form-item-error-tip">交易流水号不能为空</div>-->
+                                </Form-Item>
+                                <Form-Item label="付款金额" prop="payment_amount">
+                                    <i-Input v-model="form_line.payment_amount" placeholder="J$ "></i-Input>
+                                  <!--  <div class="ivu-form-item-error-tip">支付金额不能为空</div>-->
+                                </Form-Item>
+                                <Form-item label="">
+                                    <button type="button" class="btn btn-main" @click="hasSubmit('form_line')">确认提交</button>
+                                </Form-item>
+                                <Form-item label="">
+                                    <p class="f-12 col-999 info-text">注：线下付款详情会作为到账确认的重要凭证，2个工作日内核准到账；在“我的账户”的“交易记录”中可跟踪。 </p>
+                                </Form-item>
+                            </i-Form>
+                        <div class="table-bordered rg mr-100 mt-40">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <td width="150" colspan="1">收款账号资料</td>
+                                         <td width="200"></td>
+                                    </tr>
+                                    </thead>
+                                   <tbody>
+                                       <tr>
+                                           <td>收款账户名</td>
+                                           <td>上海吉凯生物科技有限公司</td>
+                                       </tr>
+                                       <tr>
+                                           <td>收款银行</td>
+                                           <td>中国银行深圳市科技园支行</td>
+                                       </tr>
+                                       <tr>
+                                           <td>收款账号</td>
+                                           <td>4558 6548 9898 1254</td>
+                                       </tr>
+                                       <tr>
+                                           <td>联系电话</td>
+                                           <td>0755-8214567</td>
+                                       </tr>
+                                   </tbody>
+                                </table>
+                        </div>
+                    </Tab-Pane>
+                 </Tabs>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="mr-60">吉凯基因分析平台</a>
+            <a href="#" class="mr-200">使用说明</a>
+            <span class="copyright f-12">©2017 GENECHEM All Rights Reserved.　沪ICP备15012724号    沪公网安备 310</span>
+        </div>
+    </footer>
+</section>
+</body>
+<script>
+    var vm=new  Vue({
+        el:"#app",
+        data:{
+            price_list:[
+                {
+                    checked:false,
+                    price:50.00
+                },
+                {
+                    checked:false,
+                    price:100.00
+                },
+                {
+                    checked:false,
+                    price:200.00
+                }
+            ],
+            form_online:{/*在线*/
+                payment_amount:"",
+                radio: 'zfb',
+            },
+            form_line:{/*线下*/
+                paying_bank:"", /*付款银行*/
+                paying_account:"",/*付款账号*/
+                batch:"",/*交易流水*/
+                payment_amount:""/*付款金额*/
+            },
+            ruleValidate: {
+                paying_bank: [
+                    { required: true, message: '请输入正确的银行账号', trigger: 'blur' }
+                ],
+                paying_account: [
+                    { required: true, message: '账号不能为空', trigger: 'blur' },
+                ],
+                batch: [
+                    { required: true, message: '交易流水号不能为空', trigger: 'blur' }
+                ],
+                payment_amount: [
+                    { required: true, message: '支付金额不能为空', trigger: 'blur' }
+                ]
+            }
+        },
+        methods:{
+            option_price(index){ /*选择价格*/
+                this.price_list.forEach(function (i,index,val) {
+                    val[index].checked=false
+                })
+                this.price_list[index].checked=true;
+                this.form_online.payment_amount=this.price_list[index].price
+            },
+            hasSubmit (name) { /*提交验证*/
+                console.log(this[name])
+                this[name].validate((valid) => {
+                    if (valid) {
+                        this.$Message.success('提交成功!');
+                    } else {
+                        this.$Message.error('表单验证失败!');
+                    }
+                })
+            },
+        }
+    })
+</script>
+</html>

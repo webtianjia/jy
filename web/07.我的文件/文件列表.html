@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/vue/css/iview.css">
+    <link rel="stylesheet" href="../js/slide/swiper.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/vue/vue.min.js"></script>
+    <script src="../js/vue/iview.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/slide/swiper.js"></script>
+    <script src="../js/script.js"></script>
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.js"></script>
+    <![endif]-->
+    <title>Title</title>
+</head>
+<body>
+<section id="app">
+    <header class="header" >
+        <div class="container">
+            <a href="#">
+                <div class="layout-logo"></div>
+                <div class="lf">吉凯基因分析平台</div>
+            </a>
+            <Dropdown class="lf ml-50">
+                <a href="javascript:void (0)">
+                    <span> 更多平台</span>
+                    <Icon type="arrow-down-b"></Icon>
+                </a>
+                <DropdownMenu slot="list">
+                    <Dropdown-Item>新增和启动</Dropdown-Item>
+                    <Dropdown-Item>活跃分析</Dropdown-Item>
+                    <Dropdown-Item>时段分析</Dropdown-Item>
+                    <Dropdown-Item>更多平台四</Dropdown-Item>
+                </DropdownMenu>
+            </Dropdown>
+            <div class="search ml-50 lf">
+                <input class="search-input" type="text" placeholder="搜索应用">
+                <button class="search-btn"></button>
+            </div>
+            <div class="rg">
+                <!--登录之前-->
+                <!--<div class="lf"><a href="#">关于平台</a></div>-->
+                <div class="lf ml-50"><a href="#">帮助中心</a></div>
+                <div class="lf ml-50">
+                    <Dropdown trigger="click">
+                        <div href="#" class="badge">
+                            <div class="badge-count">99+</div>
+                        </div>
+                        <Dropdown-Menu slot="list">
+                            <div class="news">
+                                <div class="news-header">
+                                    <a class="rg" href="#">全部已读</a>
+                                    <i class="icon"></i>
+                                    <span>未读消息(36条)</span>
+                                </div>
+                                <div class="news-content">
+                                    <ul class="list">
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                        <li>
+                                            <div class="title">系统消息</div>
+                                            <div class="content">全新应用新鲜上线。火热</div>
+                                            <a href="#">点击查看</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="new-footer">
+                                    <a href="#">查看全部>></a>
+                                </div>
+                            </div>
+                        </Dropdown-Menu>
+                    </Dropdown>
+                </div>
+                <div class="lf ml-20">
+                    <Dropdown>
+                        <a href="javascript:void(0)">
+                            <img class="img-circle head" src="../images/head.png" style="width: 40px;height: 40px">
+                            <span class=" name text-overflow">ExoxonsvyExoxonsvyExoxonsvy...</span>
+                            <Icon type="arrow-down-b"></Icon>
+                        </a>
+                        <DropdownMenu slot="list">
+                            <Dropdown-Item>个人信息</Dropdown-Item>
+                            <Dropdown-Item>安全设置</Dropdown-Item>
+                            <Dropdown-Item>第三方账号</Dropdown-Item>
+                            <Dropdown-Item>退出</Dropdown-Item>
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <div class="layout mt-10" :class="{'layout-hide-text': spanLeft < 4}">
+                <Row>
+                    <i-Col :span="spanLeft" class="layout-menu-left text-c">
+                        <div class="layout-logo-left">
+                            <button class="btn btn-text"  @click="toggleClick" >
+                                <Icon type="navicon" size="32"></Icon>
+                            </button>
+                        </div>
+                        <i-Menu active-name="1" theme="dark" width="auto">
+                            <Menu-Item name="1">
+                                <i class="i-13"></i>
+                                <span class="layout-text">工作面板</span>
+                            </Menu-Item>
+                            <Menu-Item name="2">
+                                <i class="i-14"></i>
+                                <span class="layout-text">应用市场</span>
+                            </Menu-Item>
+                            <Menu-Item name="3">
+                                <i class="i-15"></i>
+                                <span class="layout-text">我的应用</span>
+                            </Menu-Item>
+                            <Menu-Item name="4">
+                                <i class="i-16"></i>
+                                <span class="layout-text">我的项目</span>
+                            </Menu-Item>
+                            <Menu-Item name="5">
+                                <i class="i-17"></i>
+                                <span class="layout-text">我的文件</span>
+                            </Menu-Item>
+                            <Menu-Item name="6">
+                                <i class="i-18"></i>
+                                <span class="layout-text">我的账户</span>
+                            </Menu-Item>
+                            <Menu-Item name="7">
+                                <i class="i-19"></i>
+                                <span class="layout-text">好友列表</span>
+                            </Menu-Item>
+                            <Menu-Item name="8">
+                                <i class="i-20"></i>
+                                <span class="layout-text">使用帮助</span>
+                            </Menu-Item>
+                        </i-Menu>
+                    </i-Col>
+                    <i-Col :span="spanRight" class="layout-right">
+                        <div class="layout-content">
+                            <div class="panel mt-10">
+                                <div style="height: 50px;line-height: 70px">
+                                     <span class="ml-20">/某某某某人的云空间</span>
+                                        <div class="text-r create_new_project file_btn" style="width: 298px;">
+                                            <a class="btn btn-main mr-20"><i class="i-73"></i>上传文件</a>
+                                            <a class="btn btn-main mr-5"><i class="i-74"></i>创建文件夹</a>
+                                        </div>
+                                </div>
+                                <div class="mt-20"></div>
+                            </div>
+                            <div  class="panel mt-10 positon-r" style="min-height: 750px">
+                                <table class="table table-hover">
+                                    <thead >
+                                    <tr class="bg_f8f8f8">
+                                        <td><img class="mr-5" src="../images/icons/i-80.png">名称</td>
+                                        <td><img class="mr-5" src="../images/icons/i-79.png">大小</td>
+                                        <td><img class="mr-5" src="../images/icons/i-81.png">最后修改时间</td>
+                                        <td><img class="mr-5" src="../images/icons/i-40.png">操作</td>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="col-666">
+                                    <tr>
+                                        <td>
+                                            <p><img src="../images/icons/i-78.png" class="mr-5">biostat.css</p>
+                                        </td>
+                                        <td>
+                                            <p>1.04M</p>
+                                        </td>
+                                        <td>
+                                            <p>3小时前</p>
+                                        </td>
+                                        <td>
+                                            <a class="operation mr-10 ml-30" @click="confirm">
+                                                <Icon type="ios-trash-outline" size="22"></Icon>
+                                                <span class="info-text">删除</span>
+                                            </a>
+                                            <a class="operation" @click="read">
+                                                <Icon type="ios-download-outline" size="22"></Icon>
+                                                <span class="info-text">下载</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><img src="../images/icons/i-77.png" class="mr-5">biostat.css</p>
+                                        </td>
+                                        <td>
+                                            <p>1.04M</p>
+                                        </td>
+                                        <td>
+                                            <p>3小时前</p>
+                                        </td>
+                                        <td>
+                                            <a class="operation mr-10" @click="look">
+                                                <Icon type="ios-search" size="22"></Icon>
+                                                <span class="info-text">查看</span>
+                                            </a>
+                                            <a class="operation mr-10 " @click="confirm">
+                                                <Icon type="ios-trash-outline" size="22"></Icon>
+                                                <span class="info-text">删除</span>
+                                            </a>
+                                            <a class="operation" @click="read">
+                                                <Icon type="ios-download-outline" size="22"></Icon>
+                                                <span class="info-text">下载</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><img src="../images/icons/i-78.png" class="mr-5">biostat.css</p>
+                                        </td>
+                                        <td>
+                                            <p>1.04M</p>
+                                        </td>
+                                        <td>
+                                            <p>3小时前</p>
+                                        </td>
+                                        <td>
+                                            <a class="operation mr-10 ml-30" @click="confirm">
+                                                <Icon type="ios-trash-outline" size="22"></Icon>
+                                                <span class="info-text">删除</span>
+                                            </a>
+                                            <a class="operation" @click="read">
+                                                <Icon type="ios-download-outline" size="22"></Icon>
+                                                <span class="info-text">下载</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><img src="../images/icons/i-77.png" class="mr-5">biostat.css</p>
+                                        </td>
+                                        <td>
+                                            <p>1.04M</p>
+                                        </td>
+                                        <td>
+                                            <p>3小时前</p>
+                                        </td>
+                                        <td>
+                                            <a class="operation mr-10" @click="look">
+                                                <Icon type="ios-search" size="22"></Icon>
+                                                <span class="info-text">查看</span>
+                                            </a>
+                                            <a class="operation mr-10 " @click="confirm">
+                                                <Icon type="ios-trash-outline" size="22"></Icon>
+                                                <span class="info-text">删除</span>
+                                            </a>
+                                            <a class="operation" @click="read">
+                                                <Icon type="ios-download-outline" size="22"></Icon>
+                                                <span class="info-text">下载</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><img src="../images/icons/i-78.png" class="mr-5">biostat.css</p>
+                                        </td>
+                                        <td>
+                                            <p>1.04M</p>
+                                        </td>
+                                        <td>
+                                            <p>3小时前</p>
+                                        </td>
+                                        <td>
+                                            <a class="operation mr-10 ml-30" @click="confirm">
+                                                <Icon type="ios-trash-outline" size="22"></Icon>
+                                                <span class="info-text">删除</span>
+                                            </a>
+                                            <a class="operation" @click="read">
+                                                <Icon type="ios-download-outline" size="22"></Icon>
+                                                <span class="info-text">下载</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><img src="../images/icons/i-77.png" class="mr-5">biostat.css</p>
+                                        </td>
+                                        <td>
+                                            <p>1.04M</p>
+                                        </td>
+                                        <td>
+                                            <p>3小时前</p>
+                                        </td>
+                                        <td>
+                                            <a class="operation mr-10" @click="look">
+                                                <Icon type="ios-search" size="22"></Icon>
+                                                <span class="info-text">查看</span>
+                                            </a>
+                                            <a class="operation mr-10 " @click="confirm">
+                                                <Icon type="ios-trash-outline" size="22"></Icon>
+                                                <span class="info-text">删除</span>
+                                            </a>
+                                            <a class="operation" @click="read">
+                                                <Icon type="ios-download-outline" size="22"></Icon>
+                                                <span class="info-text">下载</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><img src="../images/icons/i-78.png" class="mr-5">biostat.css</p>
+                                        </td>
+                                        <td>
+                                            <p>1.04M</p>
+                                        </td>
+                                        <td>
+                                            <p>3小时前</p>
+                                        </td>
+                                        <td>
+                                            <a class="operation mr-10 ml-30" @click="confirm">
+                                                <Icon type="ios-trash-outline" size="22"></Icon>
+                                                <span class="info-text">删除</span>
+                                            </a>
+                                            <a class="operation" @click="read">
+                                                <Icon type="ios-download-outline" size="22"></Icon>
+                                                <span class="info-text">下载</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p><img src="../images/icons/i-77.png" class="mr-5">biostat.css</p>
+                                        </td>
+                                        <td>
+                                            <p>1.04M</p>
+                                        </td>
+                                        <td>
+                                            <p>3小时前</p>
+                                        </td>
+                                        <td>
+                                            <a class="operation mr-10" @click="look">
+                                                <Icon type="ios-search" size="22"></Icon>
+                                                <span class="info-text">查看</span>
+                                            </a>
+                                            <a class="operation mr-10 " @click="confirm">
+                                                <Icon type="ios-trash-outline" size="22"></Icon>
+                                                <span class="info-text">删除</span>
+                                            </a>
+                                            <a class="operation" @click="read">
+                                                <Icon type="ios-download-outline" size="22"></Icon>
+                                                <span class="info-text">下载</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class=" text-r b-r">
+                                    <Page :total="100" show-elevator class="mr-20"></Page>
+                                </div>
+                                <div class="mt-30"></div>
+                            </div>
+                        </div>
+                        <div class="layout-copy">
+                            <span class="copyright rg">©2017 GENECHEM All Rights Reserved.　沪ICP备15012724号    沪公网安备 310</span>
+                            <a href="#" class="mr-60">吉凯基因分析平台</a>
+                            <a href="#" class="mr-200">使用说明</a>
+                        </div>
+                    </i-Col>
+                </Row>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            spanLeft:4,
+            spanRight:20
+        },
+        methods:{
+            confirm () {
+                this.$Modal.confirm({
+                    title: '是否删除该文件?',
+                    content: '<p>删除以后将不可恢复!</p>',
+                    onOk: () => {
+                        this.$Message.info('删除成功');
+                    },
+                    onCancel: () => {
+                        this.$Message.info('也是删除');
+                    }
+                });
+            },
+            read(){
+                this.$Message.info('操作成功!');
+            },
+            toggleClick () {
+                if (this.spanLeft === 4) {
+                    this.spanLeft = 2;
+                    this.spanRight = 22;
+                } else {
+                    this.spanLeft = 4;
+                    this.spanRight = 20;
+                }
+            },
+            look(){
+                location.href="查看文件.html"
+            }
+        }
+    })
+</script>
+</body>
+</html>

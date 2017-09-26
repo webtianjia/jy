@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/vue/css/iview.css">
+    <link rel="stylesheet" href="../js/slide/swiper.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/vue/vue.min.js"></script>
+    <script src="../js/vue/iview.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/slide/swiper.js"></script>
+    <!--[if lt IE 9]>
+    <script src="../js/html5shiv.js"></script>
+    <script src="../js/respond.js"></script>
+    <![endif]-->
+    <title>Title</title>
+</head>
+<body>
+<section id="app">
+    <header class="header" >
+        <div class="container">
+            <a href="#">
+                <div class="layout-logo"></div>
+                <div class="lf">吉凯基因分析平台</div>
+            </a>
+            <Dropdown class="lf ml-50">
+                <a href="javascript:void (0)">
+                    <span> 更多平台</span>
+                    <Icon type="arrow-down-b"></Icon>
+                </a>
+                <DropdownMenu slot="list">
+                    <Dropdown-Item>新增和启动</Dropdown-Item>
+                    <Dropdown-Item>活跃分析</Dropdown-Item>
+                    <Dropdown-Item>时段分析</Dropdown-Item>
+                    <Dropdown-Item>更多平台四</Dropdown-Item>
+                </DropdownMenu>
+            </Dropdown>
+            <div class="search ml-50 lf">
+                <input class="search-input" type="text" placeholder="搜索应用">
+                <button class="search-btn"></button>
+            </div>
+            <div class="rg">
+                <!--登录之前-->
+                <!--<div class="lf"><a href="#">关于平台</a></div>-->
+                <div class="lf ml-50"><a href="#">帮助中心</a></div>
+                        <div class="lf ml-50">
+                            <Dropdown trigger="click">
+                                <div href="#" class="badge">
+                                    <div class="badge-count">99+</div>
+                                </div>
+                                <Dropdown-Menu slot="list">
+                                    <div class="news">
+                                        <div class="news-header">
+                                            <a class="rg" href="#">全部已读</a>
+                                            <i class="icon"></i>
+                                            <span>未读消息(36条)</span>
+                                        </div>
+                                        <div class="news-content">
+                                            <ul class="list">
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热八月感觉最快捷的生物信息分析 工具点工具点工具点工具点工具点....</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                                <li>
+                                                    <div class="title">系统消息</div>
+                                                    <div class="content">全新应用新鲜上线。火热</div>
+                                                    <a href="#">点击查看</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="new-footer">
+                                            <a href="#">查看全部>></a>
+                                        </div>
+                                    </div>
+                                </Dropdown-Menu>
+                            </Dropdown>
+                        </div>
+                        <div class="lf ml-20">
+                            <Dropdown>
+                                <a href="javascript:void(0)">
+                                    <img class="img-circle head" src="../images/head.png" style="width: 40px;height: 40px">
+                                    <span class=" name text-overflow">ExoxonsvyExoxonsvyExoxonsvy...</span>
+                                    <Icon type="arrow-down-b"></Icon>
+                                </a>
+                                <DropdownMenu slot="list">
+                                    <Dropdown-Item>个人信息</Dropdown-Item>
+                                    <Dropdown-Item>安全设置</Dropdown-Item>
+                                    <Dropdown-Item>第三方账号</Dropdown-Item>
+                                    <Dropdown-Item>退出</Dropdown-Item>
+                                </DropdownMenu>
+                            </Dropdown>
+                        </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <div class="layout mt-10" :class="{'layout-hide-text': spanLeft < 4}">
+                <Row>
+                    <i-Col :span="spanLeft" class="layout-menu-left text-c">
+                        <div class="layout-logo-left">
+                            <button class="btn btn-text"  @click="toggleClick" >
+                                <Icon type="navicon" size="32"></Icon>
+                            </button>
+                        </div>
+                        <i-Menu active-name="1" theme="dark" width="auto">
+                            <Menu-Item name="1">
+                                <i class="i-13"></i>
+                                <span class="layout-text">工作面板</span>
+                            </Menu-Item>
+                            <Menu-Item name="2">
+                                <i class="i-14"></i>
+                                <span class="layout-text">应用市场</span>
+                            </Menu-Item>
+                            <Menu-Item name="3">
+                                <i class="i-15"></i>
+                                <span class="layout-text">我的应用</span>
+                            </Menu-Item>
+                            <Menu-Item name="4">
+                                <i class="i-16"></i>
+                                <span class="layout-text">我的项目</span>
+                            </Menu-Item>
+                            <Menu-Item name="5">
+                                <i class="i-17"></i>
+                                <span class="layout-text">我的文件</span>
+                            </Menu-Item>
+                            <Menu-Item name="6">
+                                <i class="i-18"></i>
+                                <span class="layout-text">我的账户</span>
+                            </Menu-Item>
+                            <Menu-Item name="7">
+                                <i class="i-19"></i>
+                                <span class="layout-text">好友列表</span>
+                            </Menu-Item>
+                            <Menu-Item name="8">
+                                <i class="i-20"></i>
+                                <span class="layout-text">使用帮助</span>
+                            </Menu-Item>
+                        </i-Menu>
+                    </i-Col>
+                    <i-Col :span="spanRight" class="layout-right">
+                        <div class="layout-content">
+                            <div class="market">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <a href="应用市场.html">应用市场</a> >应用详情
+                                    </div>
+                                    <div class="panel-body details">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <img src="../images/list/2.png" height="44" width="78"/>
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="rg">
+                                                    <span  class="col-main text-r mr-20"   v-if="checked"><Icon type="checkmark-round" class="mr-5"></Icon>已添加</span>
+                                                    <button @click="add" v-else type="button" class="btn btn-outline mr-20">添加到我的应用</button>
+                                                    <button @click="modal=true"  type="button" class="btn btn-main">立即应用</button>
+                                                    <div class="col-red text-r mt-5">￥3.00/次(免费)</div>
+                                                </div>
+                                                <div><span class="market-name">应用名称应用名称应用名称用名名称应用应用名称应用名称应用名称用名名称应用名称应用名称应用应用名称应用</span><span class="f-12 ml-5 col-666">调用次数：345次</span></div>
+                                                <div class="labels mt-3 ">
+                                                    <span>我是一个标签啊</span>
+                                                    <span>最搞笑</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mt-20"></div>
+                                        <div class="left lf ">
+                                                <div class="gallery-top swiper-container">
+                                                    <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <img class="img-responsive" src="../images/list/3.png" height="390" width="706"/>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img class="img-responsive" src="../images/list/3.png" height="390" width="706"/>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img class="img-responsive" src="../images/list/3.png" height="390" width="706"/>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img class="img-responsive" src="../images/list/3.png" height="390" width="706"/>
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img class="img-responsive" src="../images/list/3.png" height="390" width="706"/>
+                                                            </div>
+                                                     </div>
+                                                    <!-- Add Arrows -->
+                                                    <div class="swiper-button-next"></div>
+                                                    <div class="swiper-button-prev"></div>
+                                                </div>
+                                                <div class="gallery-thumbs swiper-container ">
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide " >
+                                                                <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                            </div>
+                                                            <div class="swiper-slide " >
+                                                            <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                          </div>
+                                                            <div class="swiper-slide " >
+                                                              <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                            </div>
+                                                            <div class="swiper-slide " >
+                                                              <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                            </div>
+                                                            <div class="swiper-slide " >
+                                                              <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        <dl class="right rg f-12">
+                                            <dt class="title">应用介绍</dt>
+                                            <dd class="mt-10">应用的介绍应用的介绍应用的介绍应用的介 绍应用的介绍应用的介绍应用的介绍应用的 介绍应用的介绍应用的介绍应用的介绍应用 的介绍</dd>
+                                            <dt class="mt-40 title">相关信息</dt>
+                                            <dd class="mt-10">版本：1.3.0</dd>
+                                            <dd>最后更新日期：2016.8.19</dd>
+                                            <dd>预计运行时间：35秒/1200条</dd>
+                                            <dd>开发语言：R3.40</dd>
+                                            <dt class="mt-40 title">开发者</dt>
+                                            <dd class="mt-10">Email:kddigj@daf.com</dd>
+                                            <dd class="mt-20">引用说明: XXXX analysis was performed
+                                                using the OmicShare tools.(www.omsic
+                                                hare.com/tools) </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layout-copy">
+                            <span class="copyright  rg">©2017 GENECHEM All Rights Reserved.　沪ICP备15012724号    沪公网安备 310</span>
+                            <a href="#" class="mr-60">吉凯基因分析平台</a>
+                            <a href="#" class="mr-200">使用说明</a>
+                        </div>
+                    </i-Col>
+                </Row>
+            </div>
+        </div>
+    </div>
+    <Modal
+            :width="400"
+            ok-text="创建"
+            v-model="modal"
+            title="创建项目"
+            @on-ok="ok"
+            class-name="vertical-center-modal">
+        <i-Form :model="add_project" :label-width="80">
+            <Form-Item label="项目名称">
+                <i-Input style="width: 200px" v-model="add_project.name" placeholder="项目名称"></i-Input>
+            </Form-Item>
+            <Form-Item label="应用程序">
+                <span>应用程序</span>
+            </Form-Item>
+            <Form-Item label="项目编号">
+                <span>“应用代码”-201475</span>
+            </Form-Item>
+        </i-Form>
+    </Modal>
+</section>
+</body>
+<script>
+    var vm=new  Vue({
+        el:"#app",
+        data:{
+            spanLeft:4,
+            spanRight:20,
+            modal:false,
+            checked:false,
+            add_project:{
+                name:""
+            }
+        },
+        computed: {/*每次发生变化触发的函数*/
+        },
+        methods: {
+            toggleClick () {
+                if (this.spanLeft === 4) {
+                    this.spanLeft = 2;
+                    this.spanRight = 22;
+                } else {
+                    this.spanLeft = 4;
+                    this.spanRight = 20;
+                }
+            },
+            ok(){
+                location.href="运行.html"
+            },
+            add(){
+                this.checked=true;
+                this.$Notice.success({
+                    title: '成功添加至您的应用！',
+                    desc: ''
+                });
+            }
+        }
+    });
+
+  /*  var mySwiper2 = new Swiper('.gallery-thumbs',{
+      watchSlidesProgress : true,
+      watchSlidesVisibility : true,
+      slidesPerView :5,
+      onTap: function(){
+        mySwiper3.slideTo( mySwiper2.clickedIndex)
+      }
+    });
+    var mySwiper3 = new Swiper('.gallery-top',{
+      onSlideChangeStart: function(){
+        updateNavPosition()
+      }
+
+    })
+
+    function updateNavPosition(){
+      $('.gallery-thumbs .active-nav').removeClass('swiper-slide-active');
+      var activeNav = $('.gallery-thumbs .swiper-slide').eq(mySwiper3.activeIndex).addClass('swiper-slide-active');
+      if (!activeNav.hasClass('swiper-slide-visible')) {
+        console.log(1);
+        if (activeNav.index()>mySwiper2.activeIndex) {
+          console.log(2);
+          var thumbsPerNav = Math.floor(mySwiper2.width/activeNav.width())-1
+          mySwiper2.slideTo(activeNav.index()-thumbsPerNav)
+        }
+        else {
+          console.log(3);
+          mySwiper2.slideTo(activeNav.index())
+        }
+      }
+    }
+*/
+</script>
+</html>
