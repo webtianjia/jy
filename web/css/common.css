@@ -393,7 +393,7 @@ select:-webkit-autofill {
   height: 20%;
   box-sizing: border-box;
   padding: 10px 0;
-  /*width: 520px;*/
+  width: 520px;
 }
 .gallery-thumbs .swiper-slide {
   width: 20%;

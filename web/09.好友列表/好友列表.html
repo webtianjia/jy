@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="mt-20"></div>
                             </div>
-                            <div class="panel mt-10">
+                            <div v-if="type===0"  class="panel mt-10">
                                 <div class="panel-heading">
                                     <i class="icon i-49"></i>好友列表
                                 </div>
@@ -351,10 +351,10 @@
                                                         <span class="col-main mr-20">已过期</span>
                                                         <button class="btn btn-outline">删除</button>
                                                     </p>
-                                                    <p >
+                                                    <div >
                                                         <span class="mr-20 col-main">已是好友</span>
-                                                        <button class="btn btn-outline" @click="confirm">删除</button>
-                                                    </p>
+                                                        <button class="btn btn-outline del_friend" @click="confirm">解除好友</button>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -384,10 +384,10 @@
                                                         <span class="col-main mr-20">已过期</span>
                                                         <button class="btn btn-outline">删除</button>
                                                     </p>
-                                                    <p >
+                                                    <div >
                                                         <span class="mr-20 col-main">已是好友</span>
-                                                        <button class="btn btn-outline" @click="confirm">删除</button>
-                                                    </p>
+                                                        <button class="btn btn-outline del_friend" @click="confirm">解除好友</button>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -417,10 +417,10 @@
                                                         <span class="col-main mr-20">已过期</span>
                                                         <button class="btn btn-outline">删除</button>
                                                     </p>
-                                                    <p >
+                                                    <div >
                                                         <span class="mr-20 col-main">已是好友</span>
-                                                        <button class="btn btn-outline" @click="confirm">删除</button>
-                                                    </p>
+                                                        <button class="btn btn-outline del_friend" @click="confirm">解除好友</button>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -450,10 +450,43 @@
                                                         <span class="col-main mr-20">已过期</span>
                                                         <button class="btn btn-outline">删除</button>
                                                     </p>
-                                                    <p >
+                                                    <div >
                                                         <span class="mr-20 col-main">已是好友</span>
-                                                        <button class="btn btn-outline" @click="confirm">删除</button>
+                                                        <button class="btn btn-outline del_friend" @click="confirm">解除好友</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>
+                                                        <a href="#" class="link">
+                                                            <img src="../images/list/head.png">
+                                                        </a>
+                                                        <a href="#" class="link">我是一个用户名</a>
                                                     </p>
+                                                </td>
+                                                <td>
+                                                    <p>我是一个地址及职业介绍</p>
+                                                </td>
+                                                <td>
+                                                    <p hidden>
+                                                        <button type="button" class="btn btn-main mr-20">接受</button>
+                                                        <button type="button" class="btn btn-outline">忽略</button>
+                                                    </p>
+                                                    <p hidden>
+                                                        <span class="col-main">等待验证</span>
+                                                    </p>
+                                                    <p hidden>
+                                                        <button class="btn btn-main">添加</button>
+                                                    </p>
+                                                    <p hidden>
+                                                        <span class="col-main mr-20">已过期</span>
+                                                        <button class="btn btn-outline">删除</button>
+                                                    </p>
+                                                    <div >
+                                                        <span class="mr-20 col-main">已是好友</span>
+                                                        <button class="btn btn-outline del_friend" @click="confirm">解除好友</button>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -468,7 +501,6 @@
                             <span class="copyright rg">©2017 GENECHEM All Rights Reserved.　沪ICP备15012724号    沪公网安备 310</span>
                             <a href="#" class="mr-60">吉凯基因分析平台</a>
                             <a href="#" class="mr-200">使用说明</a>
-
                         </div>
                     </i-Col>
                 </Row>

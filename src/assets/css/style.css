@@ -671,7 +671,6 @@ select:-webkit-autofill {
   border-radius: 0;
 }
 .login-and-regsiter .Validform_checktip {
-  display: none;
   padding-left: 86px;
   color: #fb523e;
 }

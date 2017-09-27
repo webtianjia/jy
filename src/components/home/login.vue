@@ -7,45 +7,61 @@
         </div>
         <div class="box">
           <div class="text-c f-20 mt-80 col-666">密码登录</div>
-          <div class="form">
-            <!--手机号-->
-            <div class="form-group mt-40">
-              <div class="input-group">
-                <div class="input-group-addon">
-                  <div class=" form-lable">账号</div>
+          <form @submit.prevent="login">
+              <div class="form">
+                <!--手机号-->
+                <div class="form-group mt-40">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <div class=" form-lable">账号</div>
+                    </div>
+                    <input
+                      v-validate="'required|mobile_and_email'"
+                      name="userId"
+                      class="form-control input-text "
+                      maxlength="30"
+                      v-model="username"
+                      type="text"
+                      placeholder="请输入手机号码或邮箱">
+                    <div class="input-group-btn">
+                      <span v-show="username!=''" @click="username=''"  class="clear-txt"></span>
+                    </div>
+                  </div>
+                  <!--错误提示-->
+                  <div class=" message-box  f-12">
+                    <span v-show="errors.has('userId')" class=" Validform_checktip">{{ errors.first('userId') }}</span>
+                  </div>
                 </div>
-                <input class="form-control   input-text Validform_error" type="text" datatype="m" placeholder="请输入手机号码或邮箱" name="tel" errormsg="请输入正确的手机号码或邮箱!" nullmsg="请填写信息！">
-                <div class="input-group-btn">
-                  <span  class="clear-txt"></span>
+                <!--密码-->
+                <div class="form-group ">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <div class="form-lable">密码</div>
+                    </div>
+                    <input
+                      v-validate="'required'"
+                      class="form-control  input-text "
+                      maxlength="30"
+                      type="text"
+                      name="password"
+                      v-model="password"
+                      placeholder="请输入登录密码" >
+                    <div class="input-group-btn">
+                      <span v-show="password!=''" @click="password=''" class="clear-txt"></span>
+                    </div>
+                  </div>
+                  <!--错误提示-->
+                  <div class=" message-box  f-12">
+                    <span v-show="errors.has('password')" class=" Validform_checktip">{{ errors.first('password') }}</span>
+                  </div>
                 </div>
+                <button :disabled="sub_login"  class="btn btn-md btn-main btn-block f-16 mt-40" type="submit" v-text="btn_text"></button>
+                <p class="f-12 text-r mt-20 ">
+                  <router-link class="col-999 mr-20" to="password_retrieval">忘记密码</router-link>
+                  <router-link class="col-999" to="register">免费注册</router-link>
+                </p>
               </div>
-              <!--错误提示-->
-              <div class=" message-box  f-12">
-                <span class=" Validform_checktip Validform_wrong">请填写信息！</span>
-              </div>
-            </div>
-            <!--密码-->
-            <div class="form-group ">
-              <div class="input-group">
-                <div class="input-group-addon">
-                  <div class="form-lable">密码</div>
-                </div>
-                <input class="form-control  f-14 input-text Validform_error" type="text" datatype="m" placeholder="请输入登录密码" name="tel" errormsg="请输入您的手机号码!" nullmsg="请填写信息！">
-                <div class="input-group-btn">
-                  <span class="clear-txt"></span>
-                </div>
-              </div>
-              <!--错误提示-->
-              <div class=" message-box  f-12">
-                <span class=" Validform_checktip">请填写信息！</span>
-              </div>
-            </div>
-            <button @click="sub" class="btn btn-md btn-main btn-block f-16 mt-40" type="button">立即登录</button>
-            <p class="f-12 text-r mt-20 ">
-              <router-link class="col-999 mr-20" to="password_retrieval">忘记密码</router-link>
-              <router-link class="col-999" to="register">免费注册</router-link>
-            </p>
-          </div>
+          </form>
           <!--其他媒体注册-->
           <div   class="social-box text-center">
             <div class="mt-20 f-12 col-666">其他方式登录</div>
@@ -61,23 +77,56 @@
     <footer-item></footer-item>
   </div>
 </template>
-
 <script>
   import footerItem from "../comm/footer-1.vue"
   import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
+
   export  default{
     data(){
       return {
-
+        sub_login:false,
+        btn_text:"立即登录",
+        username:"",
+        password:"",
       }
     },
     methods:{
-      sub(){
-        setCookie('session',1); //设置Session
-        setCookie('u_uuid',1);
-        this.$router.replace({path:"/control_panel/work_panel"})
+      login(){
+          this.$validator.validateAll().then((result) => {
+            if (result) {
+              this.sub_login=true
+              if(this.sub_login){
+                this.btn_text="登录中..."
+              }
+              /*AJAX*/
+              setTimeout(()=>{
+                setCookie("username",this.username,1000*60)
+                this.$router.push('/index')
+              },1000)
+            }else {
+              alert('有错误!');
+            }
+          });
       }
     },
-    components:{footerItem}
+    mounted(){
+        /*页面挂载获取cookie，如果存在username的cookie 则跳转到主页，不需要登录*/
+      if(getCookie("username")){
+          this.$router.push("/index")
+      }
+    },
+    computed:{
+
+    },
+    created(){
+      this.$validator.updateDictionary({
+        zh_CN: {
+          messages:{
+            required:()=> "请填写信息!"
+          }
+        }
+      });
+    },
+    components:{footerItem},
   }
 </script>

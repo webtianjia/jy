@@ -125,7 +125,7 @@
     methods: {
       router_link(name) {
         if (name === "exit") {
-         /* delCookie("session");*/
+          delCookie("username");
           this.is_Login = false;
           this.$router.replace({
             name:"login",
@@ -139,9 +139,13 @@
       }
     },
     mounted:function () {
-      if (getCookie('session')) {
+      if (getCookie('username')) {
           this.is_Login=true
       }
     }
   }
+/*  router.beforeEach((to, from, next) => {
+
+    next()
+  })*/
 </script>

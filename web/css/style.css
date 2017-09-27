@@ -393,7 +393,7 @@ select:-webkit-autofill {
   height: 20%;
   box-sizing: border-box;
   padding: 10px 0;
-  /*width: 520px;*/
+  width: 520px;
 }
 .gallery-thumbs .swiper-slide {
   width: 20%;
@@ -1340,10 +1340,16 @@ select:-webkit-autofill {
   line-height: 36px;
   border-top: none;
 }
+.table-hover > tbody > tr .del_friend {
+  opacity: 0;
+}
 .table-hover > tbody > tr:hover {
   background-color: #eff7fe;
 }
 .table-hover > tbody > tr:hover .info-text {
+  opacity: 1;
+}
+.table-hover > tbody > tr:hover .del_friend {
   opacity: 1;
 }
 .table-hover > tbody > tr:active {
@@ -1511,6 +1517,14 @@ select:-webkit-autofill {
   outline: 0;
   font-family: Micrsofot Yahei;
   resize: none;
+}
+.m-upload .ivu-upload-drag {
+  background: transparent;
+  border: none;
+}
+.m-upload .ivu-upload-drag:hover {
+  border: none;
+  color: #379cf8;
 }
 input.edit-input {
   border: none;

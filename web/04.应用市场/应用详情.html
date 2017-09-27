@@ -228,20 +228,20 @@
                                                 </div>
                                                 <div class="gallery-thumbs swiper-container ">
                                                         <div class="swiper-wrapper">
-                                                            <div class="swiper-slide " >
-                                                                <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                            <div class="swiper-slide ">
+                                                                <img class="img-responsive" src="../images/list/2.png">
                                                             </div>
-                                                            <div class="swiper-slide " >
-                                                            <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
-                                                          </div>
-                                                            <div class="swiper-slide " >
-                                                              <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                            <div class="swiper-slide ">
+                                                                <img class="img-responsive" src="../images/list/2.png">
                                                             </div>
-                                                            <div class="swiper-slide " >
-                                                              <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                            <div class="swiper-slide ">
+                                                                <img class="img-responsive" src="../images/list/2.png">
                                                             </div>
-                                                            <div class="swiper-slide " >
-                                                              <img style="width: 100%" class="img-responsive" src="../images/list/2.png">
+                                                            <div class="swiper-slide ">
+                                                                <img class="img-responsive" src="../images/list/2.png">
+                                                            </div>
+                                                            <div class="swiper-slide ">
+                                                                <img class="img-responsive" src="../images/list/2.png">
                                                             </div>
                                                         </div>
                                                 </div>
@@ -291,6 +291,9 @@
             <Form-Item label="项目编号">
                 <span>“应用代码”-201475</span>
             </Form-Item>
+ <!--           <Form-Item label="">
+                <button type="button" class="btn btn-main">创建</button>
+            </Form-Item>-->
         </i-Form>
     </Modal>
 </section>
@@ -330,39 +333,23 @@
                 });
             }
         }
-    });
-
-  /*  var mySwiper2 = new Swiper('.gallery-thumbs',{
-      watchSlidesProgress : true,
-      watchSlidesVisibility : true,
-      slidesPerView :5,
-      onTap: function(){
-        mySwiper3.slideTo( mySwiper2.clickedIndex)
-      }
-    });
-    var mySwiper3 = new Swiper('.gallery-top',{
-      onSlideChangeStart: function(){
-        updateNavPosition()
-      }
-
     })
 
-    function updateNavPosition(){
-      $('.gallery-thumbs .active-nav').removeClass('swiper-slide-active');
-      var activeNav = $('.gallery-thumbs .swiper-slide').eq(mySwiper3.activeIndex).addClass('swiper-slide-active');
-      if (!activeNav.hasClass('swiper-slide-visible')) {
-        console.log(1);
-        if (activeNav.index()>mySwiper2.activeIndex) {
-          console.log(2);
-          var thumbsPerNav = Math.floor(mySwiper2.width/activeNav.width())-1
-          mySwiper2.slideTo(activeNav.index()-thumbsPerNav)
-        }
-        else {
-          console.log(3);
-          mySwiper2.slideTo(activeNav.index())
-        }
-      }
-    }
-*/
+    var galleryTop = new Swiper('.gallery-top', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 10,
+    });
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true
+    });
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
+
+
 </script>
 </html>

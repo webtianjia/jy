@@ -8,6 +8,8 @@ import ivivew from  'iview'
 import "iview/dist/styles/iview.css"
 Vue.use(ivivew)
 
+/*设置post请求*/
+Vue.prototype.post=post;
 import "bootstrap/dist/css/bootstrap.min.css"
 
 /*轮播插件*/
@@ -15,11 +17,26 @@ import "./assets/css/slide/swiper.css"
 import VueAwesomeSwiper from "vue-awesome-swiper"
 Vue.use(VueAwesomeSwiper);
 
-/*import $ from 'jquery'*/
+/*正则验证*/
+import zh_CN from 'vee-validate/dist/locale/zh_CN';
+import VeeValidate,{ Validator }from "vee-validate"
+Validator.addLocale(zh_CN);
+Validator.extend('mobile_and_email', {
+  messages: {
+    zh_CN:() => '手机号或邮箱输入不正确',
+  },
+  validate: value=> {
+    return  /^1[34578]\d{9}$/.test(value) ||/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(value)
+  }
+});
+Vue.use(VeeValidate,{
+  locale: 'zh_CN'
+})
 
-/*import VueCodeMirror from 'vue-codemirror-lite'
-Vue.use(VueCodeMirror)*/
-
+router.beforeEach((to, from, next) => {
+  // console.log(getCookie("session"))
+    next()
+})
 Vue.config.productionTip = false;
 new Vue({
   el: '#app',
@@ -29,6 +46,3 @@ new Vue({
   template: '<App/>',
   components: { App }
 });
-router.beforeEach((to, from, next) => {
-  next()
-})
