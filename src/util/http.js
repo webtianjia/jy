@@ -1,5 +1,5 @@
 import axios from 'axios' //引用axios
-import {getCookie} from './util' //引用刚才我们创建的util.js文件，并使用getCookie方法
+import {getCookie} from './cookie' //引用刚才我们创建的util.js文件，并使用getCookie方法
 
 // axios 配置
 axios.defaults.timeout = 5000;

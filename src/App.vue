@@ -8,11 +8,12 @@
   import  headerItem from "./components/comm/header.vue"
   export default {
   name: 'app',
-  components:{headerItem},
+  components:{headerItem}
 }
 </script>
 <style scoped>
   @import "./assets/css/style.css";
+
 </style>
 
 

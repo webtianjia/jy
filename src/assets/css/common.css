@@ -161,6 +161,9 @@
 .panel .panel-body {
   padding: 10px;
 }
+.media-body {
+  width: 10000px;
+}
 body {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 14px;
@@ -397,14 +400,21 @@ select:-webkit-autofill {
   box-sizing: border-box;
   padding: 10px 0;
   width: 520px;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
 }
-.gallery-thumbs .swiper-slide {
-  width: 20%;
-  height: 100%;
+.gallery-thumbs span {
+  flex: 1;
+  margin-right: 20px;
+  cursor: pointer;
   opacity: 0.4;
 }
-.gallery-thumbs .swiper-slide-active {
+.gallery-thumbs span.active {
   opacity: 1;
+}
+.gallery-thumbs span:last-child {
+  margin-right: 0;
 }
 .swiper-wrapper {
   position: relative;

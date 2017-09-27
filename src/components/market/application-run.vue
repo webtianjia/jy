@@ -215,7 +215,8 @@
         </Form-item>
         <div class="text-c">
           <button @click="preservation" type="button" class="btn btn-outline mr-40">保存</button>
-          <button @click="payment_modal=true" type="button" class="btn btn-main">提交</button>
+          <button @click="payment_modal=true" type="button" class="btn btn-main  mr-40" >提交</button>
+          <button type="button" class="btn btn-success">按示例文件及参数运行</button>
         </div>
         <div class="mt-30"></div>
       </i-Form>

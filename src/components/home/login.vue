@@ -64,6 +64,7 @@
 
 <script>
   import footerItem from "../comm/footer-1.vue"
+  import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
   export  default{
     data(){
       return {
@@ -72,8 +73,8 @@
     },
     methods:{
       sub(){
-        this.setCookie('session',1); //设置Session
-        this.setCookie('u_uuid',1);
+        setCookie('session',1); //设置Session
+        setCookie('u_uuid',1);
         this.$router.replace({path:"/control_panel/work_panel"})
       }
     },

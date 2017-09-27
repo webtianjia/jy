@@ -27,6 +27,7 @@ import  my_project from  "../components/my-project/my-project.vue"
 
 /*我的文件*/
 import  my_files from "../components/my-files/my-files.vue"
+import  look_file from "../components/my-files/file.vue"
 
 /*我的账户*/
 import my_account from "../components/my-account/my-account.vue"
@@ -39,6 +40,9 @@ import use_help from  "../components/use-help/use-help.vue"
 
 /*充值*/
 import recharge from  "../components/recharge/recharge.vue"
+
+/*404*/
+import  page_404 from "../components/page/404.vue"
 vue.use(router);
 export default new router({
 	routes: [
@@ -49,12 +53,14 @@ export default new router({
 		},
 		{
 			path: '/index',
-			name: '首页',
+      meta:{auth:false},
 			component: index
 		},
 		{
 			path: '/login',
-			name: '登录',
+			name: 'login',
+      title:"登录",
+      meta:{auth:false},
 			component: login
 		},
 		{
@@ -65,6 +71,7 @@ export default new router({
 		{
 			path: '/about_us',
 			name: '关于我们',
+      meta:{auth:false},
 			component: about_us
 		},
 		{
@@ -99,7 +106,7 @@ export default new router({
         },
         {
           path:"/control_panel/market/detail/run",
-          name:"运行应用",
+          name:"运行",
           component:application_run,
         },
 				{
@@ -117,6 +124,11 @@ export default new router({
 					name:"我的文件",
 					component:my_files
 				},
+        {
+          path:"/control_panel/look_file",
+          name:"查看文件",
+          component:look_file
+        },
 				{
 					path:"/control_panel/my_account",
 					name:"我的账户",
@@ -138,6 +150,12 @@ export default new router({
 			path:"/recharge",
 			name:"充值",
 			component:recharge
-		}
+		},
+    {
+      name:"404",
+      path:"*",
+      redirct:"/page_404",
+      component:page_404
+    }
 	]
 })

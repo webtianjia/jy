@@ -157,7 +157,9 @@
     padding: 10px;
   }
 }
-
+.media-body{
+  width: 10000px;
+}
 body{
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   font-size: 14px;
@@ -376,13 +378,20 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill{
   box-sizing: border-box;
   padding: 10px 0;
   width: 520px;
-  .swiper-slide{
-    width: 20%;
-    height: 100%;
+  margin:  0 auto;
+  display: flex;
+  text-align: center;
+  span{
+    flex: 1;
+    margin-right: 20px;
+    cursor: pointer;
     opacity: 0.4;
-  }
-  .swiper-slide-active{
-    opacity: 1;
+    &.active{
+      opacity: 1;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
   }
 }
 .swiper-wrapper{

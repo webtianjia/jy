@@ -161,6 +161,9 @@
 .panel .panel-body {
   padding: 10px;
 }
+.media-body {
+  width: 10000px;
+}
 body {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   font-size: 14px;
@@ -397,14 +400,21 @@ select:-webkit-autofill {
   box-sizing: border-box;
   padding: 10px 0;
   width: 520px;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
 }
-.gallery-thumbs .swiper-slide {
-  width: 20%;
-  height: 100%;
+.gallery-thumbs span {
+  flex: 1;
+  margin-right: 20px;
+  cursor: pointer;
   opacity: 0.4;
 }
-.gallery-thumbs .swiper-slide-active {
+.gallery-thumbs span.active {
   opacity: 1;
+}
+.gallery-thumbs span:last-child {
+  margin-right: 0;
 }
 .swiper-wrapper {
   position: relative;
@@ -793,6 +803,7 @@ select:-webkit-autofill {
 /*布局*/
 .layout {
   position: relative;
+  overflow: hidden;
 }
 .layout .layout-content {
   min-height: 400px;
@@ -800,6 +811,7 @@ select:-webkit-autofill {
 }
 .layout .layout-menu-left {
   background: #355682;
+  min-height: 800px;
 }
 .layout .layout-right {
   min-height: 200px;
@@ -955,7 +967,7 @@ select:-webkit-autofill {
 .market .details .list li:last-child {
   margin-right: 0;
 }
-.market .details .left {
+.market .details .left-content {
   width: 706px;
 }
 .market .details .banner {
@@ -964,14 +976,14 @@ select:-webkit-autofill {
   width: 100%;
   overflow: hidden;
 }
-.market .details .right {
+.market .details .right-content {
   width: 235px;
   border: 1px solid #e6e6e6;
   padding: 10px;
   min-height: 481px;
   color: #666;
 }
-.market .details .right .title {
+.market .details .right-content .title {
   color: #333;
 }
 .market.run .title {
@@ -1437,10 +1449,10 @@ select:-webkit-autofill {
   margin-top: 6px;
 }
 /*富文本编辑*/
-.main .simditor {
+.simditor {
   border: 1px solid #e6e6e6;
 }
-.main .simditor .simditor-body img {
+.simditor .simditor-body img {
   max-width: 100%;
   width: auto;
   height: auto;

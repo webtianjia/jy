@@ -25,20 +25,19 @@
           </div>
         </div>
         <div class="mt-20"></div>
-        <div class="left lf ">
-          <swiper  class="gallery-top" :options="swiper.swiperOption" :notNextTick="swiper.notNextTick" ref="Swiper_1">
-            <swiper-slide v-for="i in 8">
-              <img style="width:100%;height:100%" class="img-responsive" src="../../assets/images/list/3.png"/>
-            </swiper-slide>
-
-          </swiper>
-          <swiper  class="gallery-thumbs" :options="swiper.swiperOption2" :notNextTick="swiper.notNextTick"  ref="Swiper_2">
-            <swiper-slide v-for="i in 8">
-              <img class="img-responsive" src="../../assets/images/list/2.png">
-            </swiper-slide>
-          </swiper>
+        <div class="left-content lf ">
+          <Carousel v-model="carousel"  :dots="'none'">
+            <Carousel-Item v-for="i in 5">
+                <img style="width:100%;height:100%" class="img-responsive" src="../../assets/images/list/3.png"/>
+            </Carousel-Item>
+          </Carousel>
+          <div  class="gallery-thumbs">
+              <span v-for="(i,$index) in 5" @click="carousel=$index" :class="{'active':carousel==$index}">
+                <img src="../../assets/images/list/2.png">
+              </span>
+          </div>
         </div>
-        <dl class="right rg f-12">
+        <dl class="right-content rg f-12">
           <dt class="title">应用介绍</dt>
           <dd class="mt-10">应用的介绍应用的介绍应用的介绍应用的介 绍应用的介绍应用的介绍应用的介绍应用的 介绍应用的介绍应用的介绍应用的介绍应用 的介绍</dd>
           <dt class="mt-40 title">相关信息</dt>
@@ -84,30 +83,7 @@
         add_project:{
           name:""
         },
-        swiper:{
-          control1:null,
-          control2:null,
-          notNextTick: true,
-          swiperOption:{
-            autoplay:3000,
-            loop:true,
-            loopedSlides:3,
-            spaceBetween:10,
-            centeredSlides:true,
-            slidesPerView : 'auto',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            control:null
-          },
-          swiperOption2:{
-            spaceBetween: 10,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            touchRatio: 0.2,
-            slideToClickedSlide: true,
-            control:null
-          }
-        }
+        carousel:0
       }
     },
     methods: {
@@ -120,16 +96,7 @@
           title: '成功添加至您的应用！',
           desc: ''
         });
-      }
+      },
     },
-    computed: {
-
-    },
-    mounted(){
-     /* console.log(this.$refs.Swiper_1.swiper)*/
-       this.$refs.Swiper_1.params.control= this.$refs.Swiper_2.params.control;
-       this.$refs.Swiper_2.params.control= this.$refs.Swiper_1.params.control;
-    }
-
   }
 </script>

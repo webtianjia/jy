@@ -238,7 +238,10 @@
         this.$Message.info('操作成功!');
       },
       look(){
-        location.href="查看文件.html"
+       this.$router.push({
+         name:"查看文件",
+         path:"/control_panel/my_files"
+       })
       }
     }
   }

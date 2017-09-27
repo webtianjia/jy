@@ -6,8 +6,8 @@
         <div class="lf">Gcloud</div>
       </router-link>
       <div   class="lf ml-50"><router-link :to="{name:'关于我们',path:'/about_us'}">关于平台</router-link></div>
-      <div  v-if="!login" class="lf ml-50"><a href="javascript:void (0)">新闻中心</a></div>
-      <Dropdown v-if="login" class="lf ml-50">
+      <div  v-if="!is_Login" class="lf ml-50"><a href="javascript:void (0)">新闻中心</a></div>
+      <Dropdown v-if="is_Login" class="lf ml-50">
          <a href="javascript:void (0)">
              <span> 更多平台</span>
              <Icon type="arrow-down-b"></Icon>
@@ -19,14 +19,14 @@
              <Dropdown-Item>更多平台四</Dropdown-Item>
          </DropdownMenu>
      </Dropdown>
-      <div v-if="login" class="search ml-50 lf">
+      <div v-if="is_Login" class="search ml-50 lf">
          <input class="search-input" type="text" placeholder="搜索应用">
          <button class="search-btn"></button>
      </div>
       <div class="rg">
-        <div v-if="!login" class="lf mr-20"><router-link :to="{name:'注册',path:'/register'}"  class="register-btn">注册</router-link></div>
-        <div v-if="!login" class="lf"><router-link :to="{name:'登录',path:'/login'}" class="login-btn">登录</router-link></div>
-        <div v-if="login" class="lf ml-50">
+        <div v-if="!is_Login" class="lf mr-20"><router-link :to="{name:'注册',path:'/register'}"  class="register-btn">注册</router-link></div>
+        <div v-if="!is_Login" class="lf"><router-link :to="{name:'login',path:'/login',title:'登录'}" class="login-btn">登录</router-link></div>
+        <div v-if="is_Login" class="lf ml-50">
             <Dropdown trigger="click">
                 <div href="#" class="badge">
                     <div class="badge-count">99+</div>
@@ -94,7 +94,7 @@
                 </Dropdown-Menu>
             </Dropdown>
         </div>
-        <div v-if="login" class="lf ml-20">
+        <div v-if="is_Login" class="lf ml-20">
             <Dropdown @on-click="router_link">
                 <a href="javascript:void(0)">
                     <img class="img-circle head" src="../../assets/images/head.png" style="width: 40px;height: 40px">
@@ -115,19 +115,20 @@
 </template>
 
 <script>
+  import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
   export default {
     data(){
       return{
-        login:false
+        is_Login:false
       }
     },
     methods: {
       router_link(name) {
         if (name === "exit") {
-          this.delCookie("session");
-          this.login = false;
+         /* delCookie("session");*/
+          this.is_Login = false;
           this.$router.replace({
-            name:"登录",
+            name:"login",
             path: "/login"
           })
         }else {
@@ -138,8 +139,8 @@
       }
     },
     mounted:function () {
-      if (this.getCookie('session')) {
-          this.login=true
+      if (getCookie('session')) {
+          this.is_Login=true
       }
     }
   }

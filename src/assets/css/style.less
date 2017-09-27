@@ -369,12 +369,14 @@
 /*布局*/
 .layout{
   position: relative;
+  overflow: hidden;
   .layout-content{
     min-height: 400px;
     margin-left: 10px;
   }
   .layout-menu-left{
     background:#355682;
+    min-height: 800px;
   }
   .layout-right{
     min-height: 200px;
@@ -534,7 +536,7 @@
         }
       }
     }
-    .left{
+    .left-content{
       width: 706px;
     };
     .banner{
@@ -543,7 +545,7 @@
       width: 100%;
       overflow: hidden;
     }
-    .right{
+    .right-content{
       width: 235px;
       border:1px solid @col-br;
       padding: 10px;
@@ -1055,18 +1057,16 @@
 }
 
 /*富文本编辑*/
-.main{
-  .simditor{
-    border: 1px solid @col-br;
-    .simditor-body{
-      img{
-        max-width: 100%;
-        width: auto;
-        height: auto;
-      }
-    }
-  }
-}
+ .simditor{
+     border: 1px solid @col-br;
+     .simditor-body{
+       img{
+         max-width: 100%;
+         width: auto;
+         height: auto;
+       }
+     }
+   }
 /*站内信*/
 .m-message{
     overflow-y:scroll;

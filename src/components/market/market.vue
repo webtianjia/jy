@@ -114,7 +114,7 @@
         checked:false,
         swiper:{
           swiperOption:{
-            autoplay:10000,
+            autoplay:10000000,
             loop:true,
             loopedSlides:3,
             spaceBetween:10,
