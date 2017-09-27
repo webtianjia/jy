@@ -1,5 +1,5 @@
 <template>
-  <header class="header" >
+  <header  class="header" >
     <div class="container">
       <router-link :to="{name:'首页',path:'/index'}">
         <div class="layout-logo"></div>
@@ -138,14 +138,11 @@
         }
       }
     },
+    prop:["is_Login"],
     mounted:function () {
       if (getCookie('username')) {
           this.is_Login=true
       }
     }
   }
-/*  router.beforeEach((to, from, next) => {
-
-    next()
-  })*/
 </script>
