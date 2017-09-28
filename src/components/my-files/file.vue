@@ -13,7 +13,11 @@
           <div class="mt-20"></div>
         </div>
         <div  class="panel mt-10 positon-r" style="min-height: 750px;padding: 10px">
-          <!--<codemirror > </codemirror >-->
+          <div class="well">
+            <pre>
+              {{code}}
+            </pre>
+          </div>
         </div>
       </div>
 </template>
@@ -25,10 +29,7 @@
             }
         },
       computed: {
-/*        editor() {
-          // get current editor object
-          return this.$refs.myEditor.editor
-        }*/
+
       },
         methods: {}
     }

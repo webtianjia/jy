@@ -138,7 +138,6 @@
         }
       }
     },
-    prop:["is_Login"],
     mounted:function () {
       if (getCookie('username')) {
           this.is_Login=true

@@ -15,14 +15,20 @@
                 <div class="input-group-addon">
                   <div class=" form-lable">账号</div>
                 </div>
-                <input class="form-control   input-text Validform_error" type="text" datatype="m" placeholder="请输入手机号码或邮箱" name="tel" errormsg="请输入正确的手机号码或邮箱!" nullmsg="请填写信息！">
+                <input
+                  v-validate="'required|mobile_and_email'"
+                  name="phone_email"
+                  v-model="form_validate.user_id"
+                  class="form-control   input-text "
+                  type="text"
+                  placeholder="请输入手机号码或邮箱">
                 <div class="input-group-btn">
-                  <span class="clear-txt"></span>
+                  <span v-show="form_validate.user_id!=''&&errors.has('phone_email')" @click="form_validate.user_id=''" class="clear-txt"></span>
                 </div>
               </div>
               <!--错误提示-->
               <div class=" message-box  f-12">
-                <span class=" Validform_checktip Validform_wrong">请填写信息！</span>
+                <span v-show="errors.has('phone_email')" class=" Validform_checktip">{{errors.first("phone_email")}}</span>
               </div>
             </div>
             <!--验证码-->
@@ -31,14 +37,25 @@
                 <div class="input-group-addon ">
                   <div class="form-lable">验证码</div>
                 </div>
-                <input class="form-control  input-text Validform_wrong" type="text" datatype="p" placeholder="请输入验证码 " nullmsg="验证码不能为空！" errormsg="请输入正确验证码！">
+                <input
+                  v-validate="'required|numeric|min:6'"
+                  name="code"
+                  v-model="form_validate.code"
+                  class="form-control  input-text "
+                  type="text"
+                  placeholder="请输入验证码 ">
                 <div class="input-group-btn">
-                  <button type="button" class="btn f-12 btn-text ">获取验证码</button>
+                  <button v-if="!send_to" @click="send_authentication_code" type="button" class="btn f-12 btn-text ">获取验证码</button>
+                  <button v-else type="button" class="btn f-12 btn-text " disabled>{{send_time}}s可重新发送</button>
                 </div>
               </div>
               <!--错误提示-->
               <div class="message-box  f-12">
-                <span class="Validform_checktip">请填写信息</span>
+                        <span
+                          v-show="errors.has('code')"
+                          class=" Validform_checktip">
+                      请输入有效6位数字验证码
+                </span>
               </div>
             </div>
             <button @click="sub" class="btn btn-md btn-main btn-block f-16 mt-40" type="button">确认</button>
@@ -57,14 +74,47 @@
   import footerItem from "../comm/footer-1.vue"
   export  default{
     data(){
-      return {
-
-      }
+        return {
+          send_to:false,
+          send_time:60,
+          form_validate:{
+            user_id:"",
+            code:"",
+          }
+        }
     },
     methods:{
       sub(){
-        this.$Message.success("找回成功！");
-        this.$router.push({ path:'/reset_password' })
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            /*AJAX*/
+            var form_data =  JSON.stringify(this.form_validate)
+            console.log(form_data)
+                this.$Message.success("找回成功！");
+             this.$router.push({ path:'/reset_password' })
+          }else {
+            alert('有错误!');
+          }
+
+      })
+      },
+      send_authentication_code(){/*发送验证码*/
+        this.$validator.validate("phone_email").then((result)=>{
+          if(result){
+            this.send_to=true;
+            var time=setInterval(()=>{
+              this.send_time--;
+              if( this.send_time<=0){
+                this.send_to=false;
+                this.send_time=60
+                clearInterval(time)
+              }
+            },1000)
+          }else {
+            alert("先填写手机号")
+          }
+        })
+
       }
     },
     components:{footerItem}

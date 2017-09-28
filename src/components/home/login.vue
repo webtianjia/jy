@@ -20,11 +20,11 @@
                       name="userId"
                       class="form-control input-text "
                       maxlength="30"
-                      v-model="username"
+                      v-model="form_validate.user_id"
                       type="text"
                       placeholder="请输入手机号码或邮箱">
                     <div class="input-group-btn">
-                      <span v-show="username!=''" @click="username=''"  class="clear-txt"></span>
+                      <span v-show="form_validate.user_id!=''" @click="form_validate.user_id=''"  class="clear-txt"></span>
                     </div>
                   </div>
                   <!--错误提示-->
@@ -42,12 +42,13 @@
                       v-validate="'required'"
                       class="form-control  input-text "
                       maxlength="30"
-                      type="text"
+                      type="password"
                       name="password"
-                      v-model="password"
+                      v-model="form_validate.pwd"
+                      autocomplete="off"
                       placeholder="请输入登录密码" >
                     <div class="input-group-btn">
-                      <span v-show="password!=''" @click="password=''" class="clear-txt"></span>
+                      <span v-show="form_validate.pwd!=''" @click="form_validate.pwd=''" class="clear-txt"></span>
                     </div>
                   </div>
                   <!--错误提示-->
@@ -86,8 +87,10 @@
       return {
         sub_login:false,
         btn_text:"立即登录",
-        username:"",
-        password:"",
+        form_validate:{
+          user_id:"",
+          pwd:"",
+        }
       }
     },
     methods:{
@@ -119,13 +122,6 @@
 
     },
     created(){
-      this.$validator.updateDictionary({
-        zh_CN: {
-          messages:{
-            required:()=> "请填写信息!"
-          }
-        }
-      });
     },
     components:{footerItem},
   }
