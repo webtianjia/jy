@@ -10,21 +10,29 @@
             <span class="f-12 col-999">已有吉凯账号 <router-link class="col-main" to="login">快捷登录</router-link></span>
           </div>
           <div class="text-c f-20 mt-80 col-666">欢迎注册吉凯平台</div>
-          <div class="form">
+          <form @submit.prevent="register">
+            <div class="form">
             <!--手机号-->
             <div class="form-group mt-40">
               <div class="input-group">
                 <div class="input-group-addon">
                   <div class=" form-lable">账号</div>
                 </div>
-                <input class="form-control   input-text Validform_error" type="text" datatype="m" placeholder="请输入手机号码或邮箱" name="tel" errormsg="请输入正确的手机号码或邮箱!" nullmsg="请填写信息！">
+                <input
+                  v-validate="'required|mobile_and_email'"
+                  name="phone_email"
+                  v-model="form_validate.user_id"
+                  class="form-control   input-text"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="请输入手机号码或邮箱">
                 <div class="input-group-btn">
-                  <span class="clear-txt"></span>
+                  <span v-show="form_validate.user_id!=''" @click="form_validate.user_id=''" class="clear-txt"></span>
                 </div>
               </div>
               <!--错误提示-->
               <div class=" message-box  f-12">
-                <span class=" Validform_checktip Validform_wrong">请填写信息！</span>
+                <span v-show="errors.has('phone_email')" class=" Validform_checktip">{{errors.first("phone_email")}}</span>
               </div>
             </div>
             <!--昵称-->
@@ -33,14 +41,24 @@
                 <div class="input-group-addon">
                   <div class="form-lable">昵称</div>
                 </div>
-                <input class="form-control   input-text Validform_wrong" type="text" placeholder="请输入昵称" datatype="s6-18" errormsg="昵称至少6个字符,最多18个字符" nullmsg="请填写信息！">
+                <input
+                  v-validate="'required|nickname'"
+                  name="username"
+                  v-model="form_validate.user_name"
+                  class="form-control   input-text"
+                  autocomplete="off"
+                  type="text" placeholder="请输入昵称">
                 <div class="input-group-btn">
-                  <span class="clear-txt"></span>
+                  <span v-show="form_validate.user_name!=''" @click="form_validate.user_name=''" class="clear-txt"></span>
                 </div>
               </div>
               <!--错误提示-->
               <div class=" message-box  f-12">
-                <span class=" Validform_checktip">请填写信息</span>
+                <span
+                  v-show="errors.has('username')"
+                  class=" Validform_checktip">
+                  {{errors.first("username")}}
+                </span>
               </div>
             </div>
             <!--验证码-->
@@ -49,14 +67,26 @@
                 <div class="input-group-addon ">
                   <div class="form-lable">验证码</div>
                 </div>
-                <input class="form-control  input-text Validform_wrong" type="text" datatype="p" placeholder="请输入验证码 " nullmsg="验证码不能为空！" errormsg="请输入正确验证码！">
+                <input
+                  v-validate="'required|numeric|min:6'"
+                  name="code"
+                  v-model="form_validate.code"
+                  class="form-control  input-text "
+                  type="text"
+                  autocomplete="off"
+                  placeholder="请输入验证码 ">
                 <div class="input-group-btn">
-                  <button type="button" class="btn f-12 btn-text ">获取验证码</button>
+                  <button v-if="!send_to" @click="send_authentication_code" type="button" class="btn f-12 btn-text ">获取验证码</button>
+                  <button v-else type="button" class="btn f-12 btn-text " disabled>{{send_time}}s可重新发送</button>
                 </div>
               </div>
               <!--错误提示-->
               <div class="message-box  f-12">
-                <span class="Validform_checktip">请填写信息</span>
+                    <span
+                      v-show="errors.has('code')"
+                      class=" Validform_checktip">
+                      请输入有效6位数字验证码
+                </span>
               </div>
             </div>
             <!--密码-->
@@ -65,14 +95,25 @@
                 <div class="input-group-addon">
                   <div class="form-lable">密码</div>
                 </div>
-                <input class="form-control  f-14 input-text Validform_error" type="text" datatype="m" placeholder="请输入登录密码" name="tel" errormsg="请输入您的手机号码!" nullmsg="请填写信息！">
+                <input
+                      v-validate="'required|min:6|max:20|alpha_num'"
+                      name="pwd"
+                      v-model="form_validate.pwd"
+                      class="form-control   input-text "
+                      type="password"
+                      autocomplete="off"
+                      placeholder="请输入登录密码">
                 <div class="input-group-btn">
-                  <span class="clear-txt"></span>
+                  <span v-show="form_validate.pwd!=''" @click="form_validate.pwd=''" class="clear-txt"></span>
                 </div>
               </div>
               <!--错误提示-->
               <div class=" message-box  f-12">
-                <span class=" Validform_checktip">请填写信息！</span>
+                <span
+                  v-show="errors.has('pwd')"
+                  class=" Validform_checktip">
+                  6到16位（字母，数字，下划线，减号）
+                </span>
               </div>
             </div>
             <!--确认密码-->
@@ -81,19 +122,27 @@
                 <div class="input-group-addon">
                   <div class="form-lable">确认密码</div>
                 </div>
-                <input class="form-control  input-text Validform_error" type="text" datatype="m" placeholder="再次输入登录密码" name="tel" errormsg="再次输入登录密码!" nullmsg="请填写信息！">
-                <div class="input-group-btn">
-                  <span class="clear-txt"></span>
-                </div>
+                <input
+                  v-validate="'required|confirmed:pwd'"
+                  name="pwdnewagin"
+                  class="form-control  input-text "
+                  type="passworld"
+                  autocomplete="off"
+                  placeholder="再次输入登录密码">
               </div>
               <!--错误提示-->
               <div class=" message-box  f-12">
-                <span class=" Validform_checktip">请填写信息！</span>
+                     <span
+                       v-show="errors.has('pwdnewagin')"
+                       class=" Validform_checktip">
+                        请两次密码输入一致
+                </span>
               </div>
             </div>
-            <button class="btn btn-md btn-main btn-block f-16 mt-40" type="button">同意条款并注册</button>
+            <button class="btn btn-md btn-main btn-block f-16 mt-40" type="submit">同意条款并注册</button>
             <p class="f-12 text-center mt-10 ">点击注册，即表示已阅读并同意 <a href="服务协议.html">《服务条款》</a></p>
           </div>
+          </form>
         </div>
       </div>
     </div>
@@ -106,8 +155,44 @@
   export  default{
     data(){
       return {
-
+          send_to:false,
+          send_time:60,
+          form_validate:{
+             user_id:"",
+             user_name:"",
+             code:"",
+             pwd:"",
+          }
       }
+    },
+    methods:{
+      register(){
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            /*AJAX*/
+            var form_data =  JSON.stringify(this.form_validate)
+            console.log(form_data)
+          }else {
+            alert('有错误!');
+          }
+        });
+      },
+      send_authentication_code(){/*发送验证码*/
+        if(this.errors.has('phone_email')||this.form_validate.user_id==''){
+            alert("手机或邮箱输入格式不正确")
+          return ;
+        }
+            this.send_to=true;
+           var time=setInterval(()=>{
+              this.send_time--;
+                if( this.send_time<=0){
+                  this.send_to=false;
+                  this.send_time=60
+                  clearInterval(time)
+                }
+          },1000)
+        }
+
     },
     components:{footerItem}
   }

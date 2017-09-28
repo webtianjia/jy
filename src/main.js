@@ -21,14 +21,23 @@ Vue.use(VueAwesomeSwiper);
 import zh_CN from 'vee-validate/dist/locale/zh_CN';
 import VeeValidate,{ Validator }from "vee-validate"
 Validator.addLocale(zh_CN);
-Validator.extend('mobile_and_email', {
-  messages: {
-    zh_CN:() => '手机号或邮箱输入不正确',
-  },
-  validate: value=> {
-    return  /^1[34578]\d{9}$/.test(value) ||/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(value)
+Validator.updateDictionary({
+  zh_CN: {
+    messages:{
+      required:()=> "请填写信息!"
+    }
   }
 });
+Validator.extend(
+    'mobile_and_email', {/*手机或邮箱*/
+      messages: {
+        zh_CN:() => '手机或邮箱输入格式不正确',
+      },
+      validate: value=> {
+        return  /^1[34578]\d{9}$/.test(value) ||/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/.test(value)
+      }
+    },
+);
 Vue.use(VeeValidate,{
   locale: 'zh_CN'
 })

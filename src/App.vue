@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-item :is_Login="is_Login"></header-item>
+    <header-item></header-item>
     <router-view></router-view>
   </div>
 </template>
@@ -10,7 +10,6 @@
   name: 'app',
     data(){
       return {
-        is_Login:false
       }
     },
   components:{headerItem}
