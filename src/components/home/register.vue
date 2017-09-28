@@ -27,7 +27,7 @@
                   autocomplete="off"
                   placeholder="请输入手机号码或邮箱">
                 <div class="input-group-btn">
-                  <span v-show="form_validate.user_id!=''" @click="form_validate.user_id=''" class="clear-txt"></span>
+                  <span v-show="form_validate.user_id!=''&&errors.has('phone_email')" @click="form_validate.user_id=''" class="clear-txt"></span>
                 </div>
               </div>
               <!--错误提示-->
@@ -188,6 +188,8 @@
                   clearInterval(time)
                 }
               },1000)
+            }else {
+                alert("先填写手机号")
             }
         })
 
