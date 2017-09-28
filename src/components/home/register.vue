@@ -12,7 +12,7 @@
           <div class="text-c f-20 mt-80 col-666">欢迎注册吉凯平台</div>
           <form @submit.prevent="register">
             <div class="form">
-            <!--手机号-->
+            <!--手机号或邮箱-->
             <div class="form-group mt-40">
               <div class="input-group">
                 <div class="input-group-addon">
@@ -42,7 +42,7 @@
                   <div class="form-lable">昵称</div>
                 </div>
                 <input
-                  v-validate="'required|nickname'"
+                  v-validate="'required'"
                   name="username"
                   v-model="form_validate.user_name"
                   class="form-control   input-text"
@@ -57,7 +57,7 @@
                 <span
                   v-show="errors.has('username')"
                   class=" Validform_checktip">
-                  {{errors.first("username")}}
+                  取个奇怪的名字吧~
                 </span>
               </div>
             </div>
@@ -149,7 +149,6 @@
     <footer-item></footer-item>
   </div>
 </template>
-
 <script>
   import footerItem from "../comm/footer-1.vue"
   export  default{
@@ -178,21 +177,21 @@
         });
       },
       send_authentication_code(){/*发送验证码*/
-        if(this.errors.has('phone_email')||this.form_validate.user_id==''){
-            alert("手机或邮箱输入格式不正确")
-          return ;
-        }
-            this.send_to=true;
-           var time=setInterval(()=>{
-              this.send_time--;
+        this.$validator.validate("phone_email").then((result)=>{
+            if(result){
+              this.send_to=true;
+              var time=setInterval(()=>{
+                this.send_time--;
                 if( this.send_time<=0){
                   this.send_to=false;
                   this.send_time=60
                   clearInterval(time)
                 }
-          },1000)
-        }
+              },1000)
+            }
+        })
 
+        }
     },
     components:{footerItem}
   }
