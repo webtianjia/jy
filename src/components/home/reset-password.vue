@@ -15,14 +15,25 @@
                 <div class="input-group-addon">
                   <div class="form-lable">密码</div>
                 </div>
-                <input class="form-control  f-14 input-text Validform_error" type="text" datatype="m" placeholder="设置您的登录密码" name="tel" errormsg="请设置您的登录密码!" nullmsg="请填写信息！">
+                <input
+                  v-validate="'required|min:6|max:20|alpha_num'"
+                  name="pwd"
+                  v-model="form_validate.pwd"
+                  class="form-control   input-text "
+                  type="password"
+                  autocomplete="off"
+                  placeholder="设置您的登录密码">
                 <div class="input-group-btn">
                   <span class="clear-txt"></span>
                 </div>
               </div>
               <!--错误提示-->
               <div class=" message-box  f-12">
-                <span class=" Validform_checktip">请填写信息！</span>
+                   <span
+                     v-show="errors.has('pwd')"
+                     class=" Validform_checktip">
+                  6到16位（字母，数字，下划线，减号）
+                </span>
               </div>
             </div>
             <!--确认密码-->
@@ -31,14 +42,24 @@
                 <div class="input-group-addon">
                   <div class="form-lable">确认密码</div>
                 </div>
-                <input class="form-control  input-text Validform_error" type="text" datatype="m" placeholder="再次输入登录密码" name="tel" errormsg="再次输入登录密码!" nullmsg="请填写信息！">
+                <input
+                  v-validate="'required|confirmed:pwd'"
+                  name="pwdnewagin"
+                  class="form-control  input-text "
+                  type="password"
+                  autocomplete="off"
+                  placeholder="再次输入登录密码">
                 <div class="input-group-btn">
                   <span class="clear-txt"></span>
                 </div>
               </div>
               <!--错误提示-->
               <div class=" message-box  f-12">
-                <span class=" Validform_checktip">请填写信息！</span>
+                       <span
+                         v-show="errors.has('pwdnewagin')"
+                         class=" Validform_checktip">
+                        请两次密码输入一致
+                </span>
               </div>
             </div>
             <button @click="sub" class="btn btn-md btn-main btn-block f-16 mt-40" type="button">确认</button>
@@ -55,17 +76,28 @@
   export  default{
     data(){
       return {
-
+        form_validate:{
+          user_id:"",
+          pwd:"",
+        }
       }
     },
     methods:{
       sub(){
-        this.$Message.success("密码设置成功！");
-        this.user_id=1;
-        /*设置密码*/
-        setTimeout(()=>{
-          this.$router.push({path:"/index"});
-        },2000);
+        this.$validator.validateAll().then((result) => {
+          if (result) {
+            /*AJAX*/
+            var form_data = JSON.stringify(this.form_validate)
+            this.$Message.success("密码设置成功!");
+            this.user_id = 1;
+            console.log(form_data)
+            setTimeout(() => {
+              this.$router.push({path: "/index"});
+            }, 2000);
+          } else {
+            alert('有错误!');
+          }
+        });
       }
     },
     components:{footerItem}
