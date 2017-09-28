@@ -105,10 +105,8 @@
     </div>
     <footer-item></footer-item>
   </div>
-
 </template>
 <script>
-  import  headerItem from "./comm/header.vue"
   import footerItem from  "./comm/footer-1.vue"
 export default {
   name: 'index',

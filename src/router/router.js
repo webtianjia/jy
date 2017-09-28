@@ -36,7 +36,7 @@ import my_account from "../components/my-account/my-account.vue"
 import  buddy_list from "../components/buddy-list/buddy-list.vue"
 
 /*帮助中心*/
-import use_help from  "../components/use-help/use-help.vue"
+import use_help from  "../components/use-help/panel.vue"
 
 /*充值*/
 import recharge from  "../components/recharge/recharge.vue"
