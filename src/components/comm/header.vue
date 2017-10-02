@@ -115,6 +115,8 @@
 </template>
 
 <script>
+  import {delCookie} from "../../util/util";
+
   export default {
     data(){
       return{
@@ -124,7 +126,8 @@
     methods: {
       router_link(name) {
         if (name === "exit") {
-         this.$router.replace({path:"login"})
+         this.$router.replace({path:"login"});
+          delCookie("username")
         }else {
           this.$router.replace({
             path: name

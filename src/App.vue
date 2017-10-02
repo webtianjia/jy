@@ -6,6 +6,7 @@
 </template>
 <script>
   import  headerItem from "./components/comm/header.vue"
+  import {delCookie,getCookie,setCookie} from './util/cookie.js'
   export default {
   name: 'app',
     data(){
@@ -19,8 +20,15 @@
     methods:{
       changeState(msg){
         this.header_user_msg.is_login=true;
-        this.header_user_msg.user_name=msg.user_id
+        this.header_user_msg.user_name=getCookie("username")
       }
+    },
+    crected:function () {
+      if(getCookie("username")){
+        this.header_user_msg.user_name=getCookie("username");
+        this.header_user_msg.is_login=true;
+      }
+
     },
   components:{headerItem}
 }

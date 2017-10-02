@@ -7,6 +7,8 @@ import ivivew from  'iview'
 import "iview/dist/styles/iview.css"
 Vue.use(ivivew);
 
+
+
 import "bootstrap/dist/css/bootstrap.min.css"
 
 /*轮播插件*/

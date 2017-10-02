@@ -104,7 +104,7 @@
               this.$emit("showState",this.form_validate);
               /*AJAX*/
               setTimeout(()=>{
-                setCookie("username",this.username,1000*60);
+                setCookie("username",this.form_validate.user_id,1000*60);
                 this.$router.push('/index')
               },1000)
             }
