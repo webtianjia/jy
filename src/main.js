@@ -2,14 +2,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router'
-import {post,fetch,patch,put} from './util/http.js'
 import {delCookie,getCookie,setCookie} from './util/cookie.js'
 import ivivew from  'iview'
 import "iview/dist/styles/iview.css"
-Vue.use(ivivew)
+Vue.use(ivivew);
 
-/*设置post请求*/
-Vue.prototype.post=post;
 import "bootstrap/dist/css/bootstrap.min.css"
 
 /*轮播插件*/
@@ -40,18 +37,19 @@ Validator.extend(
 );
 Vue.use(VeeValidate,{
   locale: 'zh_CN'
-})
+});
 
-router.beforeEach((to, from, next) => {
-  // console.log(getCookie("session"))
-    next()
-})
 Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   data:{
+
   },
   router,
+  methods:{
+
+  },
   template: '<App/>',
   components: { App }
 });
+

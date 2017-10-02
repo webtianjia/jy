@@ -79,7 +79,7 @@
   </div>
 </template>
 <script>
-  import footerItem from "../comm/footer-1.vue"
+  import footerItem from "../comm/footer.vue"
   import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
 
   export  default{
@@ -97,26 +97,21 @@
       login(){
           this.$validator.validateAll().then((result) => {
             if (result) {
-              this.sub_login=true
+              this.sub_login=true;
               if(this.sub_login){
                 this.btn_text="登录中..."
               }
+              this.$emit("showState",this.form_validate);
               /*AJAX*/
               setTimeout(()=>{
-                setCookie("username",this.username,1000*60)
+                setCookie("username",this.username,1000*60);
                 this.$router.push('/index')
               },1000)
-            }else {
-              alert('有错误!');
             }
           });
       }
     },
     mounted(){
-        /*页面挂载获取cookie，如果存在username的cookie 则跳转到主页，不需要登录*/
-      if(getCookie("username")){
-          this.$router.push("/index")
-      }
     },
     computed:{
 

@@ -153,7 +153,7 @@
   </div>
 </template>
 <script>
-  import  footerItem from "../comm/footer-1.vue"
+  import  footerItem from "../comm/footer.vue"
   export  default {
     data(){
       return {

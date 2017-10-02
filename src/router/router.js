@@ -60,7 +60,6 @@ export default new router({
 			path: '/login',
 			name: 'login',
       title:"登录",
-      meta:{auth:false},
 			component: login
 		},
 		{
