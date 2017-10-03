@@ -126,8 +126,7 @@
     methods: {
       router_link(name) {
         if (name === "exit") {
-         this.$router.replace({path:"login"});
-          delCookie("username")
+         this.$emit("exit")
         }else {
           this.$router.replace({
             path: name

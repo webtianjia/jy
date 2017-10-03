@@ -101,10 +101,11 @@
               if(this.sub_login){
                 this.btn_text="登录中..."
               }
-              this.$emit("showState",this.form_validate);
+
               /*AJAX*/
               setTimeout(()=>{
                 setCookie("username",this.form_validate.user_id,1000*60);
+                this.$emit("showState");
                 this.$router.push('/index')
               },1000)
             }
