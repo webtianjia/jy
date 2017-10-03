@@ -26,6 +26,7 @@
         this.header_user_msg.is_login=false;
         this.header_user_msg.user_name="";
         delCookie("username")
+        this.$router.replace({path:"/login",name:"login"})
       }
     },
     created:function () {
