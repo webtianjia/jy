@@ -179,12 +179,12 @@ export default new router({
 					component:buddy_list
 				},
         {
-          path:"/control_panel/friend_details",
+          path:"/control_panel/friend_details/:id",
           name:"好友详情",
           component:friend_details
         },
         {
-          path:"/control_panel/send_message",
+          path:"/control_panel/send_message/:id",
           name:"站内信",
           component:send_message
         },
