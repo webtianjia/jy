@@ -11,7 +11,7 @@
                     <img src="../../assets/images/list/head-3.png" width="120" height="120" style="width: 120px;height: 120px">
                   </div>
                   <div class="media-body text-c">
-                    <div class="f-16 mt-30">Hi~Exons</div>
+                    <div class="f-16 mt-30"><router-link :to="{name:'个人信息',path:'/personal_information/security_setting'}">Hi~Exons</router-link></div>
                     <div class="f-12 col-666 mt-10">欢迎回到吉凯基因分析平台！</div>
                   </div>
                 </div>

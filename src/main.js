@@ -17,9 +17,7 @@ import VueAwesomeSwiper from "vue-awesome-swiper"
 Vue.use(VueAwesomeSwiper);
 
 /*正则验证*/
-import zh_CN from 'vee-validate/dist/locale/zh_CN';
-import VeeValidate,{ Validator }from "vee-validate"
-Validator.addLocale(zh_CN);
+  import VeeValidate,{ Validator }from "vee-validate"
 Validator.updateDictionary({
   zh_CN: {
     messages:{

@@ -41,6 +41,21 @@ import use_help from  "../components/use-help/panel.vue"
 /*充值*/
 import recharge from  "../components/recharge/recharge.vue"
 
+/*个人信息-面板*/
+import  personal_information from  "../components/personal/panel.vue"
+/*个人信息*/
+import personal from "../components/personal/personal.vue"
+/*安全设置*/
+import security_setting from "../components/personal/security-setting.vue"
+/*第三方账号*/
+import other_accounts from "../components/personal/other-accounts.vue"
+/*修改绑定账号-手机号*/
+import modify_phone from "../components/personal/modify-phone.vue"
+/*修改登录密码*/
+import modify_pwd from "../components/personal/modify-pwd.vue"
+/*修改支付密码*/
+import modify_payment from "../components/personal/modify-payment.vue"
+
 /*404*/
 import  page_404 from "../components/page/404.vue"
 vue.use(router);
@@ -150,6 +165,43 @@ export default new router({
 			name:"充值",
 			component:recharge
 		},
+    {
+      path:"/personal_information",
+      name:"个人信息-面板",
+      component:personal_information,
+      children:[
+        {
+          path:"/personal_information/personal",
+          name:"个人信息",
+          component:personal
+        },
+        {
+          path:"/personal_information/security_setting",
+          name:"安全设置",
+          component:security_setting,
+        },
+        {
+          path:"/personal_information/other_accounts",
+          name:"第三方账号",
+          component:other_accounts
+        },
+        {
+          path:"/personal_information/modify_phone",
+          name:"修改绑定账号",
+          component:modify_phone
+        },
+        {
+          path:"/personal_information/modify_pwd",
+          name:"修改密码",
+          component:modify_pwd
+        },
+        {
+          path:"/personal_information/modify_payment",
+          name:"修改支付密码",
+          component:modify_payment
+        }
+      ]
+    },
     {
       name:"404",
       path:"*",

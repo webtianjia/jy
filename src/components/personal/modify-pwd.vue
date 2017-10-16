@@ -17,6 +17,7 @@
         <Form-Item label="">
           <button type="button" class="btn btn-main">重置密码</button>
         </Form-Item>
+      </i-Form>
     </div>
   </div>
 </template>

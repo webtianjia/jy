@@ -81,7 +81,6 @@
 <script>
   import footerItem from "../comm/footer.vue"
   import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
-
   export  default{
     data(){
       return {
@@ -101,7 +100,6 @@
               if(this.sub_login){
                 this.btn_text="登录中..."
               }
-
               /*AJAX*/
               setTimeout(()=>{
                 setCookie("username",this.form_validate.user_id,1000*60);

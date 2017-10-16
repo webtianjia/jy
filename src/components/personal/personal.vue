@@ -9,7 +9,7 @@
           <div class="media-body">
             <div class="rg mt-10" style="margin-right: 250px;">
               <div>账户余额  J$ 320.22</div>
-              <div class="mt-10"><a href="../../13.充值/充值.html" class="btn btn-main">立即充值</a></div>
+              <div class="mt-10"><router-link to="/recharge" class="btn btn-main">立即充值</router-link></div>
             </div>
             <div class="mt-20">我是一个用户名1</div>
             <div class="mt-10">上次登录时间： 2017-08-17  15:18:17</div>
@@ -49,6 +49,9 @@
               <i-Option value="2">科研爱好者</i-Option>
               <i-Option value="3">瞎玩玩的</i-Option>
             </i-Select>
+          </Form-Item>
+          <Form-Item>
+            <button v-if="edit" @click="edit=false" class="btn btn-main">保存设置</button>
           </Form-Item>
         </i-Form>
       </div>
