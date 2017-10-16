@@ -21,7 +21,10 @@ import application_run from "../components/market/application-run.vue"
 
 /*我的应用*/
 import my_application from "../components/my-application/my-application.vue"
-
+import create_application_1 from "../components/my-application/create-1.vue"
+import create_application_2 from "../components/my-application/create-2.vue"
+import create_application_3 from "../components/my-application/create-3.vue"
+import create_application_4 from "../components/my-application/create-4.vue"
 /*我的项目*/
 import  my_project from  "../components/my-project/my-project.vue"
 
@@ -126,8 +129,28 @@ export default new router({
 				{
 					path:"/control_panel/my_application",
 					name:"我的应用",
-					component:my_application
+					component:my_application,
 				},
+        {
+          path:"/control_panel/my_application/create_application_1",
+          name:"创建应用1",
+          component:create_application_1,
+        },
+        {
+          path:"/control_panel/my_application/create_application_2",
+          name:"创建应用2",
+          component:create_application_2,
+        },
+        {
+          path:"/control_panel/my_application/create_application_3",
+          name:"创建应用3",
+          component:create_application_3,
+        },
+        {
+          path:"/control_panel/my_application/create_application_4",
+          name:"创建应用4",
+          component:create_application_4,
+        },
 				{
 					path:"/control_panel/my_project",
 					name:"我的项目",
