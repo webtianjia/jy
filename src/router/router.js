@@ -37,6 +37,8 @@ import my_account from "../components/my-account/my-account.vue"
 
 /*好友列表*/
 import  buddy_list from "../components/buddy-list/buddy-list.vue"
+import  friend_details from "../components/buddy-list/friend-details.vue"
+import  send_message from "../components/buddy-list/send-message.vue"
 
 /*帮助中心*/
 import use_help from  "../components/use-help/panel.vue"
@@ -176,6 +178,16 @@ export default new router({
 					name:"好友列表",
 					component:buddy_list
 				},
+        {
+          path:"/control_panel/friend_details",
+          name:"好友详情",
+          component:friend_details
+        },
+        {
+          path:"/control_panel/send_message",
+          name:"站内信",
+          component:send_message
+        },
 			]
 		},
 		{
