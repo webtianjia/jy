@@ -104,7 +104,7 @@
         </div>
         <div class="text-c">
           <button type="button" class="btn btn-outline mr-40">取消</button>
-          <button type="button" class="btn btn-main" onclick="location.href='创建应用3.html'">下一步</button>
+          <button type="button" class="btn btn-main" @click="sub_next">下一步</button>
         </div>
         <div class="mt-40"></div>
       </div>
@@ -183,6 +183,8 @@
     export default {
         data(){
             return {
+              model_1:false,
+              model_2:false,
               formItem:{
                 radio:"",
                 number:2,
@@ -250,13 +252,14 @@
             )
           },
           del_options(index){/*删除选项*/
+            if (this.options.length===1)return;
             this.options.splice(index,1)
           },
           show_option(index,type){
             if(type===1){
               this.model_1=true;
               this.on_list=this.options[index].one_option;
-              this.options[index].two_option=[{}];/*清空2级*/
+              //this.options[index].two_option=[{}];/*清空2级*/
             }else if(type===2) {
               this.model_2=true;
               this.on_list=this.options[index].two_option;
@@ -285,6 +288,7 @@
 
           },
           del_child_option(index){/*删除选项1*/
+            if(this.on_list.length===1)return;
             this.on_list.splice(index,1)
           },
           keep_child_option(type){/*保存选项1*/
@@ -305,7 +309,11 @@
               } );
           },
           del_two_option($index,two_index){/*删除2级子选项*/
+            if(this.on_list[$index].option.length<=1)return;
             this.on_list[$index].option.splice(two_index,1)
+          },
+          sub_next(){
+              this.$router.replace({path:"/control_panel/my_application/create_application_3"})
           }
         }
     }

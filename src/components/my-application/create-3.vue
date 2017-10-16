@@ -130,7 +130,7 @@
         </div>
         <div class="text-c mt-40">
           <button type="button" class="btn btn-outline mr-40">取消</button>
-          <button type="button" class="btn btn-main" onclick="location.href='创建应用4.html'">提交审核</button>
+          <button type="button" class="btn btn-main" @click="sub_next">提交审核</button>
         </div>
         <div class="mt-40"></div>
       </div>
@@ -175,6 +175,10 @@
               }
             }
         },
-        methods: {}
+        methods: {
+            sub_next(){
+                this.$router.replace({path:"/control_panel/my_application/create_application_4"})
+            }
+        }
     }
 </script>

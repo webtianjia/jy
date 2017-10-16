@@ -2,7 +2,7 @@
   <div>
     <div class="panel  search-application">
       <div class="panel-body">
-        <button onclick="location.href='创建应用1.html'" class="btn btn-main rg mt-4">创建应用</button>
+        <router-link to="/control_panel/my_application/create_application_1" class="btn btn-main rg mt-4">创建应用</router-link>
         <i-Input  placeholder="搜索应用" class="search-input" style="width: 830px">
           <i-Button slot="append" class="search-btn">搜索</i-Button>
         </i-Input>

@@ -28,7 +28,6 @@
               class="inline-block"
               :format="['jpg','jpeg','png']"
               :max-size="2048"
-              multiple
               type="drag"
               action="//jsonplaceholder.typicode.com/posts/"
               style="display: inline-block;width:58px;">
@@ -46,7 +45,7 @@
               <Radio label="mf">免费</Radio>
               <Radio label="sf">收费</Radio>
             </Radio-Group>
-            <lable class="ivu-radio-wrapper vu-radio-group-item mb-5 ml-20">每次J$ <i-Input style="width: 200px"></i-Input></lable>
+            <label class="ivu-radio-wrapper vu-radio-group-item mb-5 ml-20">每次J$ <i-Input :disabled="formItem.radio=='mf'"  style="width: 200px"></i-Input></label>
           </Form-Item>
           <Form-Item label="应用截图">
             <Upload
@@ -81,7 +80,7 @@
         </i-Form>
         <div class="text-c">
           <button type="button" class="btn btn-outline mr-40">取消</button>
-          <button type="button" class="btn btn-main" onclick="location.href='创建应用2.html'">下一步</button>
+          <button type="button" class="btn btn-main" @click="sub_next">下一步</button>
         </div>
         <div class="mt-40"></div>
       </div>
@@ -91,8 +90,16 @@
 <script>
     export default {
         data(){
-            return {}
+            return {
+              formItem:{
+                radio:"mf"
+              }
+            }
         },
-        methods: {}
+        methods: {
+          sub_next(){
+              this.$router.replace({path:"/control_panel/my_application/create_application_2"})
+          }
+        }
     }
 </script>
