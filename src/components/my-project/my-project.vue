@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="panel mt-10">
+    <div class="panel">
       <div class="mt-20 ml-10">
         <Row>
           <i-Col span="12">
@@ -47,7 +47,7 @@
           </i-Col>
         </Row>
       </div>
-      <div class="mt-20"></div>
+      <div style="margin-top: 14px"></div>
     </div>
     <!--新创建-->
     <div v-if="type===0"  class="panel mt-10">

@@ -7,7 +7,7 @@
         </div>
         <div class="box">
           <div class="text-c f-20 mt-80 col-666">密码登录</div>
-          <form @submit.prevent="login">
+          <form ref="form_validate" :model="form_validate" :rules="ruleInline">
               <div class="form">
                 <!--手机号-->
                 <div class="form-group mt-40">
@@ -16,7 +16,6 @@
                       <div class=" form-lable">账号</div>
                     </div>
                     <input
-                      v-validate="'required|mobile_and_email'"
                       name="userId"
                       class="form-control input-text "
                       maxlength="30"
@@ -29,7 +28,7 @@
                   </div>
                   <!--错误提示-->
                   <div class=" message-box  f-12">
-                    <span v-show="errors.has('userId')" class=" Validform_checktip">{{ errors.first('userId') }}</span>
+                    <span  class=" Validform_checktip"></span>
                   </div>
                 </div>
                 <!--密码-->
@@ -39,7 +38,6 @@
                       <div class="form-lable">密码</div>
                     </div>
                     <input
-                      v-validate="'required'"
                       class="form-control  input-text "
                       maxlength="30"
                       type="password"
@@ -53,10 +51,10 @@
                   </div>
                   <!--错误提示-->
                   <div class=" message-box  f-12">
-                    <span v-show="errors.has('password')" class=" Validform_checktip">{{ errors.first('password') }}</span>
+                    <span class=" Validform_checktip"></span>
                   </div>
                 </div>
-                <button :disabled="sub_login"  class="btn btn-md btn-main btn-block f-16 mt-40" type="submit" v-text="btn_text"></button>
+                <button :disabled="sub_login" @click="login('form_validate')"  class="btn btn-md btn-main btn-block f-16 mt-40" type="submit" v-text="btn_text"></button>
                 <p class="f-12 text-r mt-20 ">
                   <router-link class="col-999 mr-20" to="password_retrieval">忘记密码</router-link>
                   <router-link class="col-999" to="register">免费注册</router-link>
@@ -84,30 +82,38 @@
   export  default{
     data(){
       return {
-        sub_login:false,
-        btn_text:"立即登录",
-        form_validate:{
-          user_id:"",
-          pwd:"",
+        sub_login: false,
+        btn_text: "立即登录",
+        form_validate: {
+          user_id: "",
+          pwd: "",
+        },
+        ruleInline: {
+          user_id: [
+            {required: true, message: '请填写用户名', trigger: 'blur'}
+          ],
+          pwd: [
+            {required: true, message: '请填写密码', trigger: 'blur'},
+            {type: 'string', min: 6, message: '密码长度不能小于6位', trigger: 'blur'}
+          ]
         }
       }
     },
     methods:{
-      login(){
-          this.$validator.validateAll().then((result) => {
-            if (result) {
-              this.sub_login=true;
-              if(this.sub_login){
-                this.btn_text="登录中..."
-              }
-              /*AJAX*/
+      login(name){
+   /*     this.[name].validate((valid) => {
+          if (valid) {
+            this.$Message.success('提交成功!');
+          } else {
+            this.$Message.error('表单验证失败!');
+          }
+        })*/
+   /*           /!*AJAX*!/
               setTimeout(()=>{
                 setCookie("username",this.form_validate.user_id,1000*60);
                 this.$emit("showState");
                 this.$router.push('/index')
-              },1000)
-            }
-          });
+              },1000)*/
       }
     },
     mounted(){

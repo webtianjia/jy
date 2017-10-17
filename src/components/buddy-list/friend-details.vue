@@ -8,8 +8,8 @@
           </div>
           <div class="media-body ">
             <div class="mt-10 ml-20">
-              <span class="mr-20">我是一个用户名</span>
-              <router-link class="btn btn-main" :to="{path:'/control_panel/send_message',id:1}"><img class="mr-5" src="../../assets/images/icons/icon_Email.png">站内信息</router-link>
+              <span class="mr-20">{{$route.params.id}}</span>
+              <router-link class="btn btn-main" :to="{path:'/control_panel/send_message/'+$route.params.id}"><img class="mr-5" src="../../assets/images/icons/icon_Email.png">站内信息</router-link>
             </div>
             <div class="mt-10 ml-20">
               <span class="col-666">长居地：上海    </span>
@@ -27,7 +27,7 @@
     <div class="panel mt-10 ">
       <div class="panel-heading">
         <a class="rg f-12 col-666" href="#">查看全部<Icon class="ml-5" type="ios-arrow-right" size="14"></Icon><Icon type="ios-arrow-right" size="14"></Icon></a>
-        <i class="icon i-38"></i>清茶的应用(22)
+        <i class="icon i-38"></i>{{$route.params.id}}的应用(22)
       </div>
       <div class="panel-body application-list">
         <dl v-for=" i in 8">
@@ -61,6 +61,9 @@
         data(){
             return {}
         },
-        methods: {}
+        methods: {},
+        created:function () {
+          console.log(this.$route.params)
+        }
     }
 </script>

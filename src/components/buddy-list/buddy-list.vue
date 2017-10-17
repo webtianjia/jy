@@ -20,7 +20,7 @@
               <a href="#" class="link">
                 <img src="../../assets/images/list/head.png">
               </a>
-              <router-link :to="{path:'/control_panel/friend_details',id:1}" class="link">我是一个用户名</router-link>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">我是{{i}}个用户名</router-link>
             </p>
           </td>
           <td>

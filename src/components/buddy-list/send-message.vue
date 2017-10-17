@@ -2,7 +2,7 @@
   <div>
     <div class="panel">
       <div class="panel-heading text-c">
-        <i class="icon i-55"></i>与&nbsp;ALEX&nbsp;的站内信
+        <i class="icon i-55"></i>与&nbsp;{{$route.params.id}}&nbsp;的站内信
       </div>
       <div class="panel-body">
         <div id="m-message" class="m-message">
@@ -135,10 +135,6 @@
             });
             this.$Message.success('发送成功!');
             this.text_value="";
-          },
-          handleView (name) {
-            this.imgName = name;
-            this.visible = true;
           },
           handleRemove (file) {
             // 从 upload 实例删除数据

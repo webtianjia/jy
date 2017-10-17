@@ -82,18 +82,18 @@ export default new router({
       title:"登录",
 			component: login
 		},
-		{
+/*		{
 			path: '/register',
 			name: '注册',
 			component: register
-		},
+		},*/
 		{
 			path: '/about_us',
 			name: '关于我们',
       meta:{auth:false},
 			component: about_us
 		},
-		{
+/*		{
 			path: '/password_retrieval',
 			name: '找回密码',
 			component: password_retrieval
@@ -102,7 +102,7 @@ export default new router({
 			path: '/reset_password',
 			name: '找回成功',
 			component: reset_password
-		},
+		},*/
 		{
 			path: '/control_panel',
 			name: '应用',
