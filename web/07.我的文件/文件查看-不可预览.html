@@ -180,13 +180,19 @@
                         <div class="layout-content">
                             <div class="panel mt-10">
                                 <div class="mt-10 ml-10">
-                                    <div style="height: 30px;line-height: 40px">
-                                        <span class="ml-20">/某某某某人的云空间</span>
+                                    <div style="height: 30px;line-height: 30px">
+                                        <span class="ml-20">/某某某某人的云空间/</span>
+                                        <a @click="edit=true" v-show="edit==false" href="javascript:void (0)">{{file_name}}</a>
+                                        <input v-show="edit" type="text" v-model="file_name" style="height: 30px;width: 455px;">
+                                        <button v-show="edit" class="btn btn-outline" @click="edit=false">取消</button>
+                                        <button v-show="edit" class="btn btn-main" @click="edit=false">保存</button>
                                         <div class="text-r create_new_project file_btn" style="width: 214px;">
                                             <a class="btn btn-main mr-20"><img class="mr-5" src="../images/icons/i-75.png">下载</a>
                                             <a class="btn btn-main mr-5"><img class="mr-5" src="../images/icons/i-76.png">删除</a>
                                         </div>
+                                        <div class="f-12 col-666 ml-20 mt-5" style="line-height: 0">2017-12-05  13:23:34  728kb</div>
                                     </div>
+
                                 </div>
                                 <div class="mt-20"></div>
                             </div>
@@ -196,8 +202,8 @@
                                         <img src="../images/list/8.gif" height="78" width="79" style="width: 80px;height: 80px;"/>
                                     </div>
                                     <div class="media-body">
-                                        <div class="mt-20">A16_基于人工智能的新界面交互设计——攻略.pdf <button type="button" class="btn  btn-main  ml-100">下载</button></div>
-                                        <div class="f-12 col-666 mr-10">2017-12-05  13:23:34  728kb</div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +225,9 @@
         el:"#app",
         data:{
             spanLeft:4,
-            spanRight:20
+            spanRight:20,
+            edit:false,
+            file_name:"A16_基于人工智能的新界面交互设计——攻略.pdf"
         },
         methods:{
             confirm () {

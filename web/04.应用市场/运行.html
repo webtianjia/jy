@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../js/vue/css/iview.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../js/code-highlight/styles/github.css"/>
     <script src="../js/vue/vue.min.js"></script>
     <script src="../js/vue/iview.js"></script>
     <script src="../js/jquery.js"></script>
@@ -190,6 +191,7 @@
                                                 <Row>
                                                     <i-Col span="18">
                                                         <input type="file" class="btn ">
+                                                        <button type="button" class="btn btn-main" @click="edit_model=true">预览</button>
                                                     </i-Col>
                                                     <i-Col span="6">
                                                         <span class="mr-40 tip">
@@ -209,6 +211,7 @@
                                             <Row>
                                                 <i-Col span="18">
                                                     <input type="file" class="btn ">
+                                                    <button type="button" class="btn btn-main" @click="edit_model=true">预览</button>
                                                 </i-Col>
                                                 <i-Col span="6">
                                                     <span class="mr-40 tip">
@@ -372,7 +375,6 @@
                                         </Form-item>
                                         <div class="text-c">
                                             <button @click="preservation" type="button" class="btn btn-outline mr-40">保存</button>
-
                                             <button @click="payment_modal=true" type="button" class="btn btn-main  mr-40" >提交</button>
                                             <button type="button" class="btn btn-success">按示例文件及参数运行</button>
                                         </div>
@@ -482,14 +484,41 @@
             </div>
 
     </Modal>
+    <!--编辑文件-->
+    <Modal
+            :width="800"
+            v-model="edit_model"
+            title="index.css"
+            class="application-info"
+            class-name="vertical-center-modal">
+        <div  style="height: 600px;overflow: auto;background-color:#f8f8f8">
+                   <pre v-if="!code_edit">
+                                            <code class="css"  v-text="code">
+                                            </code>
+                                   </pre>
+                <div v-else  style="background-color: #fff">
+                    <i-Input v-model="code" type="textarea" :autosize="{minRows:50,maxRows: 500}" placeholder="请输入..."></i-Input>
+            </div>
+
+        </div>
+        <div slot="footer" class="text-c" style="border: none">
+            <button  class="btn btn-outline mr-20" @click="edit_model=false">取消</button>
+            <button  class="btn btn-main" @click="code_edit=true" v-show="!code_edit">编辑</button>
+            <button v-show="code_edit"  class="btn btn-main" @click="code_edit=false">保存</button>
+
+        </div>
+    </Modal>
 </section>
 </body>
+<script src="../js/code-highlight/highlight.pack.js"></script>
 <script>
+    hljs.initHighlightingOnLoad();
     var vm=new  Vue({
         el:"#app",
         data:{
             spanLeft:4,
             spanRight:20,
+            edit_model:false,/*编辑弹框*/
             info_modal:false,/*说明弹框*/
             payment_modal:false,/*支付弹框*/
             preservation_model:false,/*保存弹框*/
@@ -500,7 +529,119 @@
                 checked:'',
                 textarea:"",
                 color:"#379CF8"
-            }
+            },
+            code_edit:false,
+            code:`
+             /*!
+ * Agate by Taufik Nurrohman <https://github.com/tovic>
+ * ----------------------------------------------------
+ *
+ * #ade5fc
+ * #a2fca2
+ * #c6b4f0
+ * #d36363
+ * #fcc28c
+ * #fc9b9b
+ * #ffa
+ * #fff
+ * #333
+ * #62c8f3
+ * #888
+ *
+ */
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #333;
+  color: white;
+}
+
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-code,
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-tag {
+  color: #62c8f3;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #ade5fc;
+}
+
+.hljs-string,
+.hljs-bullet {
+  color: #a2fca2;
+}
+
+.hljs-type,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-quote,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ffa;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+  color: #d36363;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #fcc28c;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-code {
+  color: #888;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #c6b4f0;
+}
+
+.hljs-meta {
+  color: #fc9b9b;
+}
+
+.hljs-deletion {
+  background-color: #fc9b9b;
+  color: #333;
+}
+
+.hljs-addition {
+  background-color: #a2fca2;
+  color: #333;
+}
+
+.hljs a {
+  color: inherit;
+}
+
+.hljs a:focus,
+.hljs a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+                `
         },
         computed: {/*每次发生变化触发的函数*/
         },
