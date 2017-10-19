@@ -7,7 +7,7 @@
         </div>
         <div class="box">
           <div class="text-c f-20 mt-80 col-666">密码登录</div>
-          <form ref="form_validate" :model="form_validate" :rules="ruleInline">
+          <form @submit.prevent="login">
               <div class="form">
                 <!--手机号-->
                 <div class="form-group mt-40">
@@ -16,6 +16,7 @@
                       <div class=" form-lable">账号</div>
                     </div>
                     <input
+                      v-validate="'required|mobile_and_email'"
                       name="userId"
                       class="form-control input-text "
                       maxlength="30"
@@ -28,7 +29,7 @@
                   </div>
                   <!--错误提示-->
                   <div class=" message-box  f-12">
-                    <span  class=" Validform_checktip"></span>
+                    <span v-show="errors.has('userId')" class=" Validform_checktip">{{ errors.first('userId') }}</span>
                   </div>
                 </div>
                 <!--密码-->
@@ -38,6 +39,7 @@
                       <div class="form-lable">密码</div>
                     </div>
                     <input
+                      v-validate="'required'"
                       class="form-control  input-text "
                       maxlength="30"
                       type="password"
@@ -51,10 +53,10 @@
                   </div>
                   <!--错误提示-->
                   <div class=" message-box  f-12">
-                    <span class=" Validform_checktip"></span>
+                    <span v-show="errors.has('password')" class=" Validform_checktip">{{ errors.first('password') }}</span>
                   </div>
                 </div>
-                <button :disabled="sub_login" @click="login('form_validate')"  class="btn btn-md btn-main btn-block f-16 mt-40" type="submit" v-text="btn_text"></button>
+                <button :disabled="sub_login"  class="btn btn-md btn-main btn-block f-16 mt-40" type="submit" v-text="btn_text"></button>
                 <p class="f-12 text-r mt-20 ">
                   <router-link class="col-999 mr-20" to="password_retrieval">忘记密码</router-link>
                   <router-link class="col-999" to="register">免费注册</router-link>
@@ -73,47 +75,37 @@
         </div>
       </div>
     </div>
-    <footer-item></footer-item>
+    <v-footer></v-footer>
   </div>
 </template>
 <script>
-  import footerItem from "../comm/footer.vue"
+  import footer from "../comm/footer.vue"
   import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
   export  default{
     data(){
       return {
-        sub_login: false,
-        btn_text: "立即登录",
-        form_validate: {
-          user_id: "",
-          pwd: "",
-        },
-        ruleInline: {
-          user_id: [
-            {required: true, message: '请填写用户名', trigger: 'blur'}
-          ],
-          pwd: [
-            {required: true, message: '请填写密码', trigger: 'blur'},
-            {type: 'string', min: 6, message: '密码长度不能小于6位', trigger: 'blur'}
-          ]
+        sub_login:false,
+        btn_text:"立即登录",
+        form_validate:{
+          user_id:"",
+          pwd:"",
         }
       }
     },
     methods:{
-      login(name){
-   /*     this.[name].validate((valid) => {
-          if (valid) {
-            this.$Message.success('提交成功!');
-          } else {
-            this.$Message.error('表单验证失败!');
-          }
-        })*/
-   /*           /!*AJAX*!/
+      login(){
+          this.$validator.validateAll().then((result) => {
+            if (result) {
+              this.sub_login=true;
+                this.btn_text="登录中..."
+              /*AJAX*/
               setTimeout(()=>{
                 setCookie("username",this.form_validate.user_id,1000*60);
                 this.$emit("showState");
                 this.$router.push('/index')
-              },1000)*/
+              },1000)
+            }
+          });
       }
     },
     mounted(){
@@ -123,6 +115,8 @@
     },
     created(){
     },
-    components:{footerItem},
+    components:{
+        "v-footer":footer
+    },
   }
 </script>

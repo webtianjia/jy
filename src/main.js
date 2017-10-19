@@ -13,10 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./assets/css/slide/swiper.css"
 import VueAwesomeSwiper from "vue-awesome-swiper"
 Vue.use(VueAwesomeSwiper);
-
-
 /*正则验证*/
-/*  import VeeValidate,{ Validator }from "vee-validate"
+ import VeeValidate,{ Validator }from "vee-validate"
 Validator.updateDictionary({
   zh_CN: {
     messages:{
@@ -25,7 +23,7 @@ Validator.updateDictionary({
   }
 });
 Validator.extend(
-    'mobile_and_email', {/!*手机或邮箱*!/
+    'mobile_and_email', {/*手机或邮箱*/
       messages: {
         zh_CN:() => '手机或邮箱输入格式不正确',
       },
@@ -36,7 +34,7 @@ Validator.extend(
 );
 Vue.use(VeeValidate,{
   locale: 'zh_CN'
-});*/
+});
 
 Vue.config.productionTip = false;
 new Vue({

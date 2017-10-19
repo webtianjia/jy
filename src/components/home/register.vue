@@ -146,11 +146,11 @@
         </div>
       </div>
     </div>
-    <footer-item></footer-item>
+    <v-footer></v-footer>
   </div>
 </template>
 <script>
-  import footerItem from "../comm/footer.vue"
+  import footer from "../comm/footer.vue"
   export  default{
     data(){
       return {
@@ -195,6 +195,6 @@
 
         }
     },
-    components:{footerItem}
+    components:{"v-footer":footer}
   }
 </script>

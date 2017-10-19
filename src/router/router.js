@@ -45,7 +45,8 @@ import use_help from  "../components/use-help/panel.vue"
 
 /*充值*/
 import recharge from  "../components/recharge/recharge.vue"
-
+import recharge_success from  "../components/recharge/recharge-success.vue"
+import recharge_frist from  "../components/recharge/recharge-frist.vue"
 /*个人信息-面板*/
 import  personal_information from  "../components/personal/panel.vue"
 /*个人信息*/
@@ -82,18 +83,18 @@ export default new router({
       title:"登录",
 			component: login
 		},
-/*		{
+		{
 			path: '/register',
 			name: '注册',
 			component: register
-		},*/
+		},
 		{
 			path: '/about_us',
 			name: '关于我们',
       meta:{auth:false},
 			component: about_us
 		},
-/*		{
+		{
 			path: '/password_retrieval',
 			name: '找回密码',
 			component: password_retrieval
@@ -102,7 +103,7 @@ export default new router({
 			path: '/reset_password',
 			name: '找回成功',
 			component: reset_password
-		},*/
+		},
 		{
 			path: '/control_panel',
 			name: '应用',
@@ -200,6 +201,16 @@ export default new router({
 			name:"充值",
 			component:recharge
 		},
+    {
+      path:"/recharge-success",
+      name:"充值成功",
+      component:recharge_success
+    },
+    {
+      path:"/recharge-frist",
+      name:"首次充值设置密码",
+      component:recharge_frist
+    },
     {
       path:"/personal_information",
       name:"个人信息-面板",
