@@ -2,7 +2,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router'
-import {delCookie,getCookie,setCookie} from './util/cookie.js'
+import {post} from './util/http.js'
+Vue.prototype.post=post;
 import ivivew from  'iview'
 import "iview/dist/styles/iview.css"
 Vue.use(ivivew);
@@ -46,6 +47,7 @@ new Vue({
   },
   template: '<App/>',
   components: { App },
+
 });
 router.afterEach((to, from) => {
  /* auto_layout_height()*/

@@ -93,15 +93,25 @@
     methods:{
       login(){
           this.$validator.validateAll().then((result) => {
+            var url="https://way.jd.com/idcard/idcard"
+            var data={
+              name:"邓永望",
+              cardno:"610922197401232578",
+              appkey:"1d0f735707e0cacd4e839a7f116097af"
+            }
+            $.get("https://way.jd.com/intecredit/loadCaptchaCode?userName=andyouth665@126.com&userid=001201601011410389100716&appkey=1d0f735707e0cacd4e839a7f116097af").success(function (res) {
+              console.log(res)
+            })
             if (result) {
               this.sub_login=true;
                 this.btn_text="登录中..."
               /*AJAX*/
-              setTimeout(()=>{
+
+      /*        setTimeout(()=>{
                 setCookie("username",this.form_validate.user_id,1000*60);
                 this.$emit("showState");
                 this.$router.push('/index')
-              },1000)
+              },1000)*/
             }
           });
       }
