@@ -35,11 +35,11 @@
                 <span v-show="errors.has('phone_email')" class=" Validform_checktip">{{errors.first("phone_email")}}</span>
               </div>
             </div>
-            <!--昵称-->
+            <!--用户名-->
             <div class="form-group">
               <div class="input-group ">
                 <div class="input-group-addon">
-                  <div class="form-lable">昵称</div>
+                  <div class="form-lable">用户名</div>
                 </div>
                 <input
                   v-validate="'required'"
@@ -47,7 +47,7 @@
                   v-model="form_validate.user_name"
                   class="form-control   input-text"
                   autocomplete="off"
-                  type="text" placeholder="请输入昵称">
+                  type="text" placeholder="请输入用户名">
                 <div class="input-group-btn">
                   <span v-show="form_validate.user_name!=''" @click="form_validate.user_name=''" class="clear-txt"></span>
                 </div>

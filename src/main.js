@@ -6,9 +6,7 @@ import {delCookie,getCookie,setCookie} from './util/cookie.js'
 import ivivew from  'iview'
 import "iview/dist/styles/iview.css"
 Vue.use(ivivew);
-
 import "bootstrap/dist/css/bootstrap.min.css"
-
 /*轮播插件*/
 import "./assets/css/slide/swiper.css"
 import VueAwesomeSwiper from "vue-awesome-swiper"
@@ -47,6 +45,14 @@ new Vue({
 
   },
   template: '<App/>',
-  components: { App }
+  components: { App },
 });
-
+router.afterEach((to, from) => {
+ /* auto_layout_height()*/
+})
+function auto_layout_height(){
+  if($('.layout-menu-left').length>0){
+    $('.layout-menu-left').css('height', $('.layout-right').innerHeight());
+    console.log($('.layout-right').innerHeight())
+  }
+}
