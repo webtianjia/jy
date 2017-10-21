@@ -510,9 +510,6 @@ select:-webkit-autofill {
   left: -29px;
   top: 4px;
 }
-.header .head {
-  vertical-align: middle;
-}
 .header .name {
   width: 80px;
   display: inline-block;
@@ -588,18 +585,17 @@ select:-webkit-autofill {
 .header .ivu-dropdown-item {
   font-size: 14px!important;
 }
+.main {
+  position: relative;
+  padding-bottom: 140px;
+}
 .footer {
-  margin-top: 240px;
-  color: #666;
-  margin-bottom: 40px;
-}
-.footer a {
-  color: #666;
-}
-.footer-2 {
   background-color: #f8faff;
   height: 120px;
   color: #666;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 /*404*/
 .c-404 {
@@ -609,10 +605,9 @@ select:-webkit-autofill {
 }
 /*登录注册*/
 .login-and-regsiter {
-  /*清除按钮*/
   /*lable*/
+  /*清除按钮*/
   /*错误提示样式*/
-  /*微信首次登录*/
   /*其他媒体*/
 }
 .login-and-regsiter .content {
@@ -639,16 +634,6 @@ select:-webkit-autofill {
   margin-bottom: 0;
   height: 60px;
 }
-.login-and-regsiter .message-box {
-  line-height: 30px;
-}
-.login-and-regsiter .clear-txt {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: transparent url("../images/icons/i-3.png") no-repeat center;
-  cursor: pointer;
-}
 .login-and-regsiter .form-lable {
   font-size: 14px;
   width: 56px;
@@ -670,33 +655,19 @@ select:-webkit-autofill {
   box-shadow: none;
   border-radius: 0;
 }
+.login-and-regsiter .clear-txt {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: transparent url("../images/icons/i-3.png") no-repeat center;
+  cursor: pointer;
+}
+.login-and-regsiter .message-box {
+  line-height: 30px;
+}
 .login-and-regsiter .Validform_checktip {
   padding-left: 86px;
   color: #fb523e;
-}
-.login-and-regsiter .Initial-login .social-box {
-  height: 190px;
-  top: 0;
-  left: 0;
-}
-.login-and-regsiter .Initial-login .social-box .wx {
-  margin-top: 30px;
-}
-.login-and-regsiter .Initial-login .social-box .title {
-  margin: 0;
-}
-.login-and-regsiter .Initial-login .social-box .title h2 {
-  border-bottom: 2px solid #ffbb05;
-  font-size: 20px;
-  display: inline-block;
-  margin: 0;
-  padding-bottom: 10px;
-}
-.login-and-regsiter .Initial-login .wx-reg {
-  margin-top: 260px;
-}
-.login-and-regsiter .Initial-login .wx-reg .regsiterBtn {
-  margin-top: 100px;
 }
 .login-and-regsiter .social-box {
   position: absolute;
@@ -1015,13 +986,13 @@ select:-webkit-autofill {
   border-bottom: 1px solid #e6e6e6;
 }
 /*应用说明弹框*/
-.application-info .msg {
+.application-alert .msg {
   height: 460px;
   overflow-y: scroll;
 }
-.application-info .msg img {
+.application-alert .msg img {
   max-width: 100%;
-  max-height: 100%;
+  height: auto;
 }
 /*首页*/
 .index .service_step {

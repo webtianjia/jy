@@ -1004,11 +1004,11 @@ select:-webkit-autofill {
   border-bottom: 1px solid #e6e6e6;
 }
 /*应用说明弹框*/
-.application-info .msg {
+.application-alert .msg {
   height: 460px;
   overflow-y: scroll;
 }
-.application-info .msg img {
+.application-alert .msg img {
   max-width: 100%;
   max-height: 100%;
 }

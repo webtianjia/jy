@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="main index">
+  <div class="main">
+    <div class="index">
       <div class="banner">
         <img class="img-responsive"  src="../assets/images/list/index/banner.png"/></div>
       <div class="service_step">
@@ -50,7 +50,7 @@
       </div>
       <div class="container">
         <div class="panel mt-30">
-          <div class="panel-body mt-60 mb-60">
+          <div class="panel-body mt-60">
             <Row>
               <i-Col span="12">
                 <div class="ml-170">

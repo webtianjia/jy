@@ -2,6 +2,7 @@
   <div id="app">
     <header-item  :header_user_msg="header_user_msg"  v-on:exit="exit_login"></header-item>
     <router-view v-on:showState="changeState"></router-view>
+    <BackTop></BackTop>
   </div>
 </template>
 <script>

@@ -68,9 +68,6 @@
     left: -29px;
     top: 4px;
   }
-  .head{
-    vertical-align: middle;
-  }
   .name{
     width: 80px;
     display: inline-block;
@@ -147,18 +144,17 @@
     font-size: 14px!important;
   }
 }
-.footer{
-  margin-top: 240px;
-  color: #666;
-  margin-bottom: 40px;
-  a{
-    color: #666;
-  }
+.main{
+  position: relative;
+  padding-bottom: 140px;
 }
-.footer-2{
+.footer{
   background-color: #f8faff;
   height: 120px;
   color: #666;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 /*404*/
 .c-404{
@@ -192,17 +188,6 @@
     margin-bottom: 0;
     height: 60px;
   }
-  .message-box{
-    line-height: 30px;
-  }
-  /*清除按钮*/
-  .clear-txt{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background:transparent url("../images/icons/i-3.png") no-repeat center;
-    cursor: pointer;
-  }
   /*lable*/
   .form-lable{
     font-size: 14px;
@@ -223,37 +208,21 @@
     box-shadow: none;
     border-radius: 0;
   }
+  /*清除按钮*/
+  .clear-txt{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background:transparent url("../images/icons/i-3.png") no-repeat center;
+    cursor: pointer;
+  }
   /*错误提示样式*/
+  .message-box{
+    line-height: 30px;
+  }
   .Validform_checktip{
     padding-left: 86px;
     color: @col-error;
-  }
-  /*微信首次登录*/
-  .Initial-login{
-    .social-box{
-      height: 190px;
-      top:0;
-      left: 0;
-      .wx{
-        margin-top: 30px;
-      }
-      .title{
-        margin: 0;
-        h2{
-          border-bottom: 2px solid #ffbb05;
-          font-size: 20px;
-          display: inline-block;
-          margin: 0;
-          padding-bottom: 10px;
-        }
-      }
-    }
-    .wx-reg{
-      margin-top: 260px;
-      .regsiterBtn{
-        margin-top: 100px;
-      }
-    }
   }
   /*其他媒体*/
   .social-box{
@@ -459,7 +428,7 @@
 .market{
   .market-banner{
    width: 100%;
-    .swiper-slide{
+   .swiper-slide{
      width: 670px;
       border:1px solid @col-br;
    }
@@ -589,13 +558,13 @@
   }
 }
 /*应用说明弹框*/
-.application-info{
+.application-alert{
   .msg{
     height: 460px;
     overflow-y: scroll;
     img{
       max-width: 100%;
-      max-height: 100%;
+      height: auto;
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="login-and-regsiter mt-80">
+    <div class="login-and-regsiter mt-60">
       <div class="content">
         <div class="login-banner">
           <img class="img-responsive" src="../../assets/images/login.png">

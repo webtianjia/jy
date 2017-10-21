@@ -97,8 +97,8 @@
         <div v-if="header_user_msg.is_login" class="lf ml-20">
             <Dropdown @on-click="router_link">
                 <a href="javascript:void(0)">
-                    <img class="img-circle head" src="../../assets/images/head.png" style="width: 40px;height: 40px">
-                    <span class=" name text-overflow">{{header_user_msg.user_name}}</span>
+                    <img class="img-circle " src="../../assets/images/head.png" style="width: 40px;height: 40px">
+                    <span class="name text-overflow">{{header_user_msg.user_name}}</span>
                     <Icon type="arrow-down-b"></Icon>
                 </a>
                 <DropdownMenu slot="list" >

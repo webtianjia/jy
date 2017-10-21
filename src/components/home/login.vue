@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="login-and-regsiter mt-80">
+  <div class="main">
+    <div class="login-and-regsiter mt-60">
       <div class="content">
         <div class="login-banner">
           <img class="img-responsive" src="../../assets/images/login.png">
@@ -99,19 +99,16 @@
               cardno:"610922197401232578",
               appkey:"1d0f735707e0cacd4e839a7f116097af"
             }
-            $.get("https://way.jd.com/intecredit/loadCaptchaCode?userName=andyouth665@126.com&userid=001201601011410389100716&appkey=1d0f735707e0cacd4e839a7f116097af").success(function (res) {
-              console.log(res)
-            })
             if (result) {
               this.sub_login=true;
-                this.btn_text="登录中..."
+                this.btn_text="登录中...";
               /*AJAX*/
 
-      /*        setTimeout(()=>{
+              setTimeout(()=>{
                 setCookie("username",this.form_validate.user_id,1000*60);
                 this.$emit("showState");
                 this.$router.push('/index')
-              },1000)*/
+              },1000)
             }
           });
       }

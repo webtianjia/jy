@@ -1,7 +1,7 @@
 
 <template>
-    <div>
-      <div class="main about-us">
+    <div class="main">
+      <div class="about-us">
         <div class="banner">
           <img class="img-responsive"  src="../../assets/images/list/banner.png"/>
         </div>

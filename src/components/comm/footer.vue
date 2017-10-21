@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer-2 mt-30">
+  <footer class="footer">
     <div class="container">
       <Row class="mt-30">
         <i-Col span="8">
