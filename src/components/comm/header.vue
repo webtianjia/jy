@@ -6,8 +6,8 @@
         <div class="lf">Gcloud</div>
       </router-link>
       <div   class="lf ml-50"><router-link :to="{name:'关于我们',path:'/about_us'}">关于平台</router-link></div>
-      <div  v-if="!is_Login" class="lf ml-50"><a href="javascript:void (0)">新闻中心</a></div>
-      <Dropdown v-if="is_Login" class="lf ml-50">
+      <div  v-if="!header_user_msg.is_login" class="lf ml-50"><a href="javascript:void (0)">新闻中心</a></div>
+      <Dropdown v-if="header_user_msg.is_login" class="lf ml-50">
          <a href="javascript:void (0)">
              <span> 更多平台</span>
              <Icon type="arrow-down-b"></Icon>
@@ -19,14 +19,14 @@
              <Dropdown-Item>更多平台四</Dropdown-Item>
          </DropdownMenu>
      </Dropdown>
-      <div v-if="is_Login" class="search ml-50 lf">
+      <div v-if="header_user_msg.is_login" class="search ml-50 lf">
          <input class="search-input" type="text" placeholder="搜索应用">
          <button class="search-btn"></button>
      </div>
       <div class="rg">
-        <div v-if="!is_Login" class="lf mr-20"><router-link :to="{name:'注册',path:'/register'}"  class="register-btn">注册</router-link></div>
-        <div v-if="!is_Login" class="lf"><router-link :to="{name:'login',path:'/login',title:'登录'}" class="login-btn">登录</router-link></div>
-        <div v-if="is_Login" class="lf ml-50">
+        <div v-if="!header_user_msg.is_login" class="lf mr-20"><router-link :to="{name:'注册',path:'/register'}"  class="register-btn">注册</router-link></div>
+        <div v-if="!header_user_msg.is_login" class="lf"><router-link :to="{name:'login',path:'/login',title:'登录'}" class="login-btn">登录</router-link></div>
+        <div v-if="header_user_msg.is_login" class="lf ml-50">
             <Dropdown trigger="click">
                 <div href="#" class="badge">
                     <div class="badge-count">99+</div>
@@ -94,11 +94,11 @@
                 </Dropdown-Menu>
             </Dropdown>
         </div>
-        <div v-if="is_Login" class="lf ml-20">
+        <div v-if="header_user_msg.is_login" class="lf ml-20">
             <Dropdown @on-click="router_link">
                 <a href="javascript:void(0)">
                     <img class="img-circle head" src="../../assets/images/head.png" style="width: 40px;height: 40px">
-                    <span class=" name text-overflow">ExoxonsvyExoxonsvyExoxonsvy...</span>
+                    <span class=" name text-overflow">{{header_user_msg.user_name}}</span>
                     <Icon type="arrow-down-b"></Icon>
                 </a>
                 <DropdownMenu slot="list" >
@@ -115,22 +115,18 @@
 </template>
 
 <script>
-  import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
+  import {delCookie} from "../../util/util";
+
   export default {
     data(){
       return{
-        is_Login:false
+
       }
     },
     methods: {
       router_link(name) {
         if (name === "exit") {
-          delCookie("username");
-          this.is_Login = false;
-          this.$router.replace({
-            name:"login",
-            path: "/login"
-          })
+         this.$emit("exit")
         }else {
           this.$router.replace({
             path: name
@@ -138,10 +134,6 @@
         }
       }
     },
-    mounted:function () {
-      if (getCookie('username')) {
-          this.is_Login=true
-      }
-    }
+    props:['header_user_msg']
   }
 </script>

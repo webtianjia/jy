@@ -32,9 +32,9 @@
             <router-view></router-view>
           </div>
           <div class="layout-copy">
+            <span class="copyright rg">©2017 GENECHEM All Rights Reserved.　沪ICP备15012724号    沪公网安备 310</span>
             <a href="#" class="mr-60">吉凯基因分析平台</a>
             <a href="#" class="mr-200">使用说明</a>
-            <span class="copyright rg">©2017 GENECHEM All Rights Reserved.　沪ICP备15012724号    沪公网安备 310</span>
           </div>
         </i-Col>
       </Row>
@@ -61,14 +61,10 @@
       },
       router_link(name){
         switch (name){
-          case 'work_panel' :this.$router.replace({ path: '/control_panel/work_panel' }) ;return;
-          case "market" :this.$router.replace({ path: '/control_panel/market' }) ;return;
-          case "my_application" :this.$router.replace({ path: '/control_panel/my_application' }) ;return;
-          case "my_project" :this.$router.replace({ path: '/control_panel/my_project' }) ;return;
-          case "my_files" :this.$router.replace({ path: '/control_panel/my_files' }) ;return;
-          case "my_account" :this.$router.replace({ path: '/control_panel/my_account' }) ;return;
-          case "buddy_list" :this.$router.replace({ path: '/control_panel/buddy_list' }) ;return;
-          case "use_help" :this.$router.replace({ path: '/use_help' }) ;return;
+          case 'personal' :this.$router.replace({ path: '/personal_information/personal' }) ;return;
+          case "security_setting" :this.$router.replace({ path: '/personal_information/security_setting' }) ;return;
+          case "other_accounts" :this.$router.replace({ path: '/personal_information/other_accounts' }) ;return;
+          case "work_panel" :this.$router.replace({ path: '/control_panel/work_panel' }) ;return;
         }
       }
     }

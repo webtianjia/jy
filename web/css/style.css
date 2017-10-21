@@ -1601,3 +1601,9 @@ input.edit-input {
   cursor: default;
   color: #333;
 }
+pre {
+  background-color: transparent;
+}
+input[type=file] {
+  display: inline-block;
+}

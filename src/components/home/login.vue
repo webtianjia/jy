@@ -67,21 +67,18 @@
           <div   class="social-box text-center">
             <div class="mt-20 f-12 col-666">其他方式登录</div>
             <div class="social-login mt-30">
-              <a class="qq" href="javascript:void (0);"></a>
               <a class="wx" href="javascript:void (0)"></a>
-              <a class="zfb" href="javascript:void (0);"></a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer-item></footer-item>
+    <v-footer></v-footer>
   </div>
 </template>
 <script>
-  import footerItem from "../comm/footer-1.vue"
+  import footer from "../comm/footer.vue"
   import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
-
   export  default{
     data(){
       return {
@@ -96,33 +93,38 @@
     methods:{
       login(){
           this.$validator.validateAll().then((result) => {
+            var url="https://way.jd.com/idcard/idcard"
+            var data={
+              name:"邓永望",
+              cardno:"610922197401232578",
+              appkey:"1d0f735707e0cacd4e839a7f116097af"
+            }
+            $.get("https://way.jd.com/intecredit/loadCaptchaCode?userName=andyouth665@126.com&userid=001201601011410389100716&appkey=1d0f735707e0cacd4e839a7f116097af").success(function (res) {
+              console.log(res)
+            })
             if (result) {
-              this.sub_login=true
-              if(this.sub_login){
+              this.sub_login=true;
                 this.btn_text="登录中..."
-              }
               /*AJAX*/
-              setTimeout(()=>{
-                setCookie("username",this.username,1000*60)
+
+      /*        setTimeout(()=>{
+                setCookie("username",this.form_validate.user_id,1000*60);
+                this.$emit("showState");
                 this.$router.push('/index')
-              },1000)
-            }else {
-              alert('有错误!');
+              },1000)*/
             }
           });
       }
     },
     mounted(){
-        /*页面挂载获取cookie，如果存在username的cookie 则跳转到主页，不需要登录*/
-      if(getCookie("username")){
-          this.$router.push("/index")
-      }
     },
     computed:{
 
     },
     created(){
     },
-    components:{footerItem},
+    components:{
+        "v-footer":footer
+    },
   }
 </script>

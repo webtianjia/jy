@@ -2,25 +2,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router'
-import {post,fetch,patch,put} from './util/http.js'
-import {delCookie,getCookie,setCookie} from './util/cookie.js'
+import {post} from './util/http.js'
+Vue.prototype.post=post;
 import ivivew from  'iview'
 import "iview/dist/styles/iview.css"
-Vue.use(ivivew)
-
-/*设置post请求*/
-Vue.prototype.post=post;
+Vue.use(ivivew);
 import "bootstrap/dist/css/bootstrap.min.css"
-
 /*轮播插件*/
 import "./assets/css/slide/swiper.css"
 import VueAwesomeSwiper from "vue-awesome-swiper"
 Vue.use(VueAwesomeSwiper);
-
 /*正则验证*/
-import zh_CN from 'vee-validate/dist/locale/zh_CN';
-import VeeValidate,{ Validator }from "vee-validate"
-Validator.addLocale(zh_CN);
+ import VeeValidate,{ Validator }from "vee-validate"
 Validator.updateDictionary({
   zh_CN: {
     messages:{
@@ -40,18 +33,28 @@ Validator.extend(
 );
 Vue.use(VeeValidate,{
   locale: 'zh_CN'
-})
+});
 
-router.beforeEach((to, from, next) => {
-  // console.log(getCookie("session"))
-    next()
-})
 Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   data:{
+
   },
   router,
+  methods:{
+
+  },
   template: '<App/>',
-  components: { App }
+  components: { App },
+
 });
+router.afterEach((to, from) => {
+ /* auto_layout_height()*/
+})
+function auto_layout_height(){
+  if($('.layout-menu-left').length>0){
+    $('.layout-menu-left').css('height', $('.layout-right').innerHeight());
+    console.log($('.layout-right').innerHeight())
+  }
+}

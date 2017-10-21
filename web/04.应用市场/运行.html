@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../js/vue/css/iview.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../js/code-highlight/styles/github.css"/>
     <script src="../js/vue/vue.min.js"></script>
     <script src="../js/vue/iview.js"></script>
     <script src="../js/jquery.js"></script>
@@ -186,10 +187,15 @@
                                 <div class="panel mt-10 application-form">
                                     <i-Form ref="formValidate" :model="formValidate"  :label-width="100">
                                         <div class="form-title">设置参数</div>
-                                        <Form-Item class="mt-40" label="参数名称1">
+                                        <Form-Item class="mt-40 ivu-form-item-required " label="参数名称1">
                                                 <Row>
                                                     <i-Col span="18">
                                                         <input type="file" class="btn ">
+                                                         <div  class="mt-20"  style="height: 250px;overflow: auto;background-color:#f8f8f8;border: 1px solid #ddd">
+                                                                    <div style="background-color: #fff" >
+                                                                        <i-Input v-model="code" type="textarea" :autosize="{minRows:50,maxRows: 500}" placeholder="请输入..."></i-Input>
+                                                                    </div>
+                                                        </div>
                                                     </i-Col>
                                                     <i-Col span="6">
                                                         <span class="mr-40 tip">
@@ -205,10 +211,13 @@
                                                     </i-Col>
                                                 </Row>
                                         </Form-Item>
-                                        <Form-Item label="参数名称2">
+                                        <Form-Item class="ivu-form-item-required " label="参数名称2 ">
                                             <Row>
                                                 <i-Col span="18">
                                                     <input type="file" class="btn ">
+                                                    <div class="mt-20"  style="height: 250px;overflow: auto;background-color:#f8f8f8">
+                                                        <img class="img-responsive" src="../images/list/h-2.jpg">
+                                                    </div>
                                                 </i-Col>
                                                 <i-Col span="6">
                                                     <span class="mr-40 tip">
@@ -224,12 +233,20 @@
                                                 </i-Col>
                                             </Row>
                                         </Form-Item>
-                                        <Form-item label="参数名称3">
+                                        <Form-Item>
                                             <Row>
                                                 <i-Col span="18">
-                                                    <i-Input  placeholder="请输入参数" style="width: 500px"></i-Input>
+                                                    <i-Button type="dashed" @click="more=!more"  long>{{more==false?"显示更多参数":"隐藏更多参数"}}</i-Button>
                                                 </i-Col>
-                                                <i-Col span="6">
+                                            </Row>
+                                        </Form-Item>
+                                        <div v-show="more">
+                                                <Form-item label="参数名称3">
+                                                    <Row>
+                                                        <i-Col span="18">
+                                                            <i-Input  placeholder="请输入参数" style="width: 500px"></i-Input>
+                                                        </i-Col>
+                                                        <i-Col span="6">
                                                     <span class="mr-40 tip">
                                                           <Tooltip placement="top">
                                                         <Icon type="help-circled" size="20"></Icon>
@@ -239,20 +256,20 @@
                                                         </div>
                                                     </Tooltip>
                                                     </span>
-                                                    <button type="button" class="btn">示例</button>
-                                                </i-Col>
-                                            </Row>
-                                        </Form-item>
-                                        <Form-item label="参数名称4">
-                                            <Row>
-                                                <i-Col span="18">
-                                                    <i-Select  placeholder="请选择" style="width: 500px">
-                                                        <i-Option value="beijing">北京市</i-Option>
-                                                        <i-Option value="shanghai">上海市</i-Option>
-                                                        <i-Option value="shenzhen">深圳市</i-Option>
-                                                    </i-Select>
-                                                </i-Col>
-                                                <i-Col span="6">
+                                                            <button type="button" class="btn">示例</button>
+                                                        </i-Col>
+                                                    </Row>
+                                                </Form-item>
+                                                <Form-item label="参数名称4">
+                                                    <Row>
+                                                        <i-Col span="18">
+                                                            <i-Select  placeholder="请选择" style="width: 500px">
+                                                                <i-Option value="beijing">北京市</i-Option>
+                                                                <i-Option value="shanghai">上海市</i-Option>
+                                                                <i-Option value="shenzhen">深圳市</i-Option>
+                                                            </i-Select>
+                                                        </i-Col>
+                                                        <i-Col span="6">
                                                     <span class="mr-40 tip">
                                                           <Tooltip placement="top">
                                                         <Icon type="help-circled" size="20"></Icon>
@@ -262,16 +279,16 @@
                                                         </div>
                                                     </Tooltip>
                                                     </span>
-                                                    <button type="button" class="btn">示例</button>
-                                                </i-Col>
-                                            </Row>
-                                        </Form-item>
-                                        <Form-item label="参数名称5">
-                                            <Row>
-                                                <i-Col span="18">
-                                                    <Input-Number :max="10" :min="1" style="width: 500px"></Input-Number>
-                                                </i-Col>
-                                                <i-Col span="6">
+                                                            <button type="button" class="btn">示例</button>
+                                                        </i-Col>
+                                                    </Row>
+                                                </Form-item>
+                                                <Form-item label="参数名称5">
+                                                    <Row>
+                                                        <i-Col span="18">
+                                                            <Input-Number :max="10" :min="1" style="width: 500px"></Input-Number>
+                                                        </i-Col>
+                                                        <i-Col span="6">
                                                     <span class="mr-40 tip">
                                                           <Tooltip placement="top">
                                                         <Icon type="help-circled" size="20"></Icon>
@@ -281,20 +298,20 @@
                                                         </div>
                                                     </Tooltip>
                                                     </span>
-                                                    <button type="button" class="btn">示例</button>
-                                                </i-Col>
-                                            </Row>
-                                        </Form-item>
-                                        <Form-item label="参数名称6">
-                                            <Row>
-                                                <i-Col span="18">
-                                                    <Radio-Group v-model="formValidate.radio">
-                                                        <Radio label="金斑蝶"></Radio>
-                                                        <Radio label="爪哇犀牛"></Radio>
-                                                        <Radio label="印度黑羚"></Radio>
-                                                    </Radio-Group>
-                                                </i-Col>
-                                                <i-Col span="6">
+                                                            <button type="button" class="btn">示例</button>
+                                                        </i-Col>
+                                                    </Row>
+                                                </Form-item>
+                                                <Form-item label="参数名称6">
+                                                    <Row>
+                                                        <i-Col span="18">
+                                                            <Radio-Group v-model="formValidate.radio">
+                                                                <Radio label="金斑蝶"></Radio>
+                                                                <Radio label="爪哇犀牛"></Radio>
+                                                                <Radio label="印度黑羚"></Radio>
+                                                            </Radio-Group>
+                                                        </i-Col>
+                                                        <i-Col span="6">
                                                     <span class="mr-40 tip">
                                                           <Tooltip placement="top">
                                                         <Icon type="help-circled" size="20"></Icon>
@@ -304,21 +321,21 @@
                                                         </div>
                                                     </Tooltip>
                                                     </span>
-                                                    <button type="button" class="btn">示例</button>
-                                                </i-Col>
-                                            </Row>
-                                        </Form-item>
-                                        <Form-item label="参数名称7">
-                                            <Row>
-                                                <i-Col span="18">
-                                                    <Checkbox-Group v-model="formValidate.checked">
-                                                        <Checkbox label="吃饭"></Checkbox>
-                                                        <Checkbox label="睡觉"></Checkbox>
-                                                        <Checkbox label="跑步"></Checkbox>
-                                                        <Checkbox label="看电影"></Checkbox>
-                                                    </Checkbox-Group>
-                                                </i-Col>
-                                                <i-Col span="6">
+                                                            <button type="button" class="btn">示例</button>
+                                                        </i-Col>
+                                                    </Row>
+                                                </Form-item>
+                                                <Form-item label="参数名称7">
+                                                    <Row>
+                                                        <i-Col span="18">
+                                                            <Checkbox-Group v-model="formValidate.checked">
+                                                                <Checkbox label="吃饭"></Checkbox>
+                                                                <Checkbox label="睡觉"></Checkbox>
+                                                                <Checkbox label="跑步"></Checkbox>
+                                                                <Checkbox label="看电影"></Checkbox>
+                                                            </Checkbox-Group>
+                                                        </i-Col>
+                                                        <i-Col span="6">
                                                     <span class="mr-40 tip">
                                                           <Tooltip placement="top">
                                                         <Icon type="help-circled" size="20"></Icon>
@@ -328,16 +345,16 @@
                                                         </div>
                                                     </Tooltip>
                                                     </span>
-                                                    <button type="button" class="btn">示例</button>
-                                                </i-Col>
-                                            </Row>
-                                        </Form-item>
-                                        <Form-item label="参数名称8">
-                                            <Row>
-                                                <i-Col span="18">
-                                                    <i-Input style="width: 500px" v-model="formValidate.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入..."></i-Input>
-                                                </i-Col>
-                                                <i-Col span="6">
+                                                            <button type="button" class="btn">示例</button>
+                                                        </i-Col>
+                                                    </Row>
+                                                </Form-item>
+                                                <Form-item label="参数名称8">
+                                                    <Row>
+                                                        <i-Col span="18">
+                                                            <i-Input style="width: 500px" v-model="formValidate.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="请输入..."></i-Input>
+                                                        </i-Col>
+                                                        <i-Col span="6">
                                                     <span class="mr-40 tip">
                                                           <Tooltip placement="top">
                                                         <Icon type="help-circled" size="20"></Icon>
@@ -347,16 +364,16 @@
                                                         </div>
                                                     </Tooltip>
                                                     </span>
-                                                    <button type="button" class="btn">示例</button>
-                                                </i-Col>
-                                            </Row>
-                                        </Form-item>
-                                        <Form-item label="参数名称9">
-                                            <Row>
-                                                <i-Col span="18">
-                                                    <Color-Picker v-model="formValidate.color" />
-                                                </i-Col>
-                                                <i-Col span="6">
+                                                            <button type="button" class="btn">示例</button>
+                                                        </i-Col>
+                                                    </Row>
+                                                </Form-item>
+                                                <Form-item label="参数名称9">
+                                                    <Row>
+                                                        <i-Col span="18">
+                                                            <Color-Picker v-model="formValidate.color" />
+                                                        </i-Col>
+                                                        <i-Col span="6">
                                                     <span class="mr-40 tip">
                                                           <Tooltip placement="top">
                                                         <Icon type="help-circled" size="20"></Icon>
@@ -366,20 +383,18 @@
                                                         </div>
                                                     </Tooltip>
                                                     </span>
-                                                    <button type="button" class="btn">示例</button>
-                                                </i-Col>
-                                            </Row>
-                                        </Form-item>
+                                                            <button type="button" class="btn">示例</button>
+                                                        </i-Col>
+                                                    </Row>
+                                                </Form-item>
+                                            </div>
                                         <div class="text-c">
                                             <button @click="preservation" type="button" class="btn btn-outline mr-40">保存</button>
-
                                             <button @click="payment_modal=true" type="button" class="btn btn-main  mr-40" >提交</button>
                                             <button type="button" class="btn btn-success">按示例文件及参数运行</button>
                                         </div>
                                         <div class="mt-30"></div>
                                     </i-Form>
-                                </div>
-
                             </div>
                         </div>
                         <div class="layout-copy">
@@ -484,10 +499,13 @@
     </Modal>
 </section>
 </body>
+<script src="../js/code-highlight/highlight.pack.js"></script>
 <script>
+    hljs.initHighlightingOnLoad();
     var vm=new  Vue({
         el:"#app",
         data:{
+            more:false,
             spanLeft:4,
             spanRight:20,
             info_modal:false,/*说明弹框*/
@@ -500,7 +518,119 @@
                 checked:'',
                 textarea:"",
                 color:"#379CF8"
-            }
+            },
+            code_edit:false,
+            code:`
+             /*!
+ * Agate by Taufik Nurrohman <https://github.com/tovic>
+ * ----------------------------------------------------
+ *
+ * #ade5fc
+ * #a2fca2
+ * #c6b4f0
+ * #d36363
+ * #fcc28c
+ * #fc9b9b
+ * #ffa
+ * #fff
+ * #333
+ * #62c8f3
+ * #888
+ *
+ */
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #333;
+  color: white;
+}
+
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-code,
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-tag {
+  color: #62c8f3;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #ade5fc;
+}
+
+.hljs-string,
+.hljs-bullet {
+  color: #a2fca2;
+}
+
+.hljs-type,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-quote,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #ffa;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+  color: #d36363;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+  color: #fcc28c;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-code {
+  color: #888;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #c6b4f0;
+}
+
+.hljs-meta {
+  color: #fc9b9b;
+}
+
+.hljs-deletion {
+  background-color: #fc9b9b;
+  color: #333;
+}
+
+.hljs-addition {
+  background-color: #a2fca2;
+  color: #333;
+}
+
+.hljs a {
+  color: inherit;
+}
+
+.hljs a:focus,
+.hljs a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+                `
         },
         computed: {/*每次发生变化触发的函数*/
         },

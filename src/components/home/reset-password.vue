@@ -24,7 +24,7 @@
                   autocomplete="off"
                   placeholder="设置您的登录密码">
                 <div class="input-group-btn">
-                  <span class="clear-txt"></span>
+                  <span v-show="form_validate.pwd!=''&&errors.has('pwd')" @click="form_validate.pwd=''" class="clear-txt"></span>
                 </div>
               </div>
               <!--错误提示-->
@@ -50,7 +50,7 @@
                   autocomplete="off"
                   placeholder="再次输入登录密码">
                 <div class="input-group-btn">
-                  <span class="clear-txt"></span>
+           <!--       <span v-show="form_validate.pwdnewagin!=''&&errors.has('pwdnewagin')" @click="form_validate.pwdnewagin=''" class="clear-txt"></span>-->
                 </div>
               </div>
               <!--错误提示-->
@@ -67,12 +67,12 @@
         </div>
       </div>
     </div>
-    <footer-item></footer-item>
+    <v-footer></v-footer>
   </div>
 </template>
 
 <script>
-  import footerItem from "../comm/footer-1.vue"
+  import footer from "../comm/footer.vue"
   export  default{
     data(){
       return {
@@ -92,7 +92,7 @@
             this.user_id = 1;
             console.log(form_data)
             setTimeout(() => {
-              this.$router.push({path: "/index"});
+              this.$router.push({path: "/login"});
             }, 2000);
           } else {
             alert('有错误!');
@@ -100,7 +100,7 @@
         });
       }
     },
-    components:{footerItem}
+    components:{"v-footer":footer}
   }
 
 </script>

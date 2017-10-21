@@ -103,11 +103,11 @@
         </div>
       </div>
     </div>
-    <footer-item></footer-item>
+    <v-footer></v-footer>
   </div>
 </template>
 <script>
-  import footerItem from  "./comm/footer-1.vue"
+  import footer from "./comm/footer.vue"
 export default {
   name: 'index',
   data () {
@@ -121,7 +121,7 @@ export default {
   mounted:function () {
 
   },
-  components:{footerItem}
+  components:{"v-footer":footer}
 }
 </script>
 

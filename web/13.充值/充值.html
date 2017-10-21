@@ -135,7 +135,7 @@
                 <span>账户充值   当前余额 J$ 111.00</span>
             </div>
             <div class="well-lg well">
-                <Tabs value="name2">
+                <Tabs value="name1">
                     <Tab-Pane icon="ios-monitor-outline" con="social-apple" label="在线充值" name="name1">
                         <i-Form :model="form_online" :label-width="100" class="mt-40 ml-100" style="width:380px;">
                                 <Form-Item label="充值金额">
@@ -147,6 +147,9 @@
                                 <Form-item label="支付方式">
                                     <Radio-Group v-model="form_online.radio" vertical>
                                         <div class="checked-item">
+                                            <Radio label="jk"> &nbsp;&nbsp;&nbsp;&nbsp;吉凯余额支付</Radio>
+                                        </div>
+                                        <div class="checked-item mt-30">
                                             <Radio label="zfb"><i class="icon-zfb"></i>支付宝支付</Radio>
                                         </div>
                                         <div class="checked-item mt-30">

@@ -2,7 +2,7 @@
   <div>
     <div class="panel">
       <div class="panel-heading text-c">
-        <i class="icon i-55"></i>与&nbsp;ALEX&nbsp;的站内信
+        <i class="icon i-55"></i>与&nbsp;{{$route.params.id}}&nbsp;的站内信
       </div>
       <div class="panel-body">
         <div id="m-message" class="m-message">
@@ -10,7 +10,7 @@
             <li>
               <p class="time"><span>2017-05-12   16:37</span></p>
               <div class="main">
-                <img class="avatar" width="40" height="40" src="../images/head.png">
+                <img class="avatar" width="40" height="40" src="../../assets/images/head.png">
                 <div class="name">ALEX</div>
                 <div class="text">
                   义勇军进行曲
@@ -39,7 +39,7 @@
             <li>
               <p class="time"><span>15:10</span></p>
               <div class="main this">
-                <img class="avatar" width="40" height="40" src="../images/head.png">
+                <img class="avatar" width="40" height="40" src="../../assets/images/head.png">
                 <div class="name">大熊</div>
                 <div class="text">没吃药？</div>
               </div>
@@ -47,7 +47,7 @@
             <li>
               <p class="time"><span>2017-05-12   16:37</span></p>
               <div class="main">
-                <img class="avatar" width="40" height="40" src="../images/head.png">
+                <img class="avatar" width="40" height="40" src="../../assets/images/head.png">
                 <div class="name">ALEX</div>
                 <div class="text">在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？在吗？？？</div>
               </div>
@@ -55,7 +55,7 @@
             <li>
               <p class="time"><span>15:10</span></p>
               <div class="main this">
-                <img class="avatar" width="40" height="40" src="../images/head.png">
+                <img class="avatar" width="40" height="40" src="../../assets/images/head.png">
                 <div class="name">大熊</div>
                 <div class="text">不在</div>
               </div>
@@ -63,19 +63,19 @@
             <li>
               <p class="time"><span>15:10</span></p>
               <div class="main this">
-                <img class="avatar" width="40" height="40" src="../images/head.png">
+                <img class="avatar" width="40" height="40" src="../../assets/images/head.png">
                 <div class="name">大熊</div>
                 <div class="text">英文字体选择，不够高级，可以试试opensans,lato字体 现在字体有
                   点粗，显得不够精致！两份CBinsights的分析文档，关于亚马逊的战
                   略布局以及下一代电商发展的趋势。
-                  <img src="../images/list/1.png" alt="">
+                  <img src="../../assets/images/list/1.png" alt="">
                 </div>
               </div>
             </li>
             <li v-for="item in message_list ">
               <p class="time"><span>15:10</span></p>
               <div class="main this">
-                <img class="avatar" width="40" height="40" src="../images/head.png">
+                <img class="avatar" width="40" height="40" src="../../assets/images/head.png">
                 <div class="name">大熊</div>
                 <div class="text" v-text="item.text"></div>
                 <div l></div>
@@ -136,10 +136,6 @@
             this.$Message.success('发送成功!');
             this.text_value="";
           },
-          handleView (name) {
-            this.imgName = name;
-            this.visible = true;
-          },
           handleRemove (file) {
             // 从 upload 实例删除数据
             const fileList = this.$refs.upload.fileList;
@@ -170,6 +166,14 @@
               });
             }
             return check;
+          }
+        },
+        watch:{
+          message_list:function () {
+            this.$nextTick(() => {
+              var container = this.$el.querySelector("#m-message");
+              container.scrollTop = container.scrollHeight;
+            });
           }
         }
     }

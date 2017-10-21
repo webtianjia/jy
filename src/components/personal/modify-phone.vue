@@ -15,18 +15,19 @@
           <i-input></i-input>
         </Form-Item>
         <Form-Item label="短信验证码">
-          <i-input style="width: 185px"></i-input>
+          <i-input style="width: 184px"></i-input>
           <button type="button" class="btn btn-outline ml-10">获取验证码</button>
         </Form-Item>
         <Form-Item label="验证码">
-          <i-input style="width: 148px"></i-input>
+          <i-input style="width: 146px"></i-input>
           <a href="#" class="ml-10">
-            <img style="width: 100px;height: 32px" src="../../images/list/createCode.jpg">
+            <img style="width: 100px;height: 32px" src="../../assets/images/list/createCode.jpg">
             换一换</a>
         </Form-Item>
         <Form-Item label="">
           <button type="button" class="btn btn-main">确认</button>
         </Form-Item>
+      </i-Form>
     </div>
   </div>
 </template>
