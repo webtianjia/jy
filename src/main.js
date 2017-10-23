@@ -5,9 +5,9 @@ import router from './router/router'
 import {post} from './util/http.js'
 Vue.prototype.post=post;
 import ivivew from  'iview'
-import "iview/dist/styles/iview.css"
+
 Vue.use(ivivew);
-import "bootstrap/dist/css/bootstrap.min.css"
+
 /*轮播插件*/
 import "./assets/css/slide/swiper.css"
 import VueAwesomeSwiper from "vue-awesome-swiper"
@@ -58,3 +58,5 @@ function auto_layout_height(){
     console.log($('.layout-right').innerHeight())
   }
 }
+
+

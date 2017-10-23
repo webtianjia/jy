@@ -1,3 +1,5 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~iview/dist/styles/iview.css";
 @import "common";
 .header{
   position: relative;
@@ -273,7 +275,6 @@
     color: #fff;
   }
 }
-
 /*充值*/
 .recharge{
   .ivu-tabs-nav .ivu-tabs-tab{
@@ -522,6 +523,27 @@
         color: @font-color;
       }
       color: #666;
+    }
+    .gallery-thumbs{
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+      width: 520px;
+      margin:  0 auto;
+      display: flex;
+      text-align: center;
+      span{
+        flex: 1;
+        margin-right: 20px;
+        cursor: pointer;
+        opacity: 0.4;
+        &.active{
+          opacity: 1;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
     }
   }
   /*立即应用*/
