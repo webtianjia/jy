@@ -18,6 +18,8 @@ import work_panel from  "../components/work-panel/work-panel.vue"
 import market from "../components/market/market.vue"
 import market_detail from "../components/market/market-detail.vue"
 import application_run from "../components/market/application-run.vue"
+import demand_edit from "../components/market/demand-edit.vue"
+import demand_submit from "../components/market/demand-submit.vue"
 
 /*我的应用*/
 import my_application from "../components/my-application/my-application.vue"
@@ -27,6 +29,7 @@ import create_application_3 from "../components/my-application/create-3.vue"
 import create_application_4 from "../components/my-application/create-4.vue"
 /*我的项目*/
 import  my_project from  "../components/my-project/my-project.vue"
+import  view_details from  "../components/my-project/view-details.vue"
 
 /*我的文件*/
 import  my_files from "../components/my-files/my-files.vue"
@@ -129,6 +132,16 @@ export default new router({
           name:"运行",
           component:application_run,
         },
+        {
+          path:"/control_panel/market/demand_edit",
+          name:"提需求",
+          component:demand_edit,
+        },
+        {
+          path:"/control_panel/market/demand_submit",
+          name:"提交需求",
+          component:demand_submit,
+        },
 				{
 					path:"/control_panel/my_application",
 					name:"我的应用",
@@ -158,6 +171,11 @@ export default new router({
 					path:"/control_panel/my_project",
 					name:"我的项目",
 					component:my_project
+				},
+				{
+					path:"/control_panel/view_details",
+					name:"查看详情",
+					component:view_details
 				},
 				{
 					path:"/control_panel/my_files",

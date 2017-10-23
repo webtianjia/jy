@@ -10,15 +10,18 @@
             <TabPane icon="ios-monitor-outline"  label="在线充值" name="name1">
               <Form   :label-width="100" class="mt-40 ml-100" style="width:380px;">
                 <Form-Item label="充值金额" :class="{'ivu-form-item-error':errors.has('payment_amount')}">
-                  <i-Input  v-validate="'required'" name="payment_amount"  v-model="form_online.payment_amount" placeholder="J$ "></i-Input>
-                  <div class="ivu-form-item-error-tip" v-show="errors.has('payment_amount')">请填写充值金额</div>
+                  <i-Input  v-validate="'required|numeric'" name="payment_amount"  v-model="form_online.payment_amount" placeholder="J$ "></i-Input>
+                  <div class="ivu-form-item-error-tip" v-show="errors.has('payment_amount')">请正确填写充值金额</div>
                 </Form-Item>
                 <Form-item  v-for="(item,index) in price_list">
                   <div @click="option_price(index)" class="checked-item" :class="{'checked':item.checked}">J$  {{item.price}}</div>
                 </Form-item>
                 <Form-item label="支付方式">
                   <Radio-Group v-model="form_online.radio" vertical>
-                    <div class="checked-item">
+                    <div class="checked-item ">
+                      <Radio label="jk"> &nbsp;&nbsp;&nbsp;&nbsp;吉凯余额支付</Radio>
+                    </div>
+                    <div class="checked-item mt-30">
                       <Radio label="zfb"><i class="icon-zfb"></i>支付宝支付</Radio>
                     </div>
                     <div class="checked-item mt-30">
@@ -35,19 +38,15 @@
               <i-Form :model="form_line"  ref="form_line"  :rules="ruleInline"  class="mt-40 ml-100 lf" :label-width="100" style="width: 380px">
                 <Form-Item label="付款银行" prop="paying_bank">
                   <i-Input  v-model="form_line.paying_bank"></i-Input>
-                    <!-- <div class="ivu-form-item-error-tip">请输入正确的银行账号</div>-->
                 </Form-Item>
                 <Form-Item label="付款账号" prop="paying_account">
                   <i-Input v-model="form_line.paying_account"></i-Input>
-                  <!--  <div class="ivu-form-item-error-tip" v-if="is_sub">账号不能为空</div>-->
                 </Form-Item>
                 <Form-Item label="交易流水号" prop="batch" >
                   <i-Input v-model="form_line.batch"></i-Input>
-                  <!--<div class="ivu-form-item-error-tip">交易流水号不能为空</div>-->
                 </Form-Item>
                 <Form-Item label="付款金额" prop="payment_amount">
                   <i-Input v-model="form_line.payment_amount" placeholder="J$ "></i-Input>
-                  <!--  <div class="ivu-form-item-error-tip">支付金额不能为空</div>-->
                 </Form-Item>
                 <Form-item>
                   <button type="button" class="btn btn-main" @click="form_line_Submit('form_line')">确认提交</button>
@@ -112,7 +111,7 @@
         ],
         form_online:{/*在线*/
           payment_amount:"",
-          radio: 'zfb',
+          radio: 'jk',
         },
         form_line:{/*线下*/
           paying_bank:"", /*付款银行*/
@@ -157,11 +156,10 @@
       form_online_Submit(){
         this.$validator.validateAll().then((result) => {
           if (result) {
-            alert(result)
             /*AJAX*/
             this.$router.replace({"name":"充值成功",path:"/recharge-success"})
           }else {
-              alert("有错误")
+            this.$Message.error('表单验证失败!');
           }
         });
       },

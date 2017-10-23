@@ -92,13 +92,10 @@
     },
     methods:{
       login(){
+          this.$get("http://localhost:8080/static/test.json").then(function (res) {
+              console.log(res)
+          })
           this.$validator.validateAll().then((result) => {
-            var url="https://way.jd.com/idcard/idcard"
-            var data={
-              name:"邓永望",
-              cardno:"610922197401232578",
-              appkey:"1d0f735707e0cacd4e839a7f116097af"
-            }
             if (result) {
               this.sub_login=true;
                 this.btn_text="登录中...";

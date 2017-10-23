@@ -12,8 +12,11 @@
             <img class="img-circle" src="../../assets/images/list/head-2.png" height="80" width="80"/>
           </div>
           <div class="media-body">
-            <div class="rg mt-10" style="margin-right: 250px;">
-              <div>账户余额  J$ 320.22</div>
+            <div class="rg mt-10" style="margin-right: 150px;">
+              <div>
+                <span>账户余额  J$ 320.22</span>
+                <span class="ml-40">吉凯账户余额  ￥ 6000.00</span>
+              </div>
               <div class="mt-10"><router-link to="/recharge" class="btn btn-main">立即充值</router-link></div>
             </div>
             <div class="mt-20">{{personal_information.user_name}}</div>

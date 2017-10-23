@@ -754,10 +754,10 @@
         this.$Message.info('操作成功!');
       },
       look(){
-        location.href="../04.应用市场/运行.html"
+        this.$router.replace({name:"查看详情",path:"/control_panel/view_details"})
       },
       edit(){
-        location.href="../04.应用市场/运行.html"
+        this.$router.replace({name:"运行",path:"/control_panel/market/detail/run"})
       },
       clear(){
         this.$Modal.confirm({

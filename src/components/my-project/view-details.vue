@@ -1,5 +1,5 @@
 <template>
-  <div class="market application">
+  <div class="market run">
     <div class="panel mb-0 ">
       <div class="panel-body">
         <div class="title mr-40">项目编号：Seal-0001 项目名称：我是一个项目名称 应用程序：我是一个应用程序</div>
@@ -7,78 +7,107 @@
       </div>
     </div>
     <div class="panel mt-10 application-form">
-      <i-Form ref="formValidate"  :label-width="100">
+      <i-Form  :label-width="100">
         <div class="form-title">设置参数</div>
-        <Form-Item class="mt-40" label="参数名称1">
+        <Form-Item class="mt-40 ivu-form-item-required " label="参数名称1">
           <Row>
             <i-Col span="18">
-              <p><a href="../07.我的文件/查看文件.html">index.css</a></p>
+              <p><a href="../07.我的文件/查看文件.html" target="_blank">index.css</a></p>
             </i-Col>
           </Row>
         </Form-Item>
-        <Form-Item label="参数名称2">
+        <Form-Item class="ivu-form-item-required " label="参数名称2">
           <Row>
             <i-Col span="18">
-              <p><a href="../07.我的文件/查看文件.html">index.RGB</a></p>
+              <p><a href="../07.我的文件/查看文件.html" target="_blank">index.RGB</a></p>
             </i-Col>
           </Row>
         </Form-Item>
-        <Form-item label="参数名称3">
+        <Form-Item>
           <Row>
             <i-Col span="18">
-              <p>AABB</p>
+              <i-Button type="dashed" @click="is_more=!is_more"  long>{{is_more==false?"显示更多参数":"隐藏更多参数"}}</i-Button>
             </i-Col>
           </Row>
-        </Form-item>
-        <Form-item label="参数名称4">
-          <Row>
-            <i-Col span="18">
-              <p>ccdd</p>
-            </i-Col>
-          </Row>
-        </Form-item>
-        <Form-item label="参数名称5">
-          <Row>
-            <i-Col span="18">
-              <p>123</p>
-            </i-Col>
-          </Row>
-        </Form-item>
-        <Form-item label="参数名称6">
-          <Row>
-            <i-Col span="18">
-              <p>xaz</p>
-            </i-Col>
-          </Row>
-        </Form-item>
-        <Form-item label="参数名称7">
-          <Row>
-            <i-Col span="18">
-              <p>15, 20, 25</p>
-            </i-Col>
-          </Row>
-        </Form-item>
-        <Form-item label="参数名称8">
-          <Row>
-            <i-Col span="18">
-              <p>不成熟</p>
-            </i-Col>
-          </Row>
-        </Form-item>
-        <Form-item label="参数名称9">
-          <Row>
-            <i-Col span="18">
-              <p>#ff6001</p>
-            </i-Col>
-          </Row>
-        </Form-item>
+        </Form-Item>
+        <div v-show="is_more">
+          <Form-item label="参数名称3">
+            <Row>
+              <i-Col span="18">
+                <p>AABB</p>
+              </i-Col>
+            </Row>
+          </Form-item>
+          <Form-item label="参数名称4">
+            <Row>
+              <i-Col span="18">
+                <p>ccdd</p>
+              </i-Col>
+            </Row>
+          </Form-item>
+          <Form-item label="参数名称5">
+            <Row>
+              <i-Col span="18">
+                <p>123</p>
+              </i-Col>
+            </Row>
+          </Form-item>
+          <Form-item label="参数名称6">
+            <Row>
+              <i-Col span="18">
+                <p>xaz</p>
+              </i-Col>
+            </Row>
+          </Form-item>
+          <Form-item label="参数名称7">
+            <Row>
+              <i-Col span="18">
+                <p>15, 20, 25</p>
+              </i-Col>
+            </Row>
+          </Form-item>
+          <Form-item label="参数名称8">
+            <Row>
+              <i-Col span="18">
+                <p>不成熟</p>
+              </i-Col>
+            </Row>
+          </Form-item>
+          <Form-item label="参数名称9">
+            <Row>
+              <i-Col span="18">
+                <p>#ff6001</p>
+              </i-Col>
+            </Row>
+          </Form-item>
+        </div>
         <div class="well">
-          <p><span class="f-14 mr-20" style="font-weight: bold">运行结果</span><a class="col-main mr-20" href="#">result1.txt</a> <a class="col-main mr-20" href="#">result2.txt</a></p>
+          <div>
+            <span class="f-14 mr-20" style="font-weight: bold">运行结果</span>
+            <a class="col-main mr-20" href="../07.我的文件/查看文件.html" target="_blank">result1.txt</a>
+            <div  class="mt-20"  style="height: 250px;overflow: auto;background-color:#f8f8f8">
+                    <pre>
+                            <code class="css"  v-text="code">
+                            </code>
+                    </pre>
+          </div>
+          </div>
+
+        </div>
+        <div class="well">
+          <div><span class="f-14 mr-20" style="font-weight: bold">运行结果</span>
+            <a class="col-main mr-20" href="../07.我的文件/查看文件.html" target="_blank">result2.txt</a>
+          <div  class="mt-20"  style="height: 250px;overflow: auto;background-color:#f8f8f8">
+                  <pre>
+                          <code class="css"  v-text="code">
+                          </code>
+                  </pre>
+          </div>
+          </div>
         </div>
         <div class="text-c">
           <button type="button" class="btn btn-outline mr-40" @click="history.go(-1)">返回</button>
-
-          <button type="button" class="btn btn-main  mr-40" @click="location.href='../04.应用市场/运行.html'">修改</button>
+          <router-link :to="{name:'运行',path:'/control_panel/market/detail/run'}"  class="btn btn-main  mr-40" >修改参数再提交</router-link>
         </div>
         <div class="mt-30"></div>
       </i-Form>
@@ -88,11 +117,11 @@
       :width="800"
       v-model="info_modal"
       title="应用说明"
-      class="application-alert"
+      class="application-info"
       class-name="vertical-center-modal">
       <div class="msg">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci architecto assumenda at consectetur consequuntur dolorem doloribus earum est facilis iste, itaque molestias odit officia perferendis provident, quia quidem sequi.
-        <img src="../images/list/4.png" alt="">
+        <img src="../../assets/images/list/4.png" alt="">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deleniti, ullam. Beatae cupiditate, deleniti dolorum eum facere itaque magni officia omnis, perspiciatis porro qui quibusdam tempora ut vero voluptatibus! Incidunt.
         <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A assumenda consectetur dolorum
           eius enim, eos eveniet harum ipsum libero molestias, nesciunt nulla officiis, perspiciatis
@@ -145,6 +174,21 @@
     export default {
         data(){
             return {
+              is_more:false,
+              code:` * Agate by Taufik Nurrohman <https://github.com/tovic>
+ * ----------------------------------------------------
+ *
+ * #ade5fc
+ * #a2fca2
+ * #c6b4f0
+ * #d36363
+ * #fcc28c
+ * #fc9b9b
+ * #ffa
+ * #fff
+ * #333
+ * #62c8f3
+ * #888`,
               info_modal:false
             }
         },

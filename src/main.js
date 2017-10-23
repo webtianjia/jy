@@ -2,12 +2,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/router'
-import {post} from './util/http.js'
-Vue.prototype.post=post;
+import {fetch,post} from './util/http.js'
+Vue.prototype.$get=fetch;
+Vue.prototype.$post=post;
+
 import ivivew from  'iview'
-
 Vue.use(ivivew);
-
 /*轮播插件*/
 import "./assets/css/slide/swiper.css"
 import VueAwesomeSwiper from "vue-awesome-swiper"

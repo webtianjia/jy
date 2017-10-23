@@ -1,4 +1,3 @@
-
 <template>
   <div class="market">
     <div class="panel">
@@ -13,7 +12,8 @@
           <div class="media-body">
             <div class="rg">
               <span  class="col-main text-r mr-20"   v-if="checked"><Icon type="checkmark-round" class="mr-5"></Icon>已添加</span>
-              <button @click="add" v-else type="button" class="btn btn-outline mr-20">添加到我的应用</button>
+              <button @click="add" v-else type="button" class="btn btn-outline mr-10">添加到我的应用</button>
+              <button  @click="share_model=true"    type="button" class="btn btn-outline mr-10">分享</button>
               <button @click="modal=true"  type="button" class="btn btn-main">立即应用</button>
               <div class="col-red text-r mt-5">￥3.00/次(免费)</div>
             </div>
@@ -53,6 +53,7 @@
         </dl>
       </div>
     </div>
+    <!--创建-->
     <Modal
       :width="400"
       ok-text="创建"
@@ -72,6 +73,26 @@
         </Form-Item>
       </i-Form>
     </Modal>
+    <!--分享-->
+    <Modal
+      class="f-14"
+      :width="400"
+      v-model="share_model"
+      title="分享"
+      class-name="vertical-center-modal">
+      <div class="f-14">
+        <label class="text-c center-block">分享链接</label>
+        <div class="mt-10" style=" background-color: #f8f8f8"><pre><code> http://www.genechem.com.cn/  http://www.genechem.com.cn/  http://www.genechem.com.cn/</code></pre></div>
+        <label class="text-c center-block">分享给好友</label>
+        <i-Select v-model="city" filterable>
+          <i-Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</i-Option>
+        </i-Select>
+      </div>
+      <div slot="footer" class="text-c">
+        <button class="btn btn-main mt-20" @click="share_model=false">确认</button>
+        <div class="mt-20"></div>
+      </div>
+    </Modal>
   </div>
 </template>
 <script>
@@ -80,10 +101,38 @@
       return{
         modal:false,
         checked:false,
+        share_model:false,
         add_project:{
           name:""
         },
-        carousel:0
+        city:"",
+        cityList: [
+          {
+            value: 'beijing',
+            label: '北京市'
+          },
+          {
+            value: 'shanghai',
+            label: '上海市'
+          },
+          {
+            value: 'shenzhen',
+            label: '深圳市'
+          },
+          {
+            value: 'hangzhou',
+            label: '杭州市'
+          },
+          {
+            value: 'nanjing',
+            label: '南京市'
+          },
+          {
+            value: 'chongqing',
+            label: '重庆市'
+          }
+        ],
+        carousel:3/*轮播*/
       }
     },
     methods: {

@@ -76,6 +76,11 @@
         </dl>
       </div>
     </div>
+    <div class="mt-10">
+      <router-link :to="{name:'提需求',path:'/control_panel/market/demand_edit'}" href="javascript:void (0)">
+        <img src="../../assets/images/list/request-banner.png" class="img-responsive">
+      </router-link>
+    </div>
     <div class="panel mt-10 ">
       <div class="panel-heading">
         <a class="rg f-12" href="#">查看更多&gt;&gt;</a>

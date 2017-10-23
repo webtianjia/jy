@@ -1,0 +1,141 @@
+{
+  "code": "10000",
+  "charge": false,
+  "msg": "查询成功",
+  "result": {
+    "success": true,
+    "message": "获取蜜罐数据成功",
+    "data": {
+      "user_gray": {
+        "user_phone": "18229967576",
+        "contacts_class1_blacklist_cnt": 0,
+        "contacts_class2_blacklist_cnt": 123,
+        "phone_gray_score": 1,
+        "contacts_class1_cnt": 30,
+        "contacts_router_cnt": 5,
+        "contacts_router_ratio": 0.167
+      },
+      "user_phone_suspicion": {
+        "phone_with_other_idcards": [
+          {
+            "susp_updt": "2015-10-23 21:33:17",
+            "susp_idcard": "32052***0408"
+          }
+        ],
+        "phone_with_other_names": [
+          {
+            "susp_name": "测**",
+            "susp_updt": "2015-04-07 15:00:31"
+          }
+        ],
+        "phone_applied_in_orgs": [
+          {
+            "susp_org_type": "线上信用卡代还",
+            "susp_updt": "2015-10-23 16:31:00"
+          }
+        ]
+      },
+      "update_time": 1446702659106,
+      "user_idcard_suspicion": {
+        "idcard_with_other_names": [
+          {
+            "susp_name": "吴**",
+            "susp_updt": "2015-11-09 19:25:04"
+          }
+        ],
+        "idcard_with_other_phones": [
+          {
+            "susp_phone_province": "江苏",
+            "susp_phone_operator": "中国移动",
+            "susp_updt": "2015-11-02 10:31:39",
+            "susp_phone": "137***730",
+            "susp_phone_city": "苏州"
+          }
+        ],
+        "idcard_applied_in_orgs": [
+          {
+            "susp_org_type": "线上信用卡代还",
+            "susp_updt": "2015-10-23 16:31:00"
+          }
+        ]
+      },
+      "user_searched_history_by_orgs": [
+        {
+          "searched_org": "其他",
+          "org_self": true,
+          "searched_date": "2015-11-05"
+        }
+      ],
+      "user_searched_statistic": {
+        "searched_org_cnt": 6
+      },
+      "user_blacklist": {
+        "blacklist_name_with_idcard": true,
+        "blacklist_update_time_name_idcard": "2015-07-31 02:54:22",
+        "blacklist_name_with_phone": false,
+        "blacklist_update_time_name_phone": "2015-07-31 02:54:22",
+        "blacklist_category": [
+          "网贷"
+        ],
+        "blacklist_details": [
+          {
+            "details_key": "地址",
+            "details_value": "北京"
+          },
+          {
+            "details_key": "累计借入本金",
+            "details_value": "¥293,500.00"
+          },
+          {
+            "details_key": "性别",
+            "details_value": "男"
+          },
+          {
+            "details_key": "累计已还金额",
+            "details_value": "¥181,110.25"
+          },
+          {
+            "details_key": "最大逾期天数",
+            "details_value": "246 天"
+          }
+        ]
+      },
+      "user_basic": {
+        "user_province": "湖南省",
+        "user_city": "衡阳市",
+        "user_region": "耒阳市",
+        "user_idcard": "4304811991********",
+        "user_age": 24,
+        "user_gender": "女",
+        "user_phone": "188********",
+        "user_idcard_valid": true,
+        "user_name": "小明",
+        "user_phone_city": "长沙",
+        "user_phone_province": "湖南",
+        "user_phone_operator": "中国移动"
+      },
+      "user_register_orgs": {
+        "phone_num": "137********",
+        "register_cnt": 2,
+        "register_orgs": [ ],
+        "register_orgs_statistics": [
+          {
+            "count": 1,
+            "label": "理财"
+          },
+          {
+            "count": 1,
+            "label": "贷款"
+          },
+          {
+            "count": 2,
+            "label": "理财/贷款"
+          }
+        ]
+      },
+      "auth_org": "jcloud",
+      "user_grid_id": "306bd17e-8381-11e5-8598-525400dd3e99-6224"
+    },
+    "process_code": 20000
+  }
+}
