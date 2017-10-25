@@ -107,7 +107,6 @@
   </div>
 </template>
 <script>
-  import footer from "./comm/footer.vue"
 export default {
   name: 'index',
   data () {
@@ -120,8 +119,7 @@ export default {
   },
   mounted:function () {
 
-  },
-  components:{"v-footer":footer}
+  }
 }
 </script>
 

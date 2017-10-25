@@ -784,7 +784,7 @@
         });
       },
       ok(){
-        location.href="../04.应用市场/运行.html"
+          this.$router.replace({name:"运行",path:"/control_panel/market/detail/run"})
       }
     }
   }

@@ -1,6 +1,8 @@
 
 import Vue from 'vue'
 import App from './App'
+import footer from "./components/comm/footer.vue"
+Vue.component("v-footer",footer)
 import router from './router/router'
 import {fetch,post} from './util/http.js'
 Vue.prototype.$get=fetch;
@@ -12,6 +14,15 @@ Vue.use(ivivew);
 import "./assets/css/slide/swiper.css"
 import VueAwesomeSwiper from "vue-awesome-swiper"
 Vue.use(VueAwesomeSwiper);
+/*代码高亮*/
+import hljs from "highlight.js"
+import 'highlight.js/styles/github.css' //样式文件
+Vue.directive('highlight',function (el) {
+  let blocks = el.querySelectorAll('pre code');
+  blocks.forEach((block)=>{
+    hljs.highlightBlock(block)
+  })
+})
 /*正则验证*/
  import VeeValidate,{ Validator }from "vee-validate"
 Validator.updateDictionary({
@@ -47,16 +58,8 @@ new Vue({
   },
   template: '<App/>',
   components: { App },
-
 });
 router.afterEach((to, from) => {
  /* auto_layout_height()*/
 })
-function auto_layout_height(){
-  if($('.layout-menu-left').length>0){
-    $('.layout-menu-left').css('height', $('.layout-right').innerHeight());
-    console.log($('.layout-right').innerHeight())
-  }
-}
-
 

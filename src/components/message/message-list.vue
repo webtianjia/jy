@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div>
     <div class="container">
       <div class="panel mt-10">
         <div class="mt-20 ml-10">
@@ -39,7 +39,7 @@
           <tr v-for=" i in 6">
             <td> <Checkbox  indeterminat="true"></Checkbox></td>
             <td>
-              <img src="../images/list/head.png" style="width: 40px;height: 40px">
+              <img src="../../assets/images/list/head.png" style="width: 40px;height: 40px">
               <span>我是一个用户名</span>
             </td>
             <td>
@@ -136,6 +136,7 @@
         <div class="mt-30"></div>
       </div>
     </div>
+    <v-footer></v-footer>
   </div>
 </template>
 <script>

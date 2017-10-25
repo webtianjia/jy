@@ -72,7 +72,6 @@
 </template>
 
 <script>
-  import footer from "../comm/footer.vue"
   export  default{
     data(){
       return {
@@ -99,8 +98,7 @@
           }
         });
       }
-    },
-    components:{"v-footer":footer}
+    }
   }
 
 </script>

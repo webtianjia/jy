@@ -16,12 +16,10 @@
   </div>
 </template>
 <script>
-  import  footer from "../comm/footer.vue"
     export default {
         data(){
             return {}
         },
-        methods: {},
-        components:{"v-footer":footer}
+        methods: {}
     }
 </script>

@@ -71,53 +71,51 @@
 </template>
 
 <script>
-  import footer from "../comm/footer.vue"
+
   export  default{
     data(){
-        return {
-          send_to:false,
-          send_time:60,
-          form_validate:{
-            user_id:"",
-            code:"",
-          }
+      return {
+        send_to: false,
+        send_time: 60,
+        form_validate: {
+          user_id: "",
+          code: "",
         }
+      }
     },
-    methods:{
+    methods: {
       sub(){
         this.$validator.validateAll().then((result) => {
           if (result) {
             /*AJAX*/
-            var form_data =  JSON.stringify(this.form_validate)
+            var form_data = JSON.stringify(this.form_validate)
             console.log(form_data)
-                this.$Message.success("找回成功！");
-             this.$router.push({ path:'/reset_password' })
-          }else {
+            this.$Message.success("找回成功！");
+            this.$router.push({path: '/reset_password'})
+          } else {
             alert('有错误!');
           }
 
-      })
+        })
       },
       send_authentication_code(){/*发送验证码*/
-        this.$validator.validate("phone_email").then((result)=>{
-          if(result){
-            this.send_to=true;
-            var time=setInterval(()=>{
+        this.$validator.validate("phone_email").then((result) => {
+          if (result) {
+            this.send_to = true;
+            var time = setInterval(() => {
               this.send_time--;
-              if( this.send_time<=0){
-                this.send_to=false;
-                this.send_time=60
+              if (this.send_time <= 0) {
+                this.send_to = false;
+                this.send_time = 60
                 clearInterval(time)
               }
-            },1000)
-          }else {
+            }, 1000)
+          } else {
             alert("先填写手机号")
           }
         })
 
       }
-    },
-    components:{
-        "v-footer":footer}
+    }
   }
 </script>

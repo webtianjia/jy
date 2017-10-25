@@ -92,13 +92,11 @@
           </div>
         </div>
       </div>
-      <footer-item></footer-item>
+      <v-footer></v-footer>
     </div>
 </template>
 
 <script>
-  import  headerItem from  "../comm/header.vue"
-  import  footerItem from "../comm/footer.vue"
   export default{
     data(){
       return{
@@ -116,7 +114,6 @@
 
         $(document).scrollTop(top)
       }
-    },
-    components:{footerItem}
+    }
   }
 </script>

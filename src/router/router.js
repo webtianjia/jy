@@ -65,6 +65,8 @@ import modify_pwd from "../components/personal/modify-pwd.vue"
 /*修改支付密码*/
 import modify_payment from "../components/personal/modify-payment.vue"
 
+/*消息列表*/
+import message_list from "../components/message/message-list.vue"
 /*404*/
 import  page_404 from "../components/page/404.vue"
 vue.use(router);
@@ -267,10 +269,15 @@ export default new router({
       ]
     },
     {
+      path:"/message_list",
+      name:"消息列表",
+      component:message_list
+    },
+    {
       name:"404",
       path:"*",
       redirct:"/page_404",
       component:page_404
-    }
+    },
 	]
 })

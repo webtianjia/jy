@@ -77,7 +77,6 @@
   </div>
 </template>
 <script>
-  import footer from "../comm/footer.vue"
   import {delCookie,getCookie,setCookie} from '../../util/cookie.js'
   export  default{
     data(){
@@ -100,11 +99,10 @@
               this.sub_login=true;
                 this.btn_text="登录中...";
               /*AJAX*/
-
               setTimeout(()=>{
                 setCookie("username",this.form_validate.user_id,1000*60);
                 this.$emit("showState");
-                this.$router.push('/index')
+                this.$router.replace({name:"工作面板",path:"/control_panel/work_panel"})
               },1000)
             }
           });
@@ -116,9 +114,6 @@
 
     },
     created(){
-    },
-    components:{
-        "v-footer":footer
-    },
+    }
   }
 </script>

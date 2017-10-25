@@ -44,7 +44,6 @@
       </div>
 </template>
 <script>
-  import  footer from "../comm/footer.vue"
     export default {
         data(){
             return {
@@ -59,7 +58,6 @@
           hasSubmit(){
 
           }
-        },
-      components:{"v-footer":footer}
+        }
     }
 </script>
