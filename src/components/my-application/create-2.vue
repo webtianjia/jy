@@ -24,10 +24,10 @@
             </Radio-Group>
           </Form-Item>
           <Form-Item label="上传程序包">
-            <input type="file">
+            <input class="btn" type="file">
           </Form-Item>
           <Form-Item label="依赖程序包">
-            <input type="file">
+            <input class="btn" type="file">
           </Form-Item>
           <Form-Item label="环境版本">
             <i-Select>
@@ -313,7 +313,7 @@
             this.on_list[$index].option.splice(two_index,1)
           },
           sub_next(){
-              this.$router.replace({path:"/control_panel/my_application/create_application_3"})
+              this.$router.push({path:"/control_panel/my_application/create_application_3"})
           }
         }
     }

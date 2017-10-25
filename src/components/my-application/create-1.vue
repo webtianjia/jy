@@ -98,7 +98,7 @@
         },
         methods: {
           sub_next(){
-              this.$router.replace({path:"/control_panel/my_application/create_application_2"})
+              this.$router.push({path:"/control_panel/my_application/create_application_2"})
           }
         }
     }

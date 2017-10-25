@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="main">
       <div class="container">
         <div class="layout mt-10" :class="{'layout-hide-text': spanLeft < 4}">
@@ -12,46 +11,37 @@
               </div>
                 <Menu active-name="1" theme="dark" width="auto" @on-select="router_link">
                   <Menu-Item name="work_panel">
-                    <i class="i-13"></i>
-                    <span class="layout-text">返回</span>
+                    <Icon type="ios-undo" size="22"></Icon>
+                    <span class="layout-text">返回工作面板</span>
                   </Menu-Item>
-                  <Submenu name="1">
-                    <template slot="title">
-                      <i class="i-13"></i>
-                      <span class="layout-text">用户须知</span>
-                    </template>
-                    <Menu-Item name="1-1">选项 1</Menu-Item>
-                    <Menu-Item name="1-2">选项 2</Menu-Item>
-                    <Menu-Item name="1-3">选项 3</Menu-Item>
-                  </Submenu>
-                  <Submenu name="2">
-                    <template slot="title">
-                      <i class="i-13"></i>
-                      <span class="layout-text">操作指南</span>
-                    </template>
-                    <Menu-Item name="2-1">选项 1</Menu-Item>
-                    <Menu-Item name="2-2">选项 2</Menu-Item>
-                    <Menu-Item name="2-3">选项 3</Menu-Item>
-                  </Submenu>
-                  <Submenu name="3">
-                    <template slot="title">
-                      <i class="i-13"></i>
-                      <span class="layout-text">常见问题</span>
-                    </template>
-                    <Menu-Item name="3-1">选项 1</Menu-Item>
-                    <Menu-Item name="3-2">选项 2</Menu-Item>
-                    <Menu-Item name="3-3">选项 3</Menu-Item>
-                  </Submenu>
-                  <Submenu name="4">
-                    <template slot="title">
-                      <i class="i-13"></i>
-                      <span class="layout-text">关于我们</span>
-                    </template>
-                    <Menu-Item name="4-1">关于我们</Menu-Item>
-                    <Menu-Item name="4-2">联系我们</Menu-Item>
-                    <Menu-Item name="4-3">投诉与建议</Menu-Item>
-                    <Menu-Item name="4-4">平台公告</Menu-Item>
-                  </Submenu>
+                  <Menu-Item name="1">
+                    <Icon type="speakerphone" size="22"></Icon>
+                    <span class="layout-text">平台公告</span>
+                  </Menu-Item>
+                  <Menu-Item name="work_panel">
+                    <Icon type="ios-book" size="22"></Icon>
+                    <span class="layout-text">用户须知</span>
+                  </Menu-Item>
+                  <Menu-Item name="work_panel">
+                    <Icon type="document-text" size="22"></Icon>
+                    <span class="layout-text">操作指南</span>
+                  </Menu-Item>
+                  <Menu-Item name="work_panel">
+                    <Icon type="help-circled" size="22"></Icon>
+                    <span class="layout-text">常见问题</span>
+                  </Menu-Item>
+                  <Menu-Item name="work_panel">
+                    <Icon type="person-stalker" size="22"></Icon>
+                    <span class="layout-text">关于我们</span>
+                  </Menu-Item>
+                  <Menu-Item name="work_panel">
+                    <Icon type="android-call" size="22"></Icon>
+                    <span class="layout-text">联系我们</span>
+                  </Menu-Item>
+                  <Menu-Item name="work_panel">
+                    <Icon type="edit" size="22"></Icon>
+                    <span class="layout-text">投诉与建议</span>
+                  </Menu-Item>
                 </Menu>
             </i-Col>
             <i-Col :span="spanRight" class="layout-right">
@@ -68,7 +58,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 <script>
   export  default {

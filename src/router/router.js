@@ -45,6 +45,8 @@ import  send_message from "../components/buddy-list/send-message.vue"
 
 /*帮助中心*/
 import use_help from  "../components/use-help/panel.vue"
+import public_list from  "../components/use-help/public-list.vue"
+import public_detail from  "../components/use-help/public-detail.vue"
 
 /*充值*/
 import recharge from  "../components/recharge/recharge.vue"
@@ -214,7 +216,19 @@ export default new router({
 		{
 			path:"/use_help",
 			name:"使用帮助",
-			component:use_help
+			component:use_help,
+      children:[
+        {
+          path:"/use_help/public_list",
+          name:"公告列表",
+          component:public_list,
+        },
+        {
+          path:"/use_help/public_detail",
+          name:"公告详情",
+          component:public_detail,
+        }
+      ]
 		},
 		{
 			path:"/recharge",

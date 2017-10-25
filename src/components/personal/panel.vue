@@ -10,19 +10,22 @@
           </div>
           <Menu active-name="personal" theme="dark" width="auto" @on-select="router_link">
             <Menu-Item name="work_panel">
-              <i class="i-13"></i>
+              <Icon type="ios-undo" size="22"></Icon>
               <span class="layout-text">返回工作面板</span>
             </Menu-Item>
             <Menu-Item name="personal">
-              <i class="i-62"></i>
+             <!-- <i class="i-62"></i>-->
+              <Icon type="person" size="22"></Icon>
               <span class="layout-text">个人信息</span>
             </Menu-Item>
             <Menu-Item name="security_setting">
-              <i class="i-63"></i>
+            <!--  <i class="i-63"></i>-->
+              <Icon type="locked" size="22"></Icon>
               <span class="layout-text">安全设置</span>
             </Menu-Item>
             <Menu-Item name="other_accounts">
-              <i class="i-64"></i>
+              <!--<i class="i-64"></i>-->
+              <Icon type="android-contacts" size="22"></Icon>
               <span class="layout-text">第三方账号</span>
             </Menu-Item>
           </Menu>

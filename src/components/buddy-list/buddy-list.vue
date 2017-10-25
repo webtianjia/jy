@@ -8,6 +8,131 @@
       </div>
       <div class="mt-20"></div>
     </div>
+    <div   class="panel mt-10">
+      <div class="panel-heading">
+        <i class="icon i-49"></i>待处理
+      </div>
+      <table class="table table-hover">
+        <tbody class="col-666">
+        <tr>
+          <td>
+            <p>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">
+                <img src="../../assets/images/list/head.png">
+              </router-link>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">我是{{i}}个用户名</router-link>
+            </p>
+          </td>
+          <td width="320">
+            <p>我是一个地址及职业介绍</p>
+          </td>
+          <td>
+            <p>
+              <button type="button" class="btn btn-main mr-20" @click="read">接受</button>
+              <button type="button" class="btn btn-outline" @click="read">忽略</button>
+            </p>
+            <p hidden>
+              <span class="col-main">等待验证</span>
+            </p>
+            <p hidden>
+              <button class="btn btn-main">添加</button>
+            </p>
+            <p hidden>
+              <span class="col-main mr-20">已过期</span>
+              <button class="btn btn-outline">删除</button>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">
+                <img src="../../assets/images/list/head.png">
+              </router-link>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">我是{{i}}个用户名</router-link>
+            </p>
+          </td>
+          <td>
+            <p>我是一个地址及职业介绍</p>
+          </td>
+          <td>
+            <p hidden>
+              <button type="button" class="btn btn-main mr-20">接受</button>
+              <button type="button" class="btn btn-outline">忽略</button>
+            </p>
+            <p >
+              <span class="col-main">等待验证</span>
+            </p>
+            <p hidden>
+              <button class="btn btn-main">添加</button>
+            </p>
+            <p hidden>
+              <span class="col-main mr-20">已过期</span>
+              <button class="btn btn-outline">删除</button>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">
+                <img src="../../assets/images/list/head.png">
+              </router-link>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">我是{{i}}个用户名</router-link>
+            </p>
+          </td>
+          <td>
+            <p>我是一个地址及职业介绍</p>
+          </td>
+          <td>
+            <p hidden>
+              <button type="button" class="btn btn-main mr-20">接受</button>
+              <button type="button" class="btn btn-outline">忽略</button>
+            </p>
+            <p hidden>
+              <span class="col-main">等待验证</span>
+            </p>
+            <p >
+              <button class="btn btn-main" @click="read">添加</button>
+            </p>
+            <p hidden>
+              <span class="col-main mr-20">已过期</span>
+              <button class="btn btn-outline">删除</button>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">
+                <img src="../../assets/images/list/head.png">
+              </router-link>
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">我是{{i}}个用户名</router-link>
+            </p>
+          </td>
+          <td>
+            <p>我是一个地址及职业介绍</p>
+          </td>
+          <td>
+            <p hidden>
+              <button type="button" class="btn btn-main mr-20">接受</button>
+              <button type="button" class="btn btn-outline">忽略</button>
+            </p>
+            <p hidden>
+              <span class="col-main">等待验证</span>
+            </p>
+            <p hidden>
+              <button class="btn btn-main">添加</button>
+            </p>
+            <p >
+              <span class="col-main mr-30">已过期&nbsp;</span>
+              <button class="btn btn-outline" @click="read">删除</button>
+            </p>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
     <div class="panel mt-10">
       <div class="panel-heading">
         <i class="icon i-49"></i>好友列表
@@ -17,9 +142,9 @@
         <tr v-for="i in 8">
           <td>
             <p>
-              <a href="#" class="link">
+              <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">
                 <img src="../../assets/images/list/head.png">
-              </a>
+              </router-link>
               <router-link :to="{path:'/control_panel/friend_details/'+i,}" class="link">我是{{i}}个用户名</router-link>
             </p>
           </td>

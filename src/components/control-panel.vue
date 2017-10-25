@@ -84,7 +84,7 @@
           case "my_files" :this.$router.replace({ path: '/control_panel/my_files' }) ;return;
           case "my_account" :this.$router.replace({ path: '/control_panel/my_account' }) ;return;
           case "buddy_list" :this.$router.replace({ path: '/control_panel/buddy_list' }) ;return;
-          case "use_help" :this.$router.replace({ path: '/use_help' }) ;return;
+          case "use_help" :this.$router.replace({ path: '/use_help/public_list' }) ;return;
         }
       }
     }

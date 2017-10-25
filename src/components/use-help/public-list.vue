@@ -5,61 +5,20 @@
     </div>
     <div class="panel-body">
       <table class="table table-hover">
-        <tr>
+        <tbody>
+        <tr v-for="i in 5">
           <td>
-            <p><a href="公告详情.html" class="link">春节假期服务安排通知</a></p>
+            <p><router-link to="/use_help/public_detail" class="link">春节假期服务安排通知</router-link></p>
           </td>
           <td>
-            <p style="max-width: 700px;"><a style="width: 700px;" class="link col-666" href="公告详情.html">尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，</a></p>
-          </td>
-          <td>
-            <p>2017-8-29</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p><a href="公告详情.html" class="link">春节假期服务安排通知</a></p>
-          </td>
-          <td>
-            <p style="max-width: 700px;"><a style="width: 700px;" class="link col-666" href="公告详情.html">尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，</a></p>
+            <p style="max-width: 700px;"><router-link to="/use_help/public_detail"  style="width: 700px;" class="link col-666">尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，</router-link></p>
           </td>
           <td>
             <p>2017-8-29</p>
           </td>
         </tr>
-        <tr>
-          <td>
-            <p><a href="公告详情.html" class="link">春节假期服务安排通知</a></p>
-          </td>
-          <td>
-            <p style="max-width: 700px;"><a style="width: 700px;" class="link col-666" href="公告详情.html">尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，</a></p>
-          </td>
-          <td>
-            <p>2017-8-29</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p><a href="公告详情.html" class="link">春节假期服务安排通知</a></p>
-          </td>
-          <td>
-            <p style="max-width: 700px;"><a style="width: 700px;" class="link col-666" href="公告详情.html">尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，</a></p>
-          </td>
-          <td>
-            <p>2017-8-29</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p><a href="公告详情.html" class="link">春节假期服务安排通知</a></p>
-          </td>
-          <td>
-            <p style="max-width: 700px;"><a style="width: 700px;" class="link col-666" href="公告详情.html">尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，尊敬的客户 :您好！在2017年春节即将来临，</a></p>
-          </td>
-          <td>
-            <p>2017-8-29</p>
-          </td>
-        </tr>
+        </tbody>
+
       </table>
       <div class="mt-50 text-r">
         <Page :total="100" show-elevator class="mr-20"></Page>
