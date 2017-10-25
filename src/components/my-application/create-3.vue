@@ -16,7 +16,7 @@
         <i class="icon i-30"></i>应用说明
       </div>
       <div class="panel-body">
-        <textarea id="text-content"></textarea>
+        <simditor :value='simditor_value'></simditor>
       </div>
     </div>
     <div class="panel mt-10 ">
@@ -138,9 +138,11 @@
   </div>
 </template>
 <script>
+  import simditor from '../simditor.vue'
     export default {
         data(){
             return {
+              simditor_value:"",
               formItem:{
                 radio:"",
                 color:"#379cf8",
@@ -178,7 +180,9 @@
         methods: {
             sub_next(){
                 this.$router.push({path:"/control_panel/my_application/create_application_4"})
-            }
-        }
+            },
+            simditor(){}
+        },
+      components:{simditor}
     }
 </script>

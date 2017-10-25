@@ -132,7 +132,7 @@
             label: '重庆市'
           }
         ],
-        carousel:3/*轮播*/
+        carousel:0/*轮播*/
       }
     },
     methods: {

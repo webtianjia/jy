@@ -102,9 +102,9 @@
                   <Icon type="arrow-down-b"></Icon>
               </a>
               <DropdownMenu slot="list" >
-                  <Dropdown-Item name="/control_panel/work_panel">个人信息</Dropdown-Item>
-                  <Dropdown-Item >安全设置</Dropdown-Item>
-                  <Dropdown-Item >第三方账号</Dropdown-Item>
+                  <Dropdown-Item name="/personal_information/personal">个人信息</Dropdown-Item>
+                  <Dropdown-Item name="/personal_information/security_setting">安全设置</Dropdown-Item>
+                  <Dropdown-Item name="/personal_information/other_accounts">第三方账号</Dropdown-Item>
                   <Dropdown-Item name="exit"><span >退出</span></Dropdown-Item>
               </DropdownMenu>
           </Dropdown>
