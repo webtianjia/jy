@@ -1,5 +1,4 @@
 <template>
-    <div class="main">
       <div class="container">
         <div class="layout mt-10" :class="{'layout-hide-text': spanLeft < 4}">
           <Row>
@@ -57,7 +56,6 @@
           </Row>
         </div>
       </div>
-    </div>
 </template>
 <script>
   export  default {

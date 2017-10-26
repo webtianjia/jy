@@ -1,5 +1,4 @@
 <template>
-  <div class="main">
     <div class="login-and-regsiter mt-60">
       <div class="content">
         <div class="login-banner">
@@ -66,9 +65,8 @@
           </div>
         </div>
       </div>
+      <v-footer></v-footer>
     </div>
-    <v-footer></v-footer>
-  </div>
 </template>
 
 <script>

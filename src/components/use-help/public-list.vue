@@ -6,7 +6,7 @@
     <div class="panel-body">
       <table class="table table-hover">
         <tbody>
-        <tr v-for="i in 5">
+           <tr v-for="i in 5">
           <td>
             <p><router-link to="/use_help/public_detail" class="link">春节假期服务安排通知</router-link></p>
           </td>
@@ -18,7 +18,6 @@
           </td>
         </tr>
         </tbody>
-
       </table>
       <div class="mt-50 text-r">
         <Page :total="100" show-elevator class="mr-20"></Page>

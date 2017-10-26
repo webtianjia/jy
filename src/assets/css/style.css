@@ -512,7 +512,12 @@ select:-webkit-autofill {
 .header .ivu-dropdown-item {
   font-size: 14px!important;
 }
-.main {
+html,
+body {
+  height: 100%;
+}
+#app {
+  min-height: 100%;
   position: relative;
   padding-bottom: 140px;
 }

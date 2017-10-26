@@ -1,12 +1,12 @@
 
 <template>
-    <div class="recharge">
-      <div class="container">
+  <div class="recharge">
+      <div class="container ">
         <div class="f-16 top">
           <span>账户充值   当前余额 J$ 111.00</span>
         </div>
         <div class="well-lg well">
-          <Tabs value="name1">
+         <Tabs value="name1">
             <TabPane icon="ios-monitor-outline"  label="在线充值" name="name1">
               <Form   :label-width="100" class="mt-40 ml-100" style="width:380px;">
                 <Form-Item label="充值金额" :class="{'ivu-form-item-error':errors.has('payment_amount')}">
@@ -88,7 +88,7 @@
         </div>
       </div>
       <v-footer></v-footer>
-    </div>
+  </div>
 </template>
 <script>
 

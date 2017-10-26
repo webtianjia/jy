@@ -1,6 +1,5 @@
 
 <template>
-    <div class="main">
       <div class="about-us">
         <div class="banner">
           <img class="img-responsive"  src="../../assets/images/list/banner.png"/>
@@ -91,9 +90,8 @@
             </div>
           </div>
         </div>
+        <v-footer></v-footer>
       </div>
-      <v-footer></v-footer>
-    </div>
 </template>
 
 <script>
@@ -111,8 +109,7 @@
         }else {
           top=$(selector).offset().top;
         }
-
-        $(document).scrollTop(top)
+        $(document.body).animate({scrollTop:top+"px"})
       }
     }
   }
