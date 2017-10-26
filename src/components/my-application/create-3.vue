@@ -16,7 +16,7 @@
         <i class="icon i-30"></i>应用说明
       </div>
       <div class="panel-body">
-        <simditor :value='simditor_value'></simditor>
+        　　<v-simditor @editor-change="set_simditor_value" :url="'www.baidu.com'" :param="'dsada'" :fileKey="'dadsada'"></v-simditor>
       </div>
     </div>
     <div class="panel mt-10 ">
@@ -181,8 +181,13 @@
             sub_next(){
                 this.$router.push({path:"/control_panel/my_application/create_application_4"})
             },
-            simditor(){}
+            set_simditor_value(value){
+                this.simditor_value=value
+            }
         },
-      components:{simditor}
+      watch:{
+
+      },
+      components:{"v-simditor":simditor}
     }
 </script>
