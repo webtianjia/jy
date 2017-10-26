@@ -14,19 +14,12 @@
               </li>
               <li class="mr-80" @click="type=1"  :class="{'active':type===1}">
                 <a  class="ml-5" href="javascript:void(0)">
-                  <span>运行中</span>
+                  <span>已提交</span>
                   <span class="badge">56</span>
                 </a>
                 <i></i>
               </li>
-              <li class="mr-80" @click="type=2"  :class="{'active':type===2}">
-                <a  class="ml-5" href="javascript:void(0)">
-                  <span>已完成</span>
-                  <span class="badge">56</span>
-                </a>
-                <i></i>
-              </li>
-              <li                       @click="type=3"  :class="{'active':type===3}">
+              <li  @click="type=2"  :class="{'active':type===2}">
                 <a  class="ml-5" href="javascript:void(0)">
                   <span>已删除</span>
                   <span class="badge">4</span>
@@ -263,7 +256,7 @@
     </div>
     <!--新创建END-->
 
-    <!--运行中-->
+    <!--已提交-->
     <div v-else-if="type===1" class="panel mt-10">
       <table class="table table-hover">
         <thead >
@@ -379,7 +372,7 @@
     <!--运行中END-->
 
     <!--已完成-->
-    <div v-else-if="type===2" class="panel mt-10">
+<!--    <div v-else-if="type===2" class="panel mt-10">
       <table class="table table-hover">
         <thead >
         <tr class="bg_f8f8f8">
@@ -522,11 +515,11 @@
         <Page :total="100" show-elevator class="mr-20"></Page>
       </div>
       <div class="mt-30"></div>
-    </div>
+    </div>-->
     <!--已完成END-->
 
     <!--已取消-->
-    <div v-else-if="type===3" class="panel mt-10">
+    <div v-else-if="type===2" class="panel mt-10">
       <table class="table table-hover">
         <thead >
         <tr class="bg_f8f8f8">

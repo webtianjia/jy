@@ -1,3 +1,10 @@
+<style scoped>
+  .well{
+    border: none;
+    box-shadow: none;
+    background-color: #fff;
+  }
+</style>
 <template>
   <div class="market run">
     <div class="panel mb-0 ">
@@ -9,17 +16,36 @@
     <div class="panel mt-10 application-form">
       <i-Form  :label-width="100">
         <div class="form-title">设置参数</div>
-        <Form-Item class="mt-40 ivu-form-item-required " label="参数名称1">
+        <Form-Item class="mt-40  " label="项目状态">
+              <p>
+                <span style="color:#ff9900">  运行中</span>
+                &
+                <span style="color:#19be6b">已完成</span>
+                &
+                <span style="color:#2d8cf0">在排队</span>
+                &
+                <span style="color: #ed3f14"> 运行出错</span>
+              </p>
+        </Form-Item>
+        <Form-Item class=" ivu-form-item-required " label="参数名称1">
           <Row>
-            <i-Col span="18">
-              <p><a href="../07.我的文件/查看文件.html" target="_blank">index.css</a></p>
+            <i-Col span="10">
+              <p><a href="../07.我的文件/查看文件.html" target="_blank">index.css(点击下载)</a></p>
+            </i-Col>
+            <i-Col span="6">
+              <router-link to="/control_panel/look_file" v-show="is_checked" class="f-12" style="color:#2d8cf0">已存入云空间</router-link>
+              <Button type="primary" size="small" @click="is_checked=true" v-show="!is_checked">存入云空间</Button>
             </i-Col>
           </Row>
         </Form-Item>
         <Form-Item class="ivu-form-item-required " label="参数名称2">
           <Row>
-            <i-Col span="18">
-              <p><a href="../07.我的文件/查看文件.html" target="_blank">index.RGB</a></p>
+            <i-Col span="10">
+              <p><a href="../07.我的文件/查看文件.html" target="_blank">index.RGB(点击下载)</a></p>
+            </i-Col>
+            <i-Col span="6">
+              <router-link to="/control_panel/look_file" v-show="is_checked" class="f-12" style="color:#2d8cf0">已存入云空间</router-link>
+              <Button type="primary" size="small" @click="is_checked=true" v-show="!is_checked">存入云空间</Button>
             </i-Col>
           </Row>
         </Form-Item>
@@ -83,8 +109,12 @@
         </div>
         <div class="well">
           <div>
+            <div class="rg">
+              <router-link to="/control_panel/look_file" v-show="is_checked" class="f-12" style="color:#2d8cf0">已存入云空间</router-link>
+              <Button type="primary" size="small" @click="is_checked=true" v-show="!is_checked">存入云空间</Button>
+            </div>
             <span class="f-14 mr-20" style="font-weight: bold">运行结果</span>
-            <a class="col-main mr-20" href="../07.我的文件/查看文件.html" target="_blank">result1.txt</a>
+            <a class="col-main mr-20" href="../07.我的文件/查看文件.html" target="_blank">result1.txt(点击下载)</a>
             <div  class="mt-20"  style="height: 250px;overflow: auto;background-color:#f8f8f8">
                     <pre>
                             <code class="css"  v-text="code">
@@ -92,11 +122,15 @@
                     </pre>
           </div>
           </div>
-
         </div>
         <div class="well">
-          <div><span class="f-14 mr-20" style="font-weight: bold">运行结果</span>
-            <a class="col-main mr-20" href="../07.我的文件/查看文件.html" target="_blank">result2.txt</a>
+          <div>
+            <div class="rg">
+              <router-link to="/control_panel/look_file" v-show="is_checked" class="f-12" style="color:#2d8cf0">已存入云空间</router-link>
+              <Button type="primary" size="small" @click="is_checked=true" v-show="!is_checked">存入云空间</Button>
+            </div>
+            <span class="f-14 mr-20" style="font-weight: bold">运行结果</span>
+            <a class="col-main mr-20" href="../07.我的文件/查看文件.html" target="_blank">result2.txt(点击下载)</a>
           <div  class="mt-20"  style="height: 250px;overflow: auto;background-color:#f8f8f8">
                   <pre>
                           <code class="css"  v-text="code">
@@ -174,6 +208,7 @@
     export default {
         data(){
             return {
+              is_checked:false,
               is_more:false,
               code:` * Agate by Taufik Nurrohman <https://github.com/tovic>
  * ----------------------------------------------------
