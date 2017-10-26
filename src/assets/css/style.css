@@ -785,6 +785,9 @@ body {
 .layout .ivu-menu-dark i.i-64 {
   background-image: url("../images/icons/i-64.png");
 }
+.ivu-col {
+  transition: width 0.2s ease-in-out;
+}
 /*应用市场*/
 .market {
   /*应用详情*/

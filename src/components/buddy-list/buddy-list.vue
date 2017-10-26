@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="panel mt-10">
+    <div class="panel ">
       <div class="mt-20 ml-10 mr-10">
         <i-Input  placeholder="搜索用户(用户名，长居地，email)" class="search-input" >
           <i-Button slot="append" class="search-btn">搜索</i-Button>
