@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <div class="login-and-regsiter mt-60">
       <div class="content">
         <div class="login-banner">
