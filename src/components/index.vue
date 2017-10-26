@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="page-main">
     <div class="index">
       <div class="banner">
         <img class="img-responsive"  src="../assets/images/list/index/banner.png"/></div>

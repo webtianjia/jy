@@ -1,5 +1,6 @@
 
 <template>
+  <div class="page-main">
       <div class="about-us">
         <div class="banner">
           <img class="img-responsive"  src="../../assets/images/list/banner.png"/>
@@ -90,10 +91,10 @@
             </div>
           </div>
         </div>
-        <v-footer></v-footer>
       </div>
+      <v-footer></v-footer>
+  </div>
 </template>
-
 <script>
   export default{
     data(){

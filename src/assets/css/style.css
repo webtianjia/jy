@@ -513,12 +513,15 @@ select:-webkit-autofill {
   font-size: 14px!important;
 }
 html,
-body {
+body,
+#app {
   height: 100%;
 }
-#app {
-  min-height: 100%;
+.page-main {
+  min-height: 28%;
   position: relative;
+  top: 0;
+  padding-bottom: 140px;
 }
 .footer {
   background-color: #f8faff;
