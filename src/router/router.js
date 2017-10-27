@@ -73,6 +73,7 @@ import message_list from "../components/message/message-list.vue"
 import  page_404 from "../components/page/404.vue"
 vue.use(router);
 export default new router({
+  mode: 'history',
 	routes: [
 		{
 			path: '/',

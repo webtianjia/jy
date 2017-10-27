@@ -7,7 +7,7 @@ import router from './router/router'
 import {fetch,post} from './util/http.js'
 Vue.prototype.$get=fetch;
 Vue.prototype.$post=post;
-
+//Vue.prototype.HOST = '/api'/*跨域*/
 import ivivew from  'iview'
 Vue.use(ivivew);
 /*轮播插件*/

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="panel mt-10">
+    <div class="panel ">
       <div style="height: 50px;line-height: 70px">
         <span class="ml-20">/某某某某人的云空间</span>
         <div class="text-r create_new_project file_btn" style="width: 298px;">

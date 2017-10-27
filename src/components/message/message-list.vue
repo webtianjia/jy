@@ -24,8 +24,8 @@
       </div>
       <div v-if="type===0"  class="panel mt-10" style="min-height: 560px">
         <table class="table table-hover">
-          <thead >
-          <tr class="bg_f8f8f8">
+          <thead class="bg_f8f8f8">
+              <tr >
             <td>
               <Checkbox  indeterminat="true">全选</Checkbox>
             </td>
@@ -75,10 +75,10 @@
         </div>
         <div class="mt-30"></div>
       </div>
-      <div v-else class="panel mt-10" style="min-height: 560px">
+      <div v-else class="panel mt-10" style="min-height: 560px;">
         <table class="table table-hover">
-          <thead >
-          <tr class="bg_f8f8f8">
+          <thead class="bg_f8f8f8">
+          <tr>
             <td>
               <Checkbox  indeterminat="true">全选</Checkbox>
             </td>
@@ -143,7 +143,9 @@
     export default {
         data(){
             return {
-              type:0
+              type:0,
+              checkedAll:false,
+
             }
         },
         methods: {

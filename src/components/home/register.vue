@@ -1,7 +1,7 @@
 <template>
   <div class="page-main">
     <div class="login-and-regsiter mt-60">
-      <di class="content">
+      <div class="content">
         <div class="login-banner">
           <img class="img-responsive" src="../../assets/images/login.png">
         </div>
@@ -144,7 +144,7 @@
           </div>
           </form>
         </div>
-      </di>
+      </div>
     </div>
     <v-footer></v-footer>
   </div>
