@@ -153,22 +153,8 @@
           </td>
           <td>
             <p>
-              <button type="button" class="btn btn-main mr-20" @click="read">接受</button>
-              <button type="button" class="btn btn-outline" @click="read">忽略</button>
-            </p>
-            <p hidden>
-              <span class="col-main">等待验证</span>
-            </p>
-            <p hidden>
-              <button class="btn btn-main">添加</button>
-            </p>
-            <p hidden>
-              <span class="col-main mr-20">已过期</span>
-              <button class="btn btn-outline">删除</button>
-            </p>
-            <p hidden>
               <span class="mr-20">已是好友</span>
-              <button class="btn btn-outline">删除</button>
+              <button class="btn btn-outline del_friend">删除</button>
             </p>
           </td>
         </tr>

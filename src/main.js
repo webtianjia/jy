@@ -2,27 +2,19 @@
 import Vue from 'vue'
 import App from './App'
 import footer from "./components/comm/footer.vue"
-Vue.component("v-footer",footer)
 import router from './router/router'
-import {fetch,post} from './util/http.js'
-Vue.prototype.$get=fetch;
-Vue.prototype.$post=post;
-//Vue.prototype.HOST = '/api'/*跨域*/
+import Util from './util/util.js'
+Vue.prototype.util=Util
 import ivivew from  'iview'
-Vue.use(ivivew);
+
 /*轮播插件*/
 import "./assets/css/slide/swiper.css"
 import VueAwesomeSwiper from "vue-awesome-swiper"
-Vue.use(VueAwesomeSwiper);
+
 /*代码高亮*/
 import hljs from "highlight.js"
 import 'highlight.js/styles/github.css' //样式文件
-Vue.directive('highlight',function (el) {
-  let blocks = el.querySelectorAll('pre code');
-  blocks.forEach((block)=>{
-    hljs.highlightBlock(block)
-  })
-})
+
 /*正则验证*/
  import VeeValidate,{ Validator }from "vee-validate"
 Validator.updateDictionary({
@@ -42,6 +34,16 @@ Validator.extend(
       }
     },
 );
+
+Vue.directive('highlight',function (el) {
+  let blocks = el.querySelectorAll('pre code');
+  blocks.forEach((block)=>{
+    hljs.highlightBlock(block)
+  })
+})
+Vue.component("v-footer",footer)
+Vue.use(VueAwesomeSwiper);
+Vue.use(ivivew);
 Vue.use(VeeValidate,{
   locale: 'zh_CN'
 });
@@ -59,7 +61,14 @@ new Vue({
   template: '<App/>',
   components: { App },
 });
-router.afterEach((to, from) => {
- /* auto_layout_height()*/
-})
+router.beforeEach((to, from, next) => {
+  ivivew.LoadingBar.start();
+/*  Util.title(to.meta.title);*/
+  next();
+});
+
+router.afterEach(() => {
+  ivivew.LoadingBar.finish();
+  window.scrollTo(0, 0);
+});
 

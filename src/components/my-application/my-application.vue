@@ -19,167 +19,20 @@
         <i class="icon i-26"></i>我创建的
       </div>
       <div class="panel-body application-list">
-        <dl>
+        <dl v-for="i in 8">
           <dt>
             <img  src="../../assets/images/list/1.png" height="130" width="235"/>
             <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
+              <router-link :to="{name:'应用详情',path:'/market/detail'}"class="info-text">房检查 乳腺病是危害女性身心健康
                 的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
+                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</router-link>
               <div class="mt-20">调用次数：365次</div>
             </div>
           </dt>
           <dd>
-            <div class="title">
+            <router-link :to="{name:'应用详情',path:'/market/detail'}" class="title">
               HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
+            </router-link>
             <div class="rg col-red mt-5">￥3.00/次</div>
             <div class="labels mt-5">
               <span>我是一个标签啊</span>
@@ -195,167 +48,20 @@
         <i class="icon i-27"></i>收藏应用
       </div>
       <div class="panel-body application-list">
-        <dl>
+        <dl v-for="i in 8">
           <dt>
             <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
+          <div class="transition-info">
+            <router-link :to="{name:'应用详情',path:'/market/detail'}"class="info-text">房检查 乳腺病是危害女性身心健康
+              的主要疾病,妇检是女性健康的一道
+              己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</router-link>
+            <div class="mt-20">调用次数：365次</div>
+          </div>
           </dt>
           <dd>
-            <div class="title">
+            <router-link :to="{name:'应用详情',path:'/market/detail'}" class="title">
               HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
-            <div class="rg col-red mt-5">￥3.00/次</div>
-            <div class="labels mt-5">
-              <span>我是一个标签啊</span>
-              <span>最搞笑</span>
-            </div>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img  src="../../assets/images/list/1.png" height="130" width="235"/>
-            <div class="transition-info">
-              <div class="info-text">房检查 乳腺病是危害女性身心健康
-                的主要疾病,妇检是女性健康的一道
-                己负责的表现,点击了解民生医己负责的表现,点击了解民生医己负责的表现,点击了解民生医...</div>
-              <div class="mt-20">调用次数：365次</div>
-            </div>
-          </dt>
-          <dd>
-            <div class="title">
-              HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测HOPLCE 肺癌基因检测
-            </div>
+            </router-link>
             <div class="rg col-red mt-5">￥3.00/次</div>
             <div class="labels mt-5">
               <span>我是一个标签啊</span>

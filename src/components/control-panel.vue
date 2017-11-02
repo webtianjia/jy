@@ -37,6 +37,10 @@
                   <i class="i-19"></i>
                   <span class="layout-text">好友列表</span>
                 </Menu-Item>
+                <Menu-Item name="platform_announcement">
+                  <Icon type="speakerphone" size="22" style="color: #fff"></Icon>
+                  <span class="layout-text">平台公告</span>
+                </Menu-Item>
                 <Menu-Item name="use_help">
                   <i class="i-20"></i>
                   <span class="layout-text">使用帮助</span>
@@ -84,7 +88,8 @@
           case "my_files" :this.$router.replace({ path: '/control_panel/my_files' }) ;return;
           case "my_account" :this.$router.replace({ path: '/control_panel/my_account' }) ;return;
           case "buddy_list" :this.$router.replace({ path: '/control_panel/buddy_list' }) ;return;
-          case "use_help" :this.$router.replace({ path: '/use_help/public_list' }) ;return;
+          case "use_help" :this.$router.replace({ path: '/use_help/user_instructions' }) ;return;
+          case "platform_announcement" :this.$router.replace({ path: '/control_panel/public_list' }) ;return;
         }
       }
     }

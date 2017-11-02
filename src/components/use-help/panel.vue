@@ -8,36 +8,32 @@
                   <Icon type="navicon" size="32"></Icon>
                 </button>
               </div>
-                <Menu active-name="1" theme="dark" width="auto" @on-select="router_link">
+                <Menu active-name="user_instructions" theme="dark" width="auto" @on-select="router_link">
                   <Menu-Item name="work_panel">
                     <Icon type="ios-undo" size="22"></Icon>
                     <span class="layout-text">返回工作面板</span>
                   </Menu-Item>
-                  <Menu-Item name="1">
-                    <Icon type="speakerphone" size="22"></Icon>
-                    <span class="layout-text">平台公告</span>
-                  </Menu-Item>
-                  <Menu-Item name="work_panel">
+                  <Menu-Item name="user_instructions">
                     <Icon type="ios-book" size="22"></Icon>
                     <span class="layout-text">用户须知</span>
                   </Menu-Item>
-                  <Menu-Item name="work_panel">
+                  <Menu-Item name="1">
                     <Icon type="document-text" size="22"></Icon>
                     <span class="layout-text">操作指南</span>
                   </Menu-Item>
-                  <Menu-Item name="work_panel">
+                  <Menu-Item name="2">
                     <Icon type="help-circled" size="22"></Icon>
                     <span class="layout-text">常见问题</span>
                   </Menu-Item>
-                  <Menu-Item name="work_panel">
+                  <Menu-Item name="3">
                     <Icon type="person-stalker" size="22"></Icon>
                     <span class="layout-text">关于我们</span>
                   </Menu-Item>
-                  <Menu-Item name="work_panel">
+                  <Menu-Item name="4">
                     <Icon type="android-call" size="22"></Icon>
                     <span class="layout-text">联系我们</span>
                   </Menu-Item>
-                  <Menu-Item name="work_panel">
+                  <Menu-Item name="5">
                     <Icon type="edit" size="22"></Icon>
                     <span class="layout-text">投诉与建议</span>
                   </Menu-Item>
@@ -78,9 +74,7 @@
       router_link(name){
         switch (name){
           case 'work_panel' :this.$router.replace({ path: '/control_panel/work_panel' }) ;return;
-          case "2" :this.$router.replace({ path: '/control_panel/market' }) ;return;
-          case "3" :this.$router.replace({ path: '/control_panel/my_application' }) ;return;
-          case "4" :this.$router.replace({ path: '/control_panel/my_project' }) ;return;
+          case 'user_instructions' :this.$router.replace({ path: '/use_help/user_instructions' }) ;return;
         }
       }
     }

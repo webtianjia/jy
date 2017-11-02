@@ -1,6 +1,6 @@
 <template>
       <div>
-        <div class="panel mt-10">
+        <div class="panel ">
           <div class="mt-10 ml-10">
             <div style="height: 30px;line-height: 30px">
               <span class="ml-20">/某某某某人的云空间</span>

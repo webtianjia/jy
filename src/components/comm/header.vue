@@ -105,7 +105,7 @@
                   <Dropdown-Item name="/personal_information/personal">个人信息</Dropdown-Item>
                   <Dropdown-Item name="/personal_information/security_setting">安全设置</Dropdown-Item>
                   <Dropdown-Item name="/personal_information/other_accounts">第三方账号</Dropdown-Item>
-                  <Dropdown-Item name="exit"><span >退出</span></Dropdown-Item>
+                  <Dropdown-Item name="exit">退出</Dropdown-Item>
               </DropdownMenu>
           </Dropdown>
       </div>

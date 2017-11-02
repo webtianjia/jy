@@ -948,9 +948,15 @@ html, body,#app{
       line-height: 36px;
       border-top:none;
     }
+    .del_friend{
+      opacity: 0;
+    }
     &:hover{
       background-color:#eff7fe;
       .info-text{
+        opacity: 1;
+      }
+      .del_friend{
         opacity: 1;
       }
     }
@@ -1143,7 +1149,7 @@ input.edit-input{
 }
 /*上传文件大按钮*/
 .file_btn{
-  top: 10px;
+  top: 0;
 }
 
 /*qq&&微信&&支付宝个人信息*/
@@ -1196,7 +1202,6 @@ input.edit-input{
   &:hover,&.active{
     background-image: url("../images/icons/i-71-a.png");
   }
-
 }
 /*个人信息*/
 .user_msg{
@@ -1206,5 +1211,21 @@ input.edit-input{
     border: none;
     cursor:default;
     color: @font-color;
+  }
+}
+/*应用日志*/
+.application-log{
+  .table{
+    margin-bottom: 40px;
+    border-bottom: 1px solid @col-br;
+    tbody>tr{
+
+      >td{
+        border: none;
+        &:first-child{
+          text-align: right;
+        }
+      }
+    }
   }
 }

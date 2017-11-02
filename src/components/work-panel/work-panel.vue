@@ -77,7 +77,7 @@
           </table>
         </div>
         <div class="mt-10">
-          <img class="img-responsive" src="../../assets/images/list/7.png" height="150" width="654"/>
+          <img class="img-responsive" src="../../assets/images/list/7.png" height="150" width="100%"/>
         </div>
         <div class="mt-10">
           <Row>

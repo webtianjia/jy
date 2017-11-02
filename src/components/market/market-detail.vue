@@ -50,6 +50,9 @@
           <dd class="mt-20">引用说明: XXXX analysis was performed
             using the OmicShare tools.(www.omsic
             hare.com/tools) </dd>
+          <dd class="text-c mt-30">
+            <router-link  class="btn  btn-main" to="/application_log" target="_blank">应用日志</router-link>
+          </dd>
         </dl>
       </div>
     </div>

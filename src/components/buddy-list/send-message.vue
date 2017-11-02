@@ -78,7 +78,7 @@
                 <img class="avatar" width="40" height="40" src="../../assets/images/head.png">
                 <div class="name">大熊</div>
                 <div class="text" v-text="item.text"></div>
-                <div l></div>
+                <div></div>
               </div>
             </li>
           </ul>
@@ -100,7 +100,6 @@
             :on-format-error="handleFormatError"
             :on-exceeded-size="handleMaxSize"
             :before-upload="handleBeforeUpload"
-            multiple
             type="drag"
             action="//jsonplaceholder.typicode.com/posts/"
             class="lf"
@@ -166,15 +165,21 @@
               });
             }
             return check;
+          },
+          message_bottom(){
+            var container = this.$el.querySelector("#m-message");
+            container.scrollTop = container.scrollHeight;
           }
         },
         watch:{
           message_list:function () {
             this.$nextTick(() => {
-              var container = this.$el.querySelector("#m-message");
-              container.scrollTop = container.scrollHeight;
+              this.message_bottom()
             });
           }
-        }
+        },
+      mounted(){
+        this.message_bottom()
+      }
     }
 </script>

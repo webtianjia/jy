@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="panel ">
-      <div style="height: 50px;line-height: 70px">
-        <span class="ml-20">/某某某某人的云空间</span>
-        <div class="text-r create_new_project file_btn" style="width: 298px;">
-          <a class="btn btn-main mr-20"><i class="i-73"></i>上传文件</a>
-          <a class="btn btn-main mr-5"><i class="i-74"></i>创建文件夹</a>
+      <div class="mt-10 ml-10">
+        <div style="height: 30px;line-height: 30px">
+          <span class="ml-20">/某某某某人的云空间</span>
+          <div class="text-r create_new_project file_btn" style="width: 306px;">
+            <a class="btn btn-main mr-20"><img class="mr-5" src="../../assets/images/icons/i-75.png">上传文件</a>
+            <a class="btn btn-main mr-5"><img class="mr-5" src="../../assets/images/icons/i-76.png">创建文件夹</a>
+          </div>
+          <div class="f-12 col-666 ml-20 mt-5" style="line-height: 0">2017-12-05  13:23:34  728kb</div>
         </div>
       </div>
       <div class="mt-20"></div>

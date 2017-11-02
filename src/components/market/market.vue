@@ -119,9 +119,9 @@
         checked:false,
         swiper:{
           swiperOption:{
-            autoplay:10000000,
+            autoplay:3000,
             loop:true,
-            loopedSlides:3,
+            loopedSlides:0,
             spaceBetween:10,
             centeredSlides:true,
             slidesPerView : 'auto',

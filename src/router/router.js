@@ -20,6 +20,7 @@ import market_detail from "../components/market/market-detail.vue"
 import application_run from "../components/market/application-run.vue"
 import demand_edit from "../components/market/demand-edit.vue"
 import demand_submit from "../components/market/demand-submit.vue"
+import application_log from  "../components/market/application-log.vue"
 
 /*我的应用*/
 import my_application from "../components/my-application/my-application.vue"
@@ -45,8 +46,10 @@ import  send_message from "../components/buddy-list/send-message.vue"
 
 /*帮助中心*/
 import use_help from  "../components/use-help/panel.vue"
-import public_list from  "../components/use-help/public-list.vue"
-import public_detail from  "../components/use-help/public-detail.vue"
+import user_instructions from  "../components/use-help/user-instructions.vue"
+/*平台公告*/
+import public_list from  "../components/public-detail/public-list.vue"
+import public_detail from  "../components/public-detail/public-detail.vue"
 
 /*充值*/
 import recharge from  "../components/recharge/recharge.vue"
@@ -212,22 +215,32 @@ export default new router({
           name:"站内信",
           component:send_message
         },
+        {
+          path:"/control_panel/public_list",
+          name:"公告列表",
+          component:public_list,
+        },
+        {
+          path:"/control_panel/public-detail",
+          name:"公告详情",
+          component:public_detail,
+        }
 			]
 		},
+    {
+      path:"/application_log",
+      name:"应用日志",
+      component:application_log
+    },
 		{
 			path:"/use_help",
 			name:"使用帮助",
 			component:use_help,
       children:[
         {
-          path:"/use_help/public_list",
-          name:"公告列表",
-          component:public_list,
-        },
-        {
-          path:"/use_help/public_detail",
+          path:"/use_help/user_instructions",
           name:"公告详情",
-          component:public_detail,
+          component:user_instructions,
         }
       ]
 		},

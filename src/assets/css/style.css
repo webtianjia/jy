@@ -1280,10 +1280,16 @@ body,
   line-height: 36px;
   border-top: none;
 }
+.table-hover > tbody > tr .del_friend {
+  opacity: 0;
+}
 .table-hover > tbody > tr:hover {
   background-color: #eff7fe;
 }
 .table-hover > tbody > tr:hover .info-text {
+  opacity: 1;
+}
+.table-hover > tbody > tr:hover .del_friend {
   opacity: 1;
 }
 .table-hover > tbody > tr:active {
@@ -1461,7 +1467,7 @@ input.edit-input {
 }
 /*上传文件大按钮*/
 .file_btn {
-  top: 10px;
+  top: 0;
 }
 /*qq&&微信&&支付宝个人信息*/
 .i-68,
@@ -1526,4 +1532,15 @@ input.edit-input {
   border: none;
   cursor: default;
   color: #333;
+}
+/*应用日志*/
+.application-log .table {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.application-log .table tbody > tr > td {
+  border: none;
+}
+.application-log .table tbody > tr > td:first-child {
+  text-align: right;
 }

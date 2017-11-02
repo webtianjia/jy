@@ -18,10 +18,7 @@
       <div class="panel-body">
         <i-Form  :label-width="100" style="width: 500px">
           <Form-Item label="程序类型">
-            <Radio-Group v-model="formItem.radio">
-              <Radio label="R程序"></Radio>
-              <Radio label="Perl程序"></Radio>
-            </Radio-Group>
+            <i-input placeholder="请填写程序语言"></i-input>
           </Form-Item>
           <Form-Item label="上传程序包">
             <input class="btn" type="file">

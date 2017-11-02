@@ -91,19 +91,18 @@
     },
     methods:{
       login(){
-          var code=[];
+/*          var code=[];
             for(var i=1;i<5;i++){
               code.push(Math.floor(Math.random()*10))
             }
-            console.log(code.join(''))
           var data={
               mobile:"15016731705",
-              content:"【三合店&国际极限创意皇钻VIP第一平台】验证码为："+code+",欢迎注册平台！",
-             appkey:'1d0f735707e0cacd4e839a7f116097af'
+              content:"【三合店&国际极限创意皇钻VIP第一平台】验证码为："+code.join('')+",欢迎注册平台！",
+              appkey:'1d0f735707e0cacd4e839a7f116097af'
           }
           this.$get("https://way.jd.com/chuangxin/dxjk",data).then(function (res) {
             console.log(res)
-          })
+          })*/
           this.$validator.validateAll().then((result) => {
             if (result) {
               this.sub_login=true;
