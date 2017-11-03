@@ -81,33 +81,48 @@ export default new router({
 		{
 			path: '/',
 			name: '首页',
+      meta:{
+			 title:"吉凯首页"
+      },
 			component: index
 		},
 		{
 			path: '/index',
-      meta:{auth:false},
+      meta:{
+        title:"吉凯首页"
+      },
 			component: index
 		},
 		{
 			path: '/login',
 			name: 'login',
-      title:"登录",
+      meta:{
+        title:"用户登录"
+      },
 			component: login
 		},
 		{
 			path: '/register',
 			name: '注册',
+      meta:{
+        title:"用户注册"
+      },
 			component: register
 		},
 		{
 			path: '/about_us',
 			name: '关于我们',
-      meta:{auth:false},
+      meta:{
+        title:"关于我们-关于吉凯"
+      },
 			component: about_us
 		},
 		{
 			path: '/password_retrieval',
 			name: '找回密码',
+      meta:{
+        title:"找回密码"
+      },
 			component: password_retrieval
 		},
 		{
@@ -118,6 +133,9 @@ export default new router({
 		{
 			path: '/control_panel',
 			name: '应用',
+      meta:{
+        title:"吉凯应用"
+      },
 			component: control_panel,
 			children:[
 				{

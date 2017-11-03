@@ -3,7 +3,7 @@ import env from '../config/env.js';
 
 let util = {};
 util.title = function(title) {
-  title = title ? title + ' - Home' : 'iView project';
+  title = title ? title  : '吉凯基因';
   window.document.title = title;
 };
 

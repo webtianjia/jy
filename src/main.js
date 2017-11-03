@@ -63,7 +63,7 @@ new Vue({
 });
 router.beforeEach((to, from, next) => {
   ivivew.LoadingBar.start();
-/*  Util.title(to.meta.title);*/
+  Util.title(to.meta.title);
   next();
 });
 
