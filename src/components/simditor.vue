@@ -2,6 +2,9 @@
 <template>
   <textarea :id="names"></textarea>
 </template>
+<style>
+
+</style>
 <script>
   import Simditor from 'simditor'
   import "simditor/styles/simditor.css"
